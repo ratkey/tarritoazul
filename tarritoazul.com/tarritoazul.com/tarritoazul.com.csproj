@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\favicon.ico" />
+    <Content Include="imgs\insta_logo.png" />
+    <Content Include="imgs\load.gif" />
+    <Content Include="imgs\logo.png" />
+    <Content Include="imgs\logosmall.png" />
+    <Content Include="imgs\logosmall_nobg.png" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -83,8 +89,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="rcs\imgs\" />
-    <Folder Include="rcs\videos\" />
     <Folder Include="styles\" />
   </ItemGroup>
   <PropertyGroup>

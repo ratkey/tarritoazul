@@ -74,6 +74,7 @@
     <Content Include="imgs\logosmall.png" />
     <Content Include="imgs\logosmall_nobg.png" />
     <Content Include="index.html" />
+    <Content Include="styles\index.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,9 +89,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="styles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

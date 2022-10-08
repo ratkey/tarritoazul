@@ -8,12 +8,13 @@
     <meta name="keywords" content="Aretes, Tienda, Artesanal, Porcelana, Joyeria">
     <meta name="author" content="Code breakers.sa">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Links -->
-    <link rel="icon" type="image/png" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="styles/index.css">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="styles/index.css">
 
     <title>Tarritoazul</title>
 </head>
@@ -44,33 +45,60 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.aspx">🛒Carrito</a>
+                    </li>
+                </ul>
                 <button type="button" class="btn btn-outline-secondary" style="margin-right: 5px">Registrarse</button>
                 <button type="button" class="btn btn-primary">Iniciar seción</button>
             </form>
         </div>
     </nav>
     <br>
+    <nav class="navbar justify-content-between">
+        <a class="navbar-brand"></a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Aretes de sandía" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </nav>
     <div class="catalogo">
-        <nav class="navbar justify-content-between">
-            <a class="navbar-brand"></a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
-        <table>
-            <tr>
-                <td>
-                    <img src="imgs/producto/arete01.png">
-                </td>
-                <td>
-                    <img src="imgs/producto/arete02.png">
-                </td>
-                <td>
-                    <img src="imgs/producto/arete03.png">
-                </td>
-            </tr>
-        </table>
+        <div class="card">
+            <img src="imgs/producto/arete01.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Waflitos</h1>
+            <p class="price">$299</p>
+            <p class="descripcion">Pack de 4 aretes con forma de wafles con moras y fresas</p>
+            <p><button>Añadir al carrito</button></p>
+        </div>
+        <div class="card">
+            <img src="imgs/producto/arete02.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Güacamolitos</h1>
+            <p class="price">$299</p>
+            <p class="descripcion">Aretes con forma de molcajetes con güacamole y totopos</p>
+            <p><button>Añadir al carrito</button></p>
+        </div>
+        <div class="card">
+            <img src="imgs/producto/arete03.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Sandías</h1>
+            <p class="price">$299</p>
+            <p class="descripcion">Aretes con forma de rebanadas de sandía</p>
+            <p><button>Añadir al carrito</button></p>
+        </div>
+        <div class="card">
+            <img src="imgs/producto/arete04.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Ranitas</h1>
+            <p class="price">$299</p>
+            <p class="descripcion">Aretes con forma de ranitas sobre hojas de flor de loto</p>
+            <p><button>Añadir al carrito</button></p>
+        </div>
+        <div class="card">
+            <img src="imgs/producto/arete05.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Limoncitos</h1>
+            <p class="price">$299</p>
+            <p class="descripcion">Aretes con forma de gajos de gajitos de limón</p>
+            <p><button>Añadir al carrito</button></p>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

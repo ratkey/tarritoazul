@@ -12,7 +12,43 @@ header {
     width: 300px;
 }
 
-.catalogo table{
-    margin-left: auto;
-    margin-right: auto;
+/* Catalogo */
+.catalogo{
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    min-height: 535px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+
+    margin-top: 10px;
+    /* margin-right: 5px;
+    margin-left: 5px; */
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #526768;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
 }

@@ -16,13 +16,13 @@ header {
 .catalogo{
     display: grid;
     
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    min-height: 535px;
+    max-width: 400px;
+    min-height: 636px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -47,6 +47,10 @@ header {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+}
+
+.card .descripcion{
+    min-height: 60px;
 }
 
 .card button:hover {

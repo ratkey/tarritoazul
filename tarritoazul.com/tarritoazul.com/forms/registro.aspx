@@ -75,7 +75,6 @@
         <p>
             ¿Ya tienes una cuenta? <a>Inicie Sesión</a>
         </p>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [registro]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

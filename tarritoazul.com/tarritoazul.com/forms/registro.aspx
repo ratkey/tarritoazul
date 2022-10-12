@@ -54,7 +54,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="TbContraseña" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TbContrasena" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -64,17 +64,18 @@
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="TbConfirmarContraseña" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TbConfirmarContrasena" runat="server"></asp:TextBox>
                 </td>
             </tr>
 
         </table>
         <asp:CheckBox ID="Cbprivacidad" runat="server" Text=" "/> 
         Acepto las <a>Condiciones de uso</a> y el <a>Aviso de privacidad</a><br />
-        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" /> <br />
+        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" /> <br />
         <p>
             ¿Ya tienes una cuenta? <a>Inicie Sesión</a>
         </p>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [registro]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

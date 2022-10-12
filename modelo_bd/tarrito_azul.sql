@@ -61,7 +61,7 @@ total int,
 constraint fk_venta foreign key (id_venta) references venta(id_venta)
 )
 
-create table regitro(
+create table registro(
 id_registro int primary key identity(1,1),
 usuario varchar(50) not null,
 correo varchar(50) not null,

@@ -14,6 +14,15 @@
             }
         }
     </script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="../imgs/favicon.ico">
+
     <title>Registro de usuario</title>
 </head>
 <body>

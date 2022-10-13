@@ -6,8 +6,43 @@
 body {
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+t1{
+    font-size: 20pt;
+}
+
+.logo{
+    width: 150px;
+}
+.logo_fondo{
+    width: 100%;
+    background-color: #a1c4c6;
 }
 
 .error{
     color:red;
+}
+
+.registro_box{
+    max-width: 300px;
+    min-width: 250px;
+    text-align: center;
+    background-color: white;
+
+    /* center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.registro_box table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    
 }

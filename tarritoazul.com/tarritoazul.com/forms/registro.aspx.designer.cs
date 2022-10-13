@@ -33,6 +33,24 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.Label LbNombre;
 
         /// <summary>
+        /// RequiredNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredNombre;
+
+        /// <summary>
+        /// RegularNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularNombre;
+
+        /// <summary>
         /// TbNombre control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,24 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LbEmail;
+
+        /// <summary>
+        /// RequiredEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmail;
+
+        /// <summary>
+        /// RevEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevEmail;
 
         /// <summary>
         /// TbEmail control.
@@ -69,6 +105,24 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.Label LbConfirmarEmail;
 
         /// <summary>
+        /// RequiredConfirmarEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmarEmail;
+
+        /// <summary>
+        /// RevConfirmarEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevConfirmarEmail;
+
+        /// <summary>
         /// TbConfirmarEmail control.
         /// </summary>
         /// <remarks>
@@ -78,13 +132,22 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox TbConfirmarEmail;
 
         /// <summary>
-        /// LbContraseña control.
+        /// LbContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbContraseña;
+        protected global::System.Web.UI.WebControls.Label LbContrasena;
+
+        /// <summary>
+        /// RequiredContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredContrasena;
 
         /// <summary>
         /// TbContrasena control.
@@ -105,6 +168,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.Label LbConfirmarContraseña;
 
         /// <summary>
+        /// RequiredConfirmarContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmarContrasena;
+
+        /// <summary>
         /// TbConfirmarContrasena control.
         /// </summary>
         /// <remarks>
@@ -123,6 +195,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.CheckBox Cbprivacidad;
 
         /// <summary>
+        /// CustomValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+
+        /// <summary>
         /// BtContinuar control.
         /// </summary>
         /// <remarks>
@@ -130,5 +211,14 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtContinuar;
+
+        /// <summary>
+        /// summary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary summary;
     }
 }

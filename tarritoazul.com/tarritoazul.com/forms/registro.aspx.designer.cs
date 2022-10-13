@@ -123,6 +123,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RevConfirmarEmail;
 
         /// <summary>
+        /// CompareEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareEmail;
+
+        /// <summary>
         /// TbConfirmarEmail control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmarContrasena;
+
+        /// <summary>
+        /// CompareContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareContrasena;
 
         /// <summary>
         /// TbConfirmarContrasena control.

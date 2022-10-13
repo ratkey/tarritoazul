@@ -20,17 +20,19 @@
             <tr>
                 <td>
                     <asp:Label ID="LbNombre" runat="server" Text="Nombre"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredNombre" runat="server" ControlToValidate="TbNombre" CssClass="error" Text="*" ErrorMessage="Nombre es un campo obligatorio 😧"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularNombre" runat="server" ControlToValidate="tbNombre" ValidationExpression="^[A-Za-z]*$" CssClass="error" Text="*" ErrorMessage="Nombre solo admite letras 😒"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
                 <td>
                     <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
                 </td>
-                <td><asp:RequiredFieldValidator ID="RequiredNombre" runat="server" ControlToValidate="TbNombre" ErrorMessage="Nombre es un campo obligatorio 😧"></asp:RequiredFieldValidator></td>
             </tr>
             <tr>
                 <td>
                     <asp:Label ID="LbEmail" runat="server" Text="Email"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ControlToValidate="TbEmail" CssClass="error" Text="*" ErrorMessage="Email es un campo obligatorio 😧"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -41,6 +43,7 @@
             <tr>
                 <td>
                     <asp:Label ID="LbConfirmarEmail" runat="server" Text="Confirmar Email"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredConfirmarEmail" runat="server" ControlToValidate="TbConfirmarEmail" CssClass="error" Text="*" ErrorMessage="Confirmar Email es un campo obligatorio 😧"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -50,7 +53,8 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="LbContraseña" runat="server" Text="Contraseña"></asp:Label>
+                    <asp:Label ID="LbContrasena" runat="server" Text="Contraseña"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredContrasena" runat="server" ControlToValidate="TbContrasena" CssClass="error" Text="*" ErrorMessage="Contraseña es un campo obligatorio 😧"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -61,6 +65,7 @@
             <tr>
                 <td>
                     <asp:Label ID="LbConfirmarContraseña" runat="server" Text="Confirmar contraseña"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredConfirmarContrasena" runat="server" ControlToValidate="TbConfirmarContrasena" CssClass="error" Text="*" ErrorMessage="Confirmar contraseña es un campo obligatorio 😧"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -76,6 +81,7 @@
         <p>
             ¿Ya tienes una cuenta? <a>Inicie Sesión</a>
         </p>
+        <asp:ValidationSummary ID="summary" runat="server" />
     </form>
 </body>
 </html>

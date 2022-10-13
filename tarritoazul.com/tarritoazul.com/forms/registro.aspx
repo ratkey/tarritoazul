@@ -21,7 +21,7 @@
                 <td>
                     <asp:Label ID="LbNombre" runat="server" Text="Nombre"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredNombre" runat="server" ControlToValidate="TbNombre" CssClass="error" Text="*" ErrorMessage="Nombre es un campo obligatorio 😧"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularNombre" runat="server" ControlToValidate="tbNombre" ValidationExpression="^[A-Za-z]*$" CssClass="error" Text="*" ErrorMessage="Nombre solo admite letras 😒"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularNombre" runat="server" ControlToValidate="tbNombre" ValidationExpression="^[A-Za-z\s]*$" CssClass="error" Text="*" ErrorMessage="Nombre solo admite letras 😒"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>

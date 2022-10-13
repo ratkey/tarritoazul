@@ -5,6 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type = "text/javascript">
+        function ValidateCheckBox(sender, args) {
+            if (document.getElementById("<%=Cbprivacidad.ClientID %>").checked == true) {
+                args.IsValid = true;
+            } else {
+                args.IsValid = false;
+            }
+        }
+    </script> 
     <title></title>
 </head>
 <body>
@@ -33,6 +42,7 @@
                 <td>
                     <asp:Label ID="LbEmail" runat="server" Text="Email"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ControlToValidate="TbEmail" CssClass="error" Text="*" ErrorMessage="Email es un campo obligatorio 😧"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RevEmail" runat="server" ControlToValidate="TbEmail" CssClass="error" Text="*" ErrorMessage="Email no valido 💌" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -44,6 +54,7 @@
                 <td>
                     <asp:Label ID="LbConfirmarEmail" runat="server" Text="Confirmar Email"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredConfirmarEmail" runat="server" ControlToValidate="TbConfirmarEmail" CssClass="error" Text="*" ErrorMessage="Confirmar Email es un campo obligatorio 😧"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RevConfirmarEmail" runat="server" ControlToValidate="TbConfirmarEmail" CssClass="error" Text="*" ErrorMessage="Email no valido 💌" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -76,7 +87,9 @@
 
         </table>
         <asp:CheckBox ID="Cbprivacidad" runat="server" Text=" "/> 
-        Acepto las <a>Condiciones de uso</a> y el <a>Aviso de privacidad</a><br />
+        Acepto las <a>Condiciones de uso</a> y el <a>Aviso de privacidad</a>
+        <asp:CustomValidator ID="CustomValidator1" runat="server" CssClass="error" Text="*" ErrorMessage="Debes a ceptar las condiciones de uso 👮‍♀️" ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
+        <br />
         <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" /> <br />
         <p>
             ¿Ya tienes una cuenta? <a>Inicie Sesión</a>

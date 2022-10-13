@@ -26,6 +26,7 @@
                 <td>
                     <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
                 </td>
+                <td><asp:RequiredFieldValidator ID="RequiredNombre" runat="server" ControlToValidate="TbNombre" ErrorMessage="Nombre es un campo obligatorio 😧"></asp:RequiredFieldValidator></td>
             </tr>
             <tr>
                 <td>

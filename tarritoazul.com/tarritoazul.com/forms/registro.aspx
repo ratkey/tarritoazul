@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type = "text/javascript">
+    <script type="text/javascript">
         function ValidateCheckBox(sender, args) {
             if (document.getElementById("<%=Cbprivacidad.ClientID %>").checked == true) {
                 args.IsValid = true;
@@ -13,19 +13,13 @@
                 args.IsValid = false;
             }
         }
-    </script> 
-    <title></title>
+    </script>
+    <title>Registro de usuario</title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <t1>Crear una cuenta</t1>
         <table>
-            <caption style="width: 123px">
-            <t1>
-                Crear una cuenta
-            </t1>
-        </table>
-        <table>
-
             <tr>
                 <td>
                     <asp:Label ID="LbNombre" runat="server" Text="Nombre"></asp:Label>
@@ -86,11 +80,12 @@
             </tr>
 
         </table>
-        <asp:CheckBox ID="Cbprivacidad" runat="server" Text=" "/> 
+        <asp:CheckBox ID="Cbprivacidad" runat="server" Text=" " />
         Acepto las <a>Condiciones de uso</a> y el <a>Aviso de privacidad</a>
         <asp:CustomValidator ID="CustomValidator1" runat="server" CssClass="error" Text="*" ErrorMessage="Debes a ceptar las condiciones de uso 👮‍♀️" ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
         <br />
-        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" /> <br />
+        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" />
+        <br />
         <p>
             ¿Ya tienes una cuenta? <a>Inicie Sesión</a>
         </p>

@@ -58,6 +58,7 @@
                     <asp:Label ID="LbConfirmarEmail" runat="server" Text="Confirmar Email"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredConfirmarEmail" runat="server" ControlToValidate="TbConfirmarEmail" CssClass="error" Text="*" ErrorMessage="Confirmar Email es un campo obligatorio 😧"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RevConfirmarEmail" runat="server" ControlToValidate="TbConfirmarEmail" CssClass="error" Text="*" ErrorMessage="Email no valido 💌" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                    <asp:CompareValidator ID="CompareEmail" runat="server" ControlToValidate="TbConfirmarEmail" ControlToCompare="TbEmail" CssClass="error" Text="*" ErrorMessage="Los Emails no coinciden 📧"></asp:CompareValidator>
                 </td>
             </tr>
             <tr>
@@ -80,6 +81,7 @@
                 <td>
                     <asp:Label ID="LbConfirmarContraseña" runat="server" Text="Confirmar contraseña"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredConfirmarContrasena" runat="server" ControlToValidate="TbConfirmarContrasena" CssClass="error" Text="*" ErrorMessage="Confirmar contraseña es un campo obligatorio 😧"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareContrasena" runat="server" ControlToValidate="TbConfirmarContrasena" ControlToCompare="TbContrasena" CssClass="error" Text="*" ErrorMessage="Las contraseñas no coinciden 😟"></asp:CompareValidator>
                 </td>
             </tr>
             <tr>

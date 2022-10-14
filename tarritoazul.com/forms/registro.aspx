@@ -8,7 +8,7 @@
         <!-- Meta -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript">
+        <script type="text/javascript">
             function ValidateCheckBox(sender, args) {
                 if (document.getElementById("<%=Cbprivacidad.ClientID %>").checked == true) {
                     args.IsValid = true;
@@ -136,8 +136,8 @@
                 <p style="font-size: 12pt;">
                     ¿Ya tienes una cuenta? <a href="" target="_blank">Inicie Sesión</a>
                 </p>
+                <asp:ValidationSummary ID="summary" runat="server"/>
             </div>
-            <asp:ValidationSummary ID="summary" runat="server" />
         </form>
     </body>
 

@@ -76,6 +76,7 @@
     <Content Include="imgs\logosmall_nobg.png" />
     <Content Include="index.html" />
     <Content Include="styles\index.css" />
+    <Content Include="styles\registro.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -21,6 +21,7 @@
     </script>
 
     <!-- Links -->
+    <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/registro.css" />
     <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
 
@@ -28,15 +29,16 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
-        <div class="registro_box">
-            <div class="logo_fondo">
-                <img class="logo" src="../imgs/logo.png" />
-            </div>
-            <br />
-            <t1>Crear una cuenta</t1>
-            <br />
-            <br />
+
+    <div class="registro_box">
+        <div class="logo_fondo">
+            <img class="logo" src="../imgs/logo.png" />
+        </div>
+        <br />
+        <t1>Crear una cuenta</t1>
+        <br />
+        <br />
+        <form id="form1" runat="server">
             <table>
                 <tr>
                     <td>
@@ -102,7 +104,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="TbContrasena" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TbContrasena" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -121,7 +123,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="TbConfirmarContrasena" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TbConfirmarContrasena" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -135,12 +137,12 @@
             </p>
             <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" />
             <br />
-            <p style="font-size: 12pt;">
-                ¿Ya tienes una cuenta? <a href="" target="_blank">Inicie Sesión</a>
-            </p>
-            <asp:ValidationSummary ID="summary" runat="server" />
-        </div>
-    </form>
+        <p style="font-size: 12pt;">
+            ¿Ya tienes una cuenta? <a href="" target="_blank">Inicie Sesión</a>
+        </p>
+        <asp:ValidationSummary ID="summary" runat="server" />
+        </form>
+    </div>
 </body>
 
 </html>

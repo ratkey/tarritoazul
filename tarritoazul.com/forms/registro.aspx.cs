@@ -14,11 +14,12 @@ namespace tarritoazul.com.forms
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.Open();
+
         }
 
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
+            con.Open();
             SqlCommand cmd = new SqlCommand("insert into registro values('" + TbNombre.Text + "','" + TbEmail.Text + "','" + TbContrasena.Text + "')", con);
             cmd.ExecuteNonQuery();
             con.Close();

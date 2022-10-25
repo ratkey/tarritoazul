@@ -1,0 +1,27 @@
+t1{
+    font-size: 20pt;
+}
+
+.logo{
+    width: 150px;
+}
+
+.logo_fondo{
+    width: 100%;
+    background-color: #a1c4c6;
+}
+
+.login_box{
+    padding: 0px 0px 10px 0px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 20px auto auto auto;
+}
+
+.login_box table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}

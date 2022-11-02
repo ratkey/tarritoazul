@@ -12,6 +12,7 @@ namespace tarritoazul.com.forms
     public partial class registro : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        string SQLInsert;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,11 +20,22 @@ namespace tarritoazul.com.forms
 
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
+            String cotNombre, cotEmail, cotContrasena;
+            cotNombre = TbNombre.Text;
+            cotEmail = TbEmail.Text;
+            cotContrasena = TbContrasena.Text;
+
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into registro values('" + TbNombre.Text + "','" + TbEmail.Text + "','" + TbContrasena.Text + "')", con);
+            
+            SQLInsert = String.Format("insert into REGISTROS(usuario, correo, contrasena)"+
+            "values('{0}','{1}','{2}');", cotNombre, cotEmail, cotContrasena);
+
+            SqlCommand cmd = new SqlCommand(SQLInsert, con);
             cmd.ExecuteNonQuery();
             con.Close();
-            System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('Tu cuenta ha sido registrada correctamente 👌');", true);
+
+            string script = "alert('Usuario registrado correctamente 👍');";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
         }
     }
 }

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forms\addProducto.aspx" />
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
     <Content Include="imgs\favicon.ico" />
@@ -83,6 +84,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\addProducto.aspx.cs">
+      <DependentUpon>addProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\addProducto.aspx.designer.cs">
+      <DependentUpon>addProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

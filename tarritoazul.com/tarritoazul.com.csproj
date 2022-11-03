@@ -76,6 +76,7 @@
     <Content Include="imgs\logo.png" />
     <Content Include="imgs\logosmall.png" />
     <Content Include="imgs\logosmall_nobg.png" />
+    <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\index.css" />
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="forms\registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

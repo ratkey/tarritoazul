@@ -24,15 +24,6 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNombre;
-
-        /// <summary>
         /// tbNombre control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbNombre;
-
-        /// <summary>
-        /// lbDescripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDescripcion;
 
         /// <summary>
         /// tbDescripcion control.
@@ -60,15 +42,6 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
 
         /// <summary>
-        /// lbPrecio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPrecio;
-
-        /// <summary>
         /// tbPrecio control.
         /// </summary>
         /// <remarks>
@@ -78,15 +51,6 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox tbPrecio;
 
         /// <summary>
-        /// lbCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCantidad;
-
-        /// <summary>
         /// tbCantidad control.
         /// </summary>
         /// <remarks>
@@ -94,15 +58,6 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbCantidad;
-
-        /// <summary>
-        /// tbDisponibilidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tbDisponibilidad;
 
         /// <summary>
         /// ddlDisponibilidad control.
@@ -141,15 +96,6 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.ListItem liOculto;
 
         /// <summary>
-        /// lbCategoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCategoria;
-
-        /// <summary>
         /// dlCategoria control.
         /// </summary>
         /// <remarks>
@@ -159,13 +105,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.DropDownList dlCategoria;
 
         /// <summary>
-        /// lbEtiquetas control.
+        /// liCat1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEtiquetas;
+        protected global::System.Web.UI.WebControls.ListItem liCat1;
 
         /// <summary>
         /// tbEtiquetas control.

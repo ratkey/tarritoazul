@@ -77,6 +77,7 @@
     <Content Include="imgs\logosmall.png" />
     <Content Include="imgs\logosmall_nobg.png" />
     <Content Include="index.html" />
+    <Content Include="styles\addProducto.css" />
     <Content Include="styles\index.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\registro.css" />

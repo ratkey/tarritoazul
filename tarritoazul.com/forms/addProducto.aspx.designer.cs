@@ -123,6 +123,33 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox tbEtiquetas;
 
         /// <summary>
+        /// FileUpload_Control control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload_Control;
+
+        /// <summary>
+        /// FileUpload_SaveBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FileUpload_SaveBtn;
+
+        /// <summary>
+        /// FileUpload_Msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FileUpload_Msg;
+
+        /// <summary>
         /// btnGuardar control.
         /// </summary>
         /// <remarks>
@@ -130,5 +157,14 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
+
+        /// <summary>
+        /// FileUploadStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FileUploadStatus;
     }
 }

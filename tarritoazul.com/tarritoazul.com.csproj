@@ -76,6 +76,12 @@
     <Content Include="imgs\logo.png" />
     <Content Include="imgs\logosmall.png" />
     <Content Include="imgs\logosmall_nobg.png" />
+    <Content Include="imgs\producto\arete01.jpg" />
+    <Content Include="imgs\producto\arete02.jpg" />
+    <Content Include="imgs\producto\arete03.jpg" />
+    <Content Include="imgs\producto\arete04.jpg" />
+    <Content Include="imgs\producto\arete05.jpg" />
+    <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\index.css" />
@@ -106,6 +112,13 @@
     <Compile Include="forms\registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +130,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="forms\upload\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

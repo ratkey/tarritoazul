@@ -31,9 +31,9 @@ namespace tarritoazul.com.forms
             cotCant = int.Parse(tbCantidad.Text);
 
             con.Open();
-            
-            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, stock, descripcion, disponibilidad)"+
-            "values('{0}','{1}',{2},{3},'{4}','{5}');",cotCodProd, cotNombre, cotPrecio, cotCant, cotDesc, cotDisp);
+
+            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, stock, descripcion, disponibilidad)" +
+            "values('{0}','{1}',{2},{3},'{4}','{5}');", cotCodProd, cotNombre, cotPrecio, cotCant, cotDesc, cotDisp);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
             cmd.ExecuteNonQuery();
@@ -43,11 +43,13 @@ namespace tarritoazul.com.forms
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
         }
 
-        protected string generateProductCode(string nombre){
+        protected string generateProductCode(string nombre)
+        {
             Random rnd = new Random();
             nombre = nombre.ToUpper();
-            if (nombre.Length > 5){
-                nombre = nombre.Substring(0,5);
+            if (nombre.Length > 5)
+            {
+                nombre = nombre.Substring(0, 5);
             }
             for (int i = 0; i < 5; i++)
             {
@@ -55,6 +57,46 @@ namespace tarritoazul.com.forms
                 nombre += (char)let;
             }
             return nombre;
+        }
+
+        protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
+        {
+            //ruta para cuardar los archivos
+            string filepath = "D:\\Projects\\web\\tarritoazul\\tarritoazul.com\\imgs\\producto\\";
+
+            //revisar si se ha seleccionado un archivo
+            if ((FileUpload_Control.PostedFile != null) && (FileUpload_Control.PostedFile.ContentLength > 0))
+            {
+                //cantidad de archivos subidos
+                var cantidad_archivos = 0;
+                //iterar por cada archivo subido
+                foreach (HttpPostedFile archivo in FileUpload_Control.PostedFiles)
+                {
+                    //obtener el nombre del archivo
+                    string fn = System.IO.Path.GetFileName(archivo.FileName);
+                    //string ruta_guardado = Server.MapPath("upload") + "\\" + fn;
+
+                    string ruta_guardado = filepath + fn;
+                    try
+                    {
+                        //guardar actual archivo en el directorio
+                        archivo.SaveAs(ruta_guardado);
+                        cantidad_archivos++;
+                    }
+                    catch (Exception ex)
+                    {
+                        FileUploadStatus.Text = "Error: " + ex.Message;
+                    }
+                }
+                if (cantidad_archivos > 0)
+                {
+                    FileUploadStatus.Text = cantidad_archivos + " files has been uploaded.";
+                }
+            }
+            else
+            {
+                FileUploadStatus.Text = "Please select a file to upload.";
+            }
         }
     }
 }

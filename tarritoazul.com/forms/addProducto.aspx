@@ -4,15 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
     <!-- links -->
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/addProducto.css">
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/addProducto.css" />
 
     <title>Agregar producto</title>
 </head>
 <body>
 <form id="form1" runat="server">
     <div class="container">
+        <h2 class="titulo">Añadir producto</h2>
         <div class="item1">
             <div class="nombre">
                 <p>Nombre:</p>
@@ -20,7 +23,7 @@
             </div>
             <div class="descripcion">
                 <p>Descripcion:</p>
-                <asp:TextBox id="tbDescripcion" runat="server" CssClass="input descripcion"></asp:TextBox>
+                <asp:TextBox id="tbDescripcion" runat="server" CssClass="input_descripcion" TextMode="MultiLine"></asp:TextBox>
             </div>
         </div>
         <div class="item2">
@@ -55,9 +58,18 @@
         </div>
         
     </div>
-    
-    <br>
+    <br />
+    <div class="file_up">
+        <h2 class="titulo">Imagenes</h2>
+        <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
+        <asp:Button ID="FileUpload_SaveBtn" runat="server" Text="Upload" OnClick="FileUpload_SaveBtn_Click" />
+        <br />
+        <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
+    </div>
+    <br />
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
+    <br />
+    <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
 </form>
 </body>
 </html>

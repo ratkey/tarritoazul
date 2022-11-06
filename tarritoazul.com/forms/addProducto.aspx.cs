@@ -61,44 +61,41 @@ namespace tarritoazul.com.forms
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
         {
+            //ruta para cuardar los archivos
             string filepath = "D:\\Projects\\web\\tarritoazul\\tarritoazul.com\\imgs\\producto\\";
 
-            //check if user has selected a file
-            if (FileUpload_Control.HasFile)
+            //revisar si se ha seleccionado un archivo
+            if ((FileUpload_Control.PostedFile != null) && (FileUpload_Control.PostedFile.ContentLength > 0))
             {
-                if ((FileUpload_Control.PostedFile != null) && (FileUpload_Control.PostedFile.ContentLength > 0))
+                //cantidad de archivos subidos
+                var cantidad_archivos = 0;
+                //iterar por cada archivo subido
+                foreach (HttpPostedFile archivo in FileUpload_Control.PostedFiles)
                 {
-                    var count = 0;
-                    foreach (HttpPostedFile uploadedFile in FileUpload_Control.PostedFiles)
+                    //obtener el nombre del archivo
+                    string fn = System.IO.Path.GetFileName(archivo.FileName);
+                    //string ruta_guardado = Server.MapPath("upload") + "\\" + fn;
+
+                    string ruta_guardado = filepath + fn;
+                    try
                     {
-                        string fn = System.IO.Path.GetFileName(uploadedFile.FileName);
-                        //string SaveLocation = Server.MapPath("upload") + "\\" + fn;
-                        string SaveLocation = filepath + fn;
-                        try
-                        {
-                            uploadedFile.SaveAs(SaveLocation);
-                            count++;
-                        }
-                        catch (Exception ex)
-                        {
-                            FileUploadStatus.Text = "Error: " + ex.Message;
-                        }
+                        //guardar actual archivo en el directorio
+                        archivo.SaveAs(ruta_guardado);
+                        cantidad_archivos++;
                     }
-                    if (count > 0)
+                    catch (Exception ex)
                     {
-                        FileUploadStatus.Text = count + " files has been uploaded.";
+                        FileUploadStatus.Text = "Error: " + ex.Message;
                     }
                 }
-                else
+                if (cantidad_archivos > 0)
                 {
-                    FileUploadStatus.Text = "Please select a file to upload.";
+                    FileUploadStatus.Text = cantidad_archivos + " files has been uploaded.";
                 }
-
-
             }
             else
             {
-                FileUpload_Msg.Text = "Error - No file chosen.";
+                FileUploadStatus.Text = "Please select a file to upload.";
             }
         }
     }

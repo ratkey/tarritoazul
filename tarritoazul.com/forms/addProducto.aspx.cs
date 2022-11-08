@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,20 +14,39 @@ namespace tarritoazul.com.forms
     public partial class addProducto : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        string codigo_producto;
+        public string codigo_producto;
+        public int id_producto;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            FileUpload_SaveBtn.Visible = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             insertProducto();
+            this.id_producto = getIdProducto(this.codigo_producto);
+            subirArchivos();
         }
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
-        {
+        { 
             subirArchivos();
+        }
+
+        protected int getIdProducto(string codigo_producto)
+        {
+            taTableAdapters.PRODUCTOSTableAdapter taProducto = new taTableAdapters.PRODUCTOSTableAdapter();
+            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData(codigo_producto);
+
+            int total_registros = dtProducto.Count;
+            if (total_registros > 0)
+            {
+                ta.PRODUCTOSRow rowRegistro = dtProducto[0]; //Toda la informacion del registro
+                int id_producto = rowRegistro.id_producto;
+                return id_producto;
+            }
+
+            return -1;
         }
 
         protected void subirArchivos()
@@ -51,6 +72,9 @@ namespace tarritoazul.com.forms
                         //guardar actual archivo en el directorio
                         archivo.SaveAs(ruta_guardado);
                         cantidad_archivos++;
+
+                        //guardar info del archivo en la BD
+                        insertMedia(fn, "imagen", id_producto);
                     }
                     catch (Exception ex)
                     {
@@ -91,6 +115,7 @@ namespace tarritoazul.com.forms
 
             cotNombre = tbNombre.Text;
             cotCodProd = generateProductCode(cotNombre);
+            this.codigo_producto = cotCodProd;
             cotDesc = tbDescripcion.Text;
             cotDisp = ddlDisponibilidad.Text;
             cotPrecio = float.Parse(tbPrecio.Text);
@@ -98,7 +123,7 @@ namespace tarritoazul.com.forms
 
             con.Open();
 
-            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, stock, descripcion, disponibilidad)" +
+            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad)" +
             "values('{0}','{1}',{2},{3},'{4}','{5}');", cotCodProd, cotNombre, cotPrecio, cotCant, cotDesc, cotDisp);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
@@ -123,6 +148,11 @@ namespace tarritoazul.com.forms
                 nombre += (char)let;
             }
             return nombre;
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

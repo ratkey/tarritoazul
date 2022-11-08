@@ -12,7 +12,6 @@ namespace tarritoazul.com.forms
     public partial class addProducto : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        string codigo_producto;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -98,7 +97,7 @@ namespace tarritoazul.com.forms
 
             con.Open();
 
-            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, stock, descripcion, disponibilidad)" +
+            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad)" +
             "values('{0}','{1}',{2},{3},'{4}','{5}');", cotCodProd, cotNombre, cotPrecio, cotCant, cotDesc, cotDisp);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);

@@ -14,14 +14,18 @@ namespace tarritoazul.com.forms
     public partial class addProducto : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        public string codigo_producto;
+        public int id_producto;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            FileUpload_SaveBtn.Visible = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             insertProducto();
+            this.id_producto = getIdProducto(this.codigo_producto);
+            subirArchivos();
         }
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace tarritoazul.com.forms
         protected int getIdProducto(string codigo_producto)
         {
             taTableAdapters.PRODUCTOSTableAdapter taProducto = new taTableAdapters.PRODUCTOSTableAdapter();
-            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData("WAFLIBGGGA");
+            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData(codigo_producto);
 
             int total_registros = dtProducto.Count;
             if (total_registros > 0)
@@ -68,6 +72,9 @@ namespace tarritoazul.com.forms
                         //guardar actual archivo en el directorio
                         archivo.SaveAs(ruta_guardado);
                         cantidad_archivos++;
+
+                        //guardar info del archivo en la BD
+                        insertMedia(fn, "imagen", id_producto);
                     }
                     catch (Exception ex)
                     {
@@ -108,6 +115,7 @@ namespace tarritoazul.com.forms
 
             cotNombre = tbNombre.Text;
             cotCodProd = generateProductCode(cotNombre);
+            this.codigo_producto = cotCodProd;
             cotDesc = tbDescripcion.Text;
             cotDisp = ddlDisponibilidad.Text;
             cotPrecio = float.Parse(tbPrecio.Text);
@@ -140,6 +148,11 @@ namespace tarritoazul.com.forms
                 nombre += (char)let;
             }
             return nombre;
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

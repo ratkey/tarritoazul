@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -26,6 +27,22 @@ namespace tarritoazul.com.forms
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
         { 
             subirArchivos();
+        }
+
+        protected int getIdProducto(string codigo_producto)
+        {
+            taTableAdapters.PRODUCTOSTableAdapter taProducto = new taTableAdapters.PRODUCTOSTableAdapter();
+            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData("WAFLIBGGGA");
+
+            int total_registros = dtProducto.Count;
+            if (total_registros > 0)
+            {
+                ta.PRODUCTOSRow rowRegistro = dtProducto[0]; //Toda la informacion del registro
+                int id_producto = rowRegistro.id_producto;
+                return id_producto;
+            }
+
+            return -1;
         }
 
         protected void subirArchivos()

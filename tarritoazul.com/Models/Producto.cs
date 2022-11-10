@@ -4,13 +4,15 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.UI;
+using tarritoazul.com.taTableAdapters;
 
-namespace tarritoazul.com.Objs
+namespace tarritoazul.com.Models
 {
     public class Producto {
-        private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        private readonly SqlConnection con;
         private string codigo_producto;
         private string nombre;
         private string descripcion;
@@ -18,39 +20,27 @@ namespace tarritoazul.com.Objs
         private float precio;
         private int cantidad;
 
-        public string Codigo_producto
-        {
-            get { return codigo_producto; }
-            set { codigo_producto = value; }
-        }
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
-        public string Disponibilidad
-        {
-            get { return disponibilidad; }
-            set { disponibilidad = value; }
-        }
-        public float Precio
-        {
-            get { return precio; }
-            set { precio = value; }
-        }
-        public int Cantidad
-        {
-            get { return cantidad; }
-            set { cantidad = value; }
-        }
+        public string Codigo_producto {get; set;}
+        public string Nombre {get; set;}
+        public string Descripcion {get; set;}
+        public string Disponibilidad { get; set; }
+        public float Precio { get; set;}
+        public int Cantidad { get; set;}
+
         public Producto()
         {
+            this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        }
 
+        public Producto(string codigo_producto, string nombre, string descripcion, string disponibilidad, float precio, int cantidad)
+        {
+            this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+            this.codigo_producto = codigo_producto;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.disponibilidad = disponibilidad;
+            this.precio = precio;
+            this.cantidad = cantidad;
         }
         public void insertar()
         {

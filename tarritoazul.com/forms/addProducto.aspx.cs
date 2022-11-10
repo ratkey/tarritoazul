@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using tarritoazul.com.Objs;
+using tarritoazul.com.Models;
 
 namespace tarritoazul.com.forms
 {
@@ -24,26 +24,29 @@ namespace tarritoazul.com.forms
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            string cotNombre, cotDesc, cotDisp, cotCodProd;
-            float cotPrecio;
-            int cotCant;
-
-            cotNombre = tbNombre.Text;
-            cotCodProd = generateProductCode(cotNombre);
-            this.codigo_producto = cotCodProd;
-            cotDesc = tbDescripcion.Text;
-            cotDisp = ddlDisponibilidad.Text;
-            cotPrecio = float.Parse(tbPrecio.Text);
-            cotCant = int.Parse(tbCantidad.Text);
-
-            Producto prod = new Producto();
-            prod.Nombre = cotNombre;
-            prod.Descripcion = cotDesc;
-            prod.Precio = cotPrecio;
-            prod.Disponibilidad = cotDisp;
-            prod.Cantidad = cotCant;
+            Producto prod = new Producto
+            {
+                Nombre = tbNombre.Text,
+                Descripcion = tbDescripcion.Text,
+                Precio = float.Parse(tbPrecio.Text),
+                Disponibilidad = ddlDisponibilidad.Text,
+                Cantidad = int.Parse(tbCantidad.Text)
+            };
 
             prod.insertar();
+
+            //string cotNombre, cotDesc, cotDisp, cotCodProd;
+            //float cotPrecio;
+            //int cotCant;
+
+            //cotNombre = tbNombre.Text;
+            //cotCodProd = generateProductCode(cotNombre);
+            //this.codigo_producto = cotCodProd;
+            //cotDesc = tbDescripcion.Text;
+            //cotDisp = ddlDisponibilidad.Text;
+            //cotPrecio = float.Parse(tbPrecio.Text);
+            //cotCant = int.Parse(tbCantidad.Text);
+
             //insertProducto();
             //this.id_producto = getIdProducto(this.codigo_producto);
             //subirArchivos();

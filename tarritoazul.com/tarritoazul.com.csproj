@@ -119,6 +119,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Objs\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ta.Designer.cs">
       <AutoGen>True</AutoGen>

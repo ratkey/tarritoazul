@@ -24,7 +24,7 @@ namespace tarritoazul.com.forms
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Producto prod = new Producto
+            Producto prod = new Producto()
             {
                 Nombre = tbNombre.Text,
                 Descripcion = tbDescripcion.Text,

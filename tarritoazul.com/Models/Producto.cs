@@ -29,12 +29,12 @@ namespace tarritoazul.com.Models
 
         public Producto()
         {
-            this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         }
 
         public Producto(string codigo_producto, string nombre, string descripcion, string disponibilidad, float precio, int cantidad)
         {
-            this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
             this.codigo_producto = codigo_producto;
             this.nombre = nombre;
             this.descripcion = descripcion;
@@ -42,6 +42,7 @@ namespace tarritoazul.com.Models
             this.precio = precio;
             this.cantidad = cantidad;
         }
+
         public void insertar()
         {
             con.Open();
@@ -55,7 +56,22 @@ namespace tarritoazul.com.Models
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        protected string generateProductCode(string nombre)
+
+        public void modificar(string id_producto)
+        {
+            con.Open();
+
+            Codigo_producto = generateProductCode(Nombre);
+
+            string SQLInsert = String.Format("update PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad)" +
+            "values('{0}','{1}',{2},{3},'{4}','{5}');", Codigo_producto, Nombre, Precio, Cantidad, Descripcion, Disponibilidad);
+
+            SqlCommand cmd = new SqlCommand(SQLInsert, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public string generateProductCode(string nombre)
         {
             Random rnd = new Random();
             nombre = nombre.ToUpper();

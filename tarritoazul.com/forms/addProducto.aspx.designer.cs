@@ -96,22 +96,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.ListItem liOculto;
 
         /// <summary>
-        /// dlCategoria control.
+        /// ddlCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dlCategoria;
-
-        /// <summary>
-        /// liCat1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem liCat1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
 
         /// <summary>
         /// tbEtiquetas control.
@@ -159,6 +150,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
+        /// btnActualizar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
+
+        /// <summary>
         /// FileUploadStatus control.
         /// </summary>
         /// <remarks>
@@ -166,5 +166,14 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label FileUploadStatus;
+
+        /// <summary>
+        /// CategoriasConnectionString control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource CategoriasConnectionString;
     }
 }

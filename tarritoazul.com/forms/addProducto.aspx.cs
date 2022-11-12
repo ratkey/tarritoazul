@@ -17,6 +17,9 @@ namespace tarritoazul.com.forms
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         public string codigo_producto;
         public int id_producto;
+
+        public static Producto producto = new Producto();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             FileUpload_SaveBtn.Visible = false;
@@ -24,16 +27,16 @@ namespace tarritoazul.com.forms
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Producto prod = new Producto()
-            {
-                Nombre = tbNombre.Text,
-                Descripcion = tbDescripcion.Text,
-                Precio = float.Parse(tbPrecio.Text),
-                Disponibilidad = ddlDisponibilidad.Text,
-                Cantidad = int.Parse(tbCantidad.Text)
-            };
+            producto.Nombre = tbNombre.Text;
+            producto.Descripcion = tbDescripcion.Text;
+            producto.Precio = float.Parse(tbPrecio.Text);
+            producto.Cantidad = int.Parse(tbCantidad.Text);
+            producto.Disponibilidad = ddlDisponibilidad.Text;
+            producto.Id_Categoria = int.Parse(ddlCategoria.Text);
 
-            prod.insertar();
+            producto.insertar();
+
+            Log(producto.Id_Producto + "");
 
             //string cotNombre, cotDesc, cotDisp, cotCodProd;
             //float cotPrecio;
@@ -50,6 +53,12 @@ namespace tarritoazul.com.forms
             //insertProducto();
             //this.id_producto = getIdProducto(this.codigo_producto);
             //subirArchivos();
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Log("ID producto: " + producto.Id_Producto);
+            producto.actualizar();
         }
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
@@ -178,5 +187,7 @@ namespace tarritoazul.com.forms
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
+
+        
     }
 }

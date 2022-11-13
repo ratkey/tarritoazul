@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Windows.Forms;
 using tarritoazul.com.taTableAdapters;
@@ -14,15 +16,6 @@ namespace tarritoazul.com.Models
 {
     public class Producto {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        
-        private int id_producto;
-        private string codigo_producto;
-        private string nombre;
-        private string descripcion;
-        private float precio;
-        private int cantidad;
-        private string disponibilidad;
-        private int id_categoria;
 
         public int Id_Producto { get; set; }
         public string Codigo_producto {get; set;}
@@ -33,39 +26,87 @@ namespace tarritoazul.com.Models
         public string Disponibilidad { get; set; }
         public int Id_Categoria { get; set;}
 
-
-        public void insertar() //insertar Producto a la BD y obtener el ID
+        public void SelectFromDB(int id_producto)
         {
-            con.Open();
+            SqlCommand command = new SqlCommand("Select * from [PRODUCTOS] where id_producto=@idp", con);
+            command.Parameters.AddWithValue("@idp", id_producto);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Id_Producto = (int)reader["id_producto"];
+                        Codigo_producto = (string)reader["codigo_producto"];
+                        Nombre = (string)reader["nombre"];
+                        Descripcion = (string)reader["descripcion"];
+                        Precio = float.Parse(reader["precio"].ToString());
+                        Cantidad = (int)reader["cantidad"];
+                        Descripcion = (string)reader["disponibilidad"];
+                        Cantidad = (int)reader["id_categoria"];
+                    }
+                }
 
-            Codigo_producto = generateProductCode(Nombre);
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Insertar() //insertar Producto a la BD y obtener el ID
+        {
+            Codigo_producto = GenerateProductCode(Nombre);
 
             string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad, id_categoria) output INSERTED.id_producto " +
             "values('{0}','{1}',{2},{3},'{4}','{5}',{6});", Codigo_producto, Nombre, Precio, Cantidad, Descripcion, Disponibilidad, Id_Categoria);
-
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
-            Id_Producto = (int)cmd.ExecuteScalar();
+
+            try
+            {
+                con.Open();
+
+                Id_Producto = (int)cmd.ExecuteScalar();
+
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
+        }
+
+        public void Actualizar()
+        {
+            con.Open();
+
+            Codigo_producto = GenerateProductCode(Nombre);
+
+            string SQLUpdate = String.Format("update PRODUCTOS "+
+                "set nombre='{0}', descripcion='{1}', precio={2}, cantidad={3}, disponibilidad='{4}', id_categoria={5} " +
+                "where id_producto={6};", Nombre, Descripcion, Precio, Cantidad, Disponibilidad, Id_Categoria, Id_Producto);
+
+            SqlCommand cmd = new SqlCommand(SQLUpdate, con);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             if (con.State == System.Data.ConnectionState.Open)
                 con.Close();
         }
 
-        public void actualizar()
-        {
-            con.Open();
-
-            Codigo_producto = generateProductCode(Nombre);
-
-            string SQLInsert = String.Format("update PRODUCTOS "+
-                "set nombre = '{0}', descripcion = '{1}', precio = {2}, cantidad = {3}, disponibilidad = '{4}', id_categoria = {5} " +
-                "where id_producto = {6};", Nombre, Descripcion, Precio, Cantidad, Disponibilidad, Id_Categoria, Id_Producto);
-
-            SqlCommand cmd = new SqlCommand(SQLInsert, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        public void eliminar()
+        public void Eliminar()
         {
             con.Open();
 
@@ -76,7 +117,7 @@ namespace tarritoazul.com.Models
             con.Close();
         }
 
-        public string generateProductCode(string nombre)
+        public string GenerateProductCode(string nombre)
         {
             Random rnd = new Random();
             nombre = nombre.ToUpper();
@@ -91,6 +132,12 @@ namespace tarritoazul.com.Models
                 nombre += (char)let;
             }
             return nombre;
+        }
+        
+        public string ToString()
+        {
+            return "id_producto: " + Id_Producto + ", nombre: " + Nombre + ", descripcion: " + Descripcion +
+                ", precio: " + Precio + ", cantidad: " + Cantidad + ", disponibilidad: " + Disponibilidad + ", id_categoria: " + Id_Categoria;
         }
     }
 }

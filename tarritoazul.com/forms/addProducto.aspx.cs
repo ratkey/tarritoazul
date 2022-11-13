@@ -27,16 +27,11 @@ namespace tarritoazul.com.forms
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            producto.Nombre = tbNombre.Text;
-            producto.Descripcion = tbDescripcion.Text;
-            producto.Precio = float.Parse(tbPrecio.Text);
-            producto.Cantidad = int.Parse(tbCantidad.Text);
-            producto.Disponibilidad = ddlDisponibilidad.Text;
-            producto.Id_Categoria = int.Parse(ddlCategoria.Text);
+            GetValuesFromForm();
 
-            producto.insertar();
+            producto.Insertar();
 
-            Log(producto.Id_Producto + "");
+            Log(producto.ToString());
 
             //string cotNombre, cotDesc, cotDisp, cotCodProd;
             //float cotPrecio;
@@ -57,8 +52,20 @@ namespace tarritoazul.com.forms
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            Log("ID producto: " + producto.Id_Producto);
-            producto.actualizar();
+            GetValuesFromForm();
+
+            producto.Actualizar();
+            Log(producto.ToString());
+        }
+
+        protected void GetValuesFromForm()
+        {
+            producto.Nombre = tbNombre.Text;
+            producto.Descripcion = tbDescripcion.Text;
+            producto.Precio = float.Parse(tbPrecio.Text);
+            producto.Cantidad = int.Parse(tbCantidad.Text);
+            producto.Disponibilidad = ddlDisponibilidad.Text;
+            producto.Id_Categoria = int.Parse(ddlCategoria.Text);
         }
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)

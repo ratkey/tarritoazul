@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using tarritoazul.com.Models;
 
 namespace tarritoazul.com.forms
@@ -22,7 +23,7 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FileUpload_SaveBtn.Visible = false;
+            FileUpload_SaveBtn.Visible = true;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace tarritoazul.com.forms
 
             producto.Actualizar();
             Log(producto.ToString());
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            producto.Eliminar();
         }
 
         protected void GetValuesFromForm()
@@ -92,7 +98,7 @@ namespace tarritoazul.com.forms
         protected void subirArchivos()
         {
             //ruta para cuardar los archivos
-            string filepath = "D:\\Projects\\web\\tarritoazul\\tarritoazul.com\\imgs\\producto\\";
+            string filepath = Server.MapPath("../imgs/producto/");
 
             //revisar si se ha seleccionado un archivo
             if ((FileUpload_Control.PostedFile != null) && (FileUpload_Control.PostedFile.ContentLength > 0))
@@ -104,7 +110,6 @@ namespace tarritoazul.com.forms
                 {
                     //obtener el nombre del archivo
                     string fn = System.IO.Path.GetFileName(archivo.FileName);
-                    //string ruta_guardado = Server.MapPath("upload") + "\\" + fn;
 
                     string ruta_guardado = filepath + fn;
                     try

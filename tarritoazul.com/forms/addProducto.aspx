@@ -67,6 +67,7 @@
     <br />
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
     <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
+    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
     <br />
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
     <asp:SqlDataSource ID="CategoriasConnectionString" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [CATEGORIAS]"></asp:SqlDataSource>

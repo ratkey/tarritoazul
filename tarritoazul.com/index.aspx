@@ -62,11 +62,11 @@
             </form>
         </div>
     </nav>
-    <br>
+    <br/>
     <nav class="navbar justify-content-between">
         <a class="navbar-brand"></a>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Aretes de sandía" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Aretes de sandía" aria-label="Search" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </nav>
@@ -106,6 +106,7 @@
             <p class="descripcion">Aretes con forma de gajos de gajitos de limón</p>
             <p><button>Añadir al carrito</button></p>
         </div>
+        <asp:Label ID="label1" runat="server"></asp:Label>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

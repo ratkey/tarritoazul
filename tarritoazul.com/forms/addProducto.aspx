@@ -47,9 +47,7 @@
                 <p>Categoria:</p>
                 <!-- categoria placeholder -->
                 <!-- conectar con tabla CATEGORIAS -->
-                <asp:DropDownList id="dlCategoria" runat="server" CssClass="input">
-                    <asp:ListItem id="liCat1" runat="server" Text="Aretes"></asp:ListItem>
-                </asp:DropDownList>
+                <asp:DropDownList id="ddlCategoria" runat="server" CssClass="input" DataSourceID="CategoriasConnectionString" DataTextField="nombre" DataValueField="id_categoria"></asp:DropDownList>
             </div>
             <div class="etiquetas">
                 <p>Etiquetas:</p>
@@ -68,8 +66,11 @@
     </div>
     <br />
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
+    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
+    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
     <br />
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
+    <asp:SqlDataSource ID="CategoriasConnectionString" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [CATEGORIAS]"></asp:SqlDataSource>
 </form>
 </body>
 </html>

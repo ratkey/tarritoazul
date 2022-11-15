@@ -8,6 +8,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
+using tarritoazul.com.Models;
 
 namespace tarritoazul.com.forms
 {
@@ -16,16 +18,60 @@ namespace tarritoazul.com.forms
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         public string codigo_producto;
         public int id_producto;
+
+        public static Producto producto = new Producto();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            FileUpload_SaveBtn.Visible = false;
+            FileUpload_SaveBtn.Visible = true;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            insertProducto();
-            this.id_producto = getIdProducto(this.codigo_producto);
-            subirArchivos();
+            GetValuesFromForm();
+
+            producto.Insertar();
+
+            Log(producto.ToString());
+
+            //string cotNombre, cotDesc, cotDisp, cotCodProd;
+            //float cotPrecio;
+            //int cotCant;
+
+            //cotNombre = tbNombre.Text;
+            //cotCodProd = generateProductCode(cotNombre);
+            //this.codigo_producto = cotCodProd;
+            //cotDesc = tbDescripcion.Text;
+            //cotDisp = ddlDisponibilidad.Text;
+            //cotPrecio = float.Parse(tbPrecio.Text);
+            //cotCant = int.Parse(tbCantidad.Text);
+
+            //insertProducto();
+            //this.id_producto = getIdProducto(this.codigo_producto);
+            //subirArchivos();
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            GetValuesFromForm();
+
+            producto.Actualizar();
+            Log(producto.ToString());
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            producto.Eliminar();
+        }
+
+        protected void GetValuesFromForm()
+        {
+            producto.Nombre = tbNombre.Text;
+            producto.Descripcion = tbDescripcion.Text;
+            producto.Precio = float.Parse(tbPrecio.Text);
+            producto.Cantidad = int.Parse(tbCantidad.Text);
+            producto.Disponibilidad = ddlDisponibilidad.Text;
+            producto.Id_Categoria = int.Parse(ddlCategoria.Text);
         }
 
         protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
@@ -52,7 +98,7 @@ namespace tarritoazul.com.forms
         protected void subirArchivos()
         {
             //ruta para cuardar los archivos
-            string filepath = "D:\\Projects\\web\\tarritoazul\\tarritoazul.com\\imgs\\producto\\";
+            string filepath = Server.MapPath("../imgs/producto/");
 
             //revisar si se ha seleccionado un archivo
             if ((FileUpload_Control.PostedFile != null) && (FileUpload_Control.PostedFile.ContentLength > 0))
@@ -64,7 +110,6 @@ namespace tarritoazul.com.forms
                 {
                     //obtener el nombre del archivo
                     string fn = System.IO.Path.GetFileName(archivo.FileName);
-                    //string ruta_guardado = Server.MapPath("upload") + "\\" + fn;
 
                     string ruta_guardado = filepath + fn;
                     try
@@ -154,5 +199,7 @@ namespace tarritoazul.com.forms
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
+
+        
     }
 }

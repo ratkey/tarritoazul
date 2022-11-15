@@ -123,15 +123,6 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_Control;
 
         /// <summary>
-        /// Control FileUpload_SaveBtn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FileUpload_SaveBtn;
-
-        /// <summary>
         /// Control FileUpload_Msg.
         /// </summary>
         /// <remarks>

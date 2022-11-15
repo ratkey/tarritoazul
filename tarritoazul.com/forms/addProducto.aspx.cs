@@ -23,32 +23,28 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FileUpload_SaveBtn.Visible = true;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
 
-            producto.Insertar();
-
-            Log(producto.ToString());
-
-            //string cotNombre, cotDesc, cotDisp, cotCodProd;
-            //float cotPrecio;
-            //int cotCant;
-
-            //cotNombre = tbNombre.Text;
-            //cotCodProd = generateProductCode(cotNombre);
-            //this.codigo_producto = cotCodProd;
-            //cotDesc = tbDescripcion.Text;
-            //cotDisp = ddlDisponibilidad.Text;
-            //cotPrecio = float.Parse(tbPrecio.Text);
-            //cotCant = int.Parse(tbCantidad.Text);
-
-            //insertProducto();
-            //this.id_producto = getIdProducto(this.codigo_producto);
-            //subirArchivos();
+            //Si no existe el producto
+            if (producto.Id_Producto == 0)
+            {
+                //Insertar producto nuevo en la base de datos
+                producto.Insertar();
+                //Subir los archivos del FileUpload control
+                subirArchivos();
+            }
+            //Si ya existe el producto
+            if (producto.Id_Producto > 0)
+            {
+                producto.Actualizar();
+                subirArchivos();
+                Log("Producto actualizado");
+            }
+            Log("Producto: " + producto.ToString());
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -61,7 +57,8 @@ namespace tarritoazul.com.forms
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            producto.Eliminar();
+            if (producto.Id_Producto > 0)
+                producto.Eliminar();
         }
 
         protected void GetValuesFromForm()
@@ -72,27 +69,6 @@ namespace tarritoazul.com.forms
             producto.Cantidad = int.Parse(tbCantidad.Text);
             producto.Disponibilidad = ddlDisponibilidad.Text;
             producto.Id_Categoria = int.Parse(ddlCategoria.Text);
-        }
-
-        protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
-        { 
-            subirArchivos();
-        }
-
-        protected int getIdProducto(string codigo_producto)
-        {
-            taTableAdapters.PRODUCTOSTableAdapter taProducto = new taTableAdapters.PRODUCTOSTableAdapter();
-            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData(codigo_producto);
-
-            int total_registros = dtProducto.Count;
-            if (total_registros > 0)
-            {
-                ta.PRODUCTOSRow rowRegistro = dtProducto[0]; //Toda la informacion del registro
-                int id_producto = rowRegistro.id_producto;
-                return id_producto;
-            }
-
-            return -1;
         }
 
         protected void subirArchivos()
@@ -119,7 +95,7 @@ namespace tarritoazul.com.forms
                         cantidad_archivos++;
 
                         //guardar info del archivo en la BD
-                        insertMedia(fn, "imagen", id_producto);
+                        insertMedia(fn, "imagen", producto.Id_Producto);
                     }
                     catch (Exception ex)
                     {

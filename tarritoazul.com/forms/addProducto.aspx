@@ -60,7 +60,6 @@
     <div class="file_up">
         <h2 class="titulo">Imagenes</h2>
         <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
-        <asp:Button ID="FileUpload_SaveBtn" runat="server" Text="Upload" OnClick="FileUpload_SaveBtn_Click" />
         <br />
         <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
     </div>

@@ -49,6 +49,10 @@ body {
     height: 275px;
 }
 
+.etiquetas .input {
+    height: 108px;
+}
+
 .file_up {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

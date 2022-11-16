@@ -23,5 +23,10 @@ namespace tarritoazul.com.forms
             //Redireccionar al usuario a addProductos.asp con el id seleccionado
             Response.Redirect("~/forms/addProducto.aspx?id=" + rowId);
         }
+
+        protected void btnAddProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/forms/addProducto.aspx");
+        }
     }
 }

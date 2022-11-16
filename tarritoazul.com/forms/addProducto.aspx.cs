@@ -24,14 +24,17 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 //Revisar si la url contiene el parametro id
                 if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
                 {
+                    Log("modificando");
                     int id = Convert.ToInt32(Request.QueryString["id"]);
                     producto.SelectFromDB(id);
                     SetValuesFromModel();
+                    Log("Producto: " + producto.ToString());
                 }
             }
         }
@@ -40,6 +43,8 @@ namespace tarritoazul.com.forms
         {
             GetValuesFromForm();
             //Si no existe el producto
+            Log("Producto: " + producto.ToString());
+
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos

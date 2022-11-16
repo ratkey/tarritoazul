@@ -49,8 +49,8 @@ namespace tarritoazul.com.Models
                         Descripcion = (string)reader["descripcion"];
                         Precio = float.Parse(reader["precio"].ToString());
                         Cantidad = (int)reader["cantidad"];
-                        Descripcion = (string)reader["disponibilidad"];
-                        Cantidad = (int)reader["id_categoria"];
+                        Disponibilidad = (string)reader["disponibilidad"];
+                        Id_Categoria = (int)reader["id_categoria"];
                     }
                 }
 

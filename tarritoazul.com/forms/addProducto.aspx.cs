@@ -23,25 +23,39 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
+
+        //Eliminar
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            producto.SelectFromDB(int.Parse(TextBox1.Text));
+            SetValuesFromModel();
+        }
+        //-------
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
 
             //Si no existe el producto
-            if (producto.Id_Producto == 0)
+            if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
                 producto.Insertar();
                 //Subir los archivos del FileUpload control
                 subirArchivos();
             }
-            //Si ya existe el producto
-            if (producto.Id_Producto > 0)
+            else //Si ya existe el producto
             {
+                //Actualizar el producto
                 producto.Actualizar();
-                subirArchivos();
+                //Validar si hay archivos seleccionados
+                if (FileUpload_Control.HasFiles)
+                {
+                    //Subir los archivos
+                    subirArchivos();
+                }
                 Log("Producto actualizado");
             }
             Log("Producto: " + producto.ToString());
@@ -58,7 +72,11 @@ namespace tarritoazul.com.forms
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             if (producto.Id_Producto > 0)
+            {
                 producto.Eliminar();
+                producto = new Producto();
+                CleanForm();
+            }
         }
 
         protected void GetValuesFromForm()
@@ -69,6 +87,25 @@ namespace tarritoazul.com.forms
             producto.Cantidad = int.Parse(tbCantidad.Text);
             producto.Disponibilidad = ddlDisponibilidad.Text;
             producto.Id_Categoria = int.Parse(ddlCategoria.Text);
+        }
+
+        protected void SetValuesFromModel() {
+            tbNombre.Text = producto.Nombre;
+            tbDescripcion.Text = producto.Descripcion;
+            tbPrecio.Text = producto.Precio.ToString();
+            tbCantidad.Text = producto.Cantidad.ToString();
+            ddlDisponibilidad.SelectedValue = producto.Disponibilidad.ToString();
+            ddlCategoria.SelectedValue = producto.Id_Categoria.ToString();
+        }
+
+        protected void CleanForm()
+        {
+            tbNombre.Text = "";
+            tbDescripcion.Text = "";
+            tbPrecio.Text = "";
+            tbCantidad.Text = "";
+            ddlDisponibilidad.SelectedIndex = 0;
+            ddlCategoria.SelectedIndex = 0;
         }
 
         protected void subirArchivos()
@@ -175,7 +212,5 @@ namespace tarritoazul.com.forms
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
-
-        
     }
 }

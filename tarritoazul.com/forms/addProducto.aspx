@@ -14,6 +14,12 @@
 </head>
 <body>
 <form id="form1" runat="server">
+
+    <%--Eliminar--%>
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+    <%--  --%>
+
     <div class="container">
         <h2 class="titulo">Añadir producto</h2>
         <div class="item1">
@@ -29,11 +35,11 @@
         <div class="item2">
             <div class="precio">
                 <p>Precio:</p>
-                <asp:TextBox id="tbPrecio" runat="server" CssClass="input"></asp:TextBox>
+                <asp:TextBox id="tbPrecio" runat="server" CssClass="input">99</asp:TextBox>
             </div>
             <div class="cantidad">
                 <p>Cantidad:</p>
-                <asp:TextBox id="tbCantidad" runat="server" CssClass="input" TextMode="Number" text="0"></asp:TextBox>
+                <asp:TextBox id="tbCantidad" runat="server" CssClass="input" TextMode="Number" text="1"></asp:TextBox>
             </div>
             <div class="disponibilidad">
                 <p>Disponibilidad:</p>
@@ -65,7 +71,6 @@
     </div>
     <br />
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
-    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
     <br />
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>

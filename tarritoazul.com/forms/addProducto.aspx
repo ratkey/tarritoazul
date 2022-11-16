@@ -15,11 +15,6 @@
 <body class="bgGradient">
 <form id="form1" runat="server">
 
-    <%--Eliminar--%>
-    <%--<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />--%>
-    <%--  --%>
-
     <div class="container">
         <h2 class="titulo">Añadir producto</h2>
         <div class="item1">
@@ -73,8 +68,10 @@
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="button_accept" OnClick="btnGuardar_Click"/>
     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="button_cancel" OnClick="btnEliminar_Click" />
     <br />
+     
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
     <asp:SqlDataSource ID="CategoriasConnectionString" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [CATEGORIAS]"></asp:SqlDataSource>
 </form>
+
 </body>
 </html>

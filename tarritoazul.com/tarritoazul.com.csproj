@@ -72,7 +72,6 @@
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
     <Content Include="imgs\favicon.ico" />
-    <Content Include="imgs\icons\checkmark.gif" />
     <Content Include="imgs\insta_logo.png" />
     <Content Include="imgs\load.gif" />
     <Content Include="imgs\logo.png" />

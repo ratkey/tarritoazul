@@ -12,8 +12,9 @@
 
     <title>Agregar producto</title>
 </head>
-<body>
+<body class="bgGradient">
 <form id="form1" runat="server">
+
     <div class="container">
         <h2 class="titulo">Añadir producto</h2>
         <div class="item1">
@@ -29,11 +30,11 @@
         <div class="item2">
             <div class="precio">
                 <p>Precio:</p>
-                <asp:TextBox id="tbPrecio" runat="server" CssClass="input"></asp:TextBox>
+                <asp:TextBox id="tbPrecio" runat="server" CssClass="input">99</asp:TextBox>
             </div>
             <div class="cantidad">
                 <p>Cantidad:</p>
-                <asp:TextBox id="tbCantidad" runat="server" CssClass="input" TextMode="Number" text="0"></asp:TextBox>
+                <asp:TextBox id="tbCantidad" runat="server" CssClass="input" TextMode="Number" text="1"></asp:TextBox>
             </div>
             <div class="disponibilidad">
                 <p>Disponibilidad:</p>
@@ -60,17 +61,17 @@
     <div class="file_up">
         <h2 class="titulo">Imagenes</h2>
         <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
-        <asp:Button ID="FileUpload_SaveBtn" runat="server" Text="Upload" OnClick="FileUpload_SaveBtn_Click" />
         <br />
         <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
     </div>
     <br />
-    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
-    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
-    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="button_accept" OnClick="btnGuardar_Click"/>
+    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="button_cancel" OnClick="btnEliminar_Click" />
     <br />
+     
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
     <asp:SqlDataSource ID="CategoriasConnectionString" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [CATEGORIAS]"></asp:SqlDataSource>
 </form>
+
 </body>
 </html>

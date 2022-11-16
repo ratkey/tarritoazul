@@ -9,61 +9,67 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using tarritoazul.com.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Page = System.Web.UI.Page;
 
 namespace tarritoazul.com.forms
 {
     public partial class addProducto : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        public string codigo_producto;
-        public int id_producto;
 
         public static Producto producto = new Producto();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FileUpload_SaveBtn.Visible = true;
+            //pbStatus.Visible = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
-
-            producto.Insertar();
-
-            Log(producto.ToString());
-
-            //string cotNombre, cotDesc, cotDisp, cotCodProd;
-            //float cotPrecio;
-            //int cotCant;
-
-            //cotNombre = tbNombre.Text;
-            //cotCodProd = generateProductCode(cotNombre);
-            //this.codigo_producto = cotCodProd;
-            //cotDesc = tbDescripcion.Text;
-            //cotDisp = ddlDisponibilidad.Text;
-            //cotPrecio = float.Parse(tbPrecio.Text);
-            //cotCant = int.Parse(tbCantidad.Text);
-
-            //insertProducto();
-            //this.id_producto = getIdProducto(this.codigo_producto);
-            //subirArchivos();
-        }
-
-        protected void btnActualizar_Click(object sender, EventArgs e)
-        {
-            GetValuesFromForm();
-
-            producto.Actualizar();
-            Log(producto.ToString());
+            //Si no existe el producto
+            if (producto.Id_Producto == -1)
+            {
+                //Insertar producto nuevo en la base de datos
+                producto.Insertar();
+                //Subir los archivos del FileUpload control
+                subirArchivos();
+                //Mensaje de registro exitoso
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " registrado 😁');", true);
+            }
+            else //Si ya existe el producto
+            {
+                //Actualizar el producto
+                producto.Actualizar();
+                //Mensaje de actualizacion exitoso
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " actualizado 😵');", true);
+                //Validar si hay archivos seleccionados
+                if (FileUpload_Control.HasFiles)
+                {
+                    //Subir los archivos
+                    subirArchivos();
+                }
+                Log("Producto actualizado");
+            }
+            Log("Producto: " + producto.ToString());
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            producto.Eliminar();
+            if (producto.Id_Producto > 0)
+            {
+                producto.Eliminar();
+                //Mensaje de registro exitoso
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
+                producto = new Producto();
+                CleanForm();
+            }
         }
 
+        //Pasa los valores del formulario al objeto producto
         protected void GetValuesFromForm()
         {
             producto.Nombre = tbNombre.Text;
@@ -74,25 +80,26 @@ namespace tarritoazul.com.forms
             producto.Id_Categoria = int.Parse(ddlCategoria.Text);
         }
 
-        protected void FileUpload_SaveBtn_Click(object sender, EventArgs e)
-        { 
-            subirArchivos();
+        //Pasa los valores del objeto producto al formulario
+        protected void SetValuesFromModel() {
+            tbNombre.Text = producto.Nombre;
+            tbDescripcion.Text = producto.Descripcion;
+            tbPrecio.Text = producto.Precio.ToString();
+            tbCantidad.Text = producto.Cantidad.ToString();
+            ddlDisponibilidad.SelectedValue = producto.Disponibilidad.ToString();
+            ddlCategoria.SelectedValue = producto.Id_Categoria.ToString();
         }
 
-        protected int getIdProducto(string codigo_producto)
+        //Limpia el formulario
+        protected void CleanForm()
         {
-            taTableAdapters.PRODUCTOSTableAdapter taProducto = new taTableAdapters.PRODUCTOSTableAdapter();
-            ta.PRODUCTOSDataTable dtProducto = taProducto.GetData(codigo_producto);
-
-            int total_registros = dtProducto.Count;
-            if (total_registros > 0)
-            {
-                ta.PRODUCTOSRow rowRegistro = dtProducto[0]; //Toda la informacion del registro
-                int id_producto = rowRegistro.id_producto;
-                return id_producto;
-            }
-
-            return -1;
+            tbNombre.Text = "";
+            tbDescripcion.Text = "";
+            tbPrecio.Text = "99";
+            tbCantidad.Text = "1";
+            ddlDisponibilidad.SelectedIndex = 0;
+            ddlCategoria.SelectedIndex = 0;
+            FileUploadStatus.Text = "";
         }
 
         protected void subirArchivos()
@@ -119,7 +126,7 @@ namespace tarritoazul.com.forms
                         cantidad_archivos++;
 
                         //guardar info del archivo en la BD
-                        insertMedia(fn, "imagen", id_producto);
+                        insertMedia(fn, "imagen", producto.Id_Producto);
                     }
                     catch (Exception ex)
                     {
@@ -128,12 +135,12 @@ namespace tarritoazul.com.forms
                 }
                 if (cantidad_archivos > 0)
                 {
-                    FileUploadStatus.Text = cantidad_archivos + " files has been uploaded.";
+                    FileUploadStatus.Text = cantidad_archivos + " archivos subiidos.";
                 }
             }
             else
             {
-                FileUploadStatus.Text = "Please select a file to upload.";
+                FileUploadStatus.Text = "Seleccione archivos para subir.";
             }
         }
 
@@ -147,59 +154,11 @@ namespace tarritoazul.com.forms
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
             cmd.ExecuteNonQuery();
             con.Close();
-
-            string script = "alert('Media registrada correctamente 👍');";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-        }
-
-        protected void insertProducto()
-        {
-            string cotNombre, cotDesc, cotDisp, cotCodProd;
-            float cotPrecio;
-            int cotCant;
-
-            cotNombre = tbNombre.Text;
-            cotCodProd = generateProductCode(cotNombre);
-            this.codigo_producto = cotCodProd;
-            cotDesc = tbDescripcion.Text;
-            cotDisp = ddlDisponibilidad.Text;
-            cotPrecio = float.Parse(tbPrecio.Text);
-            cotCant = int.Parse(tbCantidad.Text);
-
-            con.Open();
-
-            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad)" +
-            "values('{0}','{1}',{2},{3},'{4}','{5}');", cotCodProd, cotNombre, cotPrecio, cotCant, cotDesc, cotDisp);
-
-            SqlCommand cmd = new SqlCommand(SQLInsert, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            string script = "alert('Producto registrado correctamente 👍');";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-        }
-
-        protected string generateProductCode(string nombre)
-        {
-            Random rnd = new Random();
-            nombre = nombre.ToUpper();
-            if (nombre.Length > 5)
-            {
-                nombre = nombre.Substring(0, 5);
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                int let = rnd.Next(65, 90);
-                nombre += (char)let;
-            }
-            return nombre;
         }
 
         public void Log(string msg)
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
-
-        
     }
 }

@@ -24,7 +24,7 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 //Revisar si la url contiene el parametro id
@@ -43,7 +43,7 @@ namespace tarritoazul.com.forms
         {
             GetValuesFromForm();
             //Si no existe el producto
-            Log("Producto: " + producto.ToString());
+            //Log("Producto: " + producto.ToString());
 
             if (producto.Id_Producto == -1)
             {
@@ -53,6 +53,9 @@ namespace tarritoazul.com.forms
                 subirArchivos();
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " registrado 😁');", true);
+                //Response.Redirect("~/forms/addProducto.aspx?id=" + producto.Id_Producto);
+
+                regresar();
             }
             else //Si ya existe el producto
             {
@@ -67,6 +70,7 @@ namespace tarritoazul.com.forms
                     subirArchivos();
                 }
                 Log("Producto actualizado");
+                regresar();
             }
             Log("Producto: " + producto.ToString());
         }
@@ -78,11 +82,14 @@ namespace tarritoazul.com.forms
                 producto.Eliminar();
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
-                producto = new Producto();
-                CleanForm();
-
-                Response.Redirect("~/forms/administracion.aspx");
+                regresar();
             }
+        }
+
+        protected void regresar()
+        {
+            producto = new Producto();
+            Response.Redirect("~/forms/administracion.aspx");
         }
 
         //Pasa los valores del formulario al objeto producto

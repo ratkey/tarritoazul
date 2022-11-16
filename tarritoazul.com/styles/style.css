@@ -36,7 +36,7 @@ header {
 }
 
 .button_cancel{
-    background-color: #946262; /* Green */
+    background-color: #946262; /* red */
 }
 
 .button_accept:hover, .button_cancel:hover{

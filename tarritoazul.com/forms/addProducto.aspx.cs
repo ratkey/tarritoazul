@@ -24,7 +24,16 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //pbStatus.Visible = false;
+            if (!IsPostBack)
+            {
+                //Revisar si la url contiene el parametro id
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
+                {
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    producto.SelectFromDB(id);
+                    SetValuesFromModel();
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -66,6 +75,8 @@ namespace tarritoazul.com.forms
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
                 producto = new Producto();
                 CleanForm();
+
+                Response.Redirect("~/forms/administracion.aspx");
             }
         }
 

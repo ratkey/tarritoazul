@@ -23,16 +23,13 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
-        //Eliminar
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            producto.SelectFromDB(int.Parse(TextBox1.Text));
-            SetValuesFromModel();
-        }
-        //-------
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    producto.SelectFromDB(int.Parse(TextBox1.Text));
+        //    SetValuesFromModel();
+        //}
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -45,6 +42,8 @@ namespace tarritoazul.com.forms
                 producto.Insertar();
                 //Subir los archivos del FileUpload control
                 subirArchivos();
+                //Mensaje de registro exitoso
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: "+producto.Nombre+" registrado correctamente 👍');", true);
             }
             else //Si ya existe el producto
             {
@@ -106,6 +105,7 @@ namespace tarritoazul.com.forms
             tbCantidad.Text = "";
             ddlDisponibilidad.SelectedIndex = 0;
             ddlCategoria.SelectedIndex = 0;
+            FileUploadStatus.Text = "";
         }
 
         protected void subirArchivos()
@@ -141,12 +141,12 @@ namespace tarritoazul.com.forms
                 }
                 if (cantidad_archivos > 0)
                 {
-                    FileUploadStatus.Text = cantidad_archivos + " files has been uploaded.";
+                    FileUploadStatus.Text = cantidad_archivos + " archivos subiidos.";
                 }
             }
             else
             {
-                FileUploadStatus.Text = "Please select a file to upload.";
+                FileUploadStatus.Text = "Seleccione archivos para subir.";
             }
         }
 
@@ -160,9 +160,6 @@ namespace tarritoazul.com.forms
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
             cmd.ExecuteNonQuery();
             con.Close();
-
-            string script = "alert('Media registrada correctamente 👍');";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
         }
 
         protected void insertProducto()

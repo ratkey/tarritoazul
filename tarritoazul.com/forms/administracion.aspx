@@ -6,13 +6,13 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- links -->
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="~/styles/style.css" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="button_accept" OnClick="btnAddProducto_Click" />
         <div>
+            <h1>Productos</h1>
             <asp:GridView ID="productosGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="id_producto" DataSourceID="productosDataSource" ForeColor="Black" GridLines="Vertical" OnRowEditing="GridView1_RowEditing" Width="100%">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
                 <Columns>
@@ -35,6 +35,7 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView> 
+            <center><asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="button_accept" OnClick="btnAddProducto_Click" /></center>
             <asp:SqlDataSource ID="productosDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" DeleteCommand="DELETE FROM [PRODUCTOS] WHERE [id_producto] = @id_producto" InsertCommand="INSERT INTO [PRODUCTOS] ([codigo_producto], [nombre], [descripcion], [precio], [cantidad], [disponibilidad], [id_categoria]) VALUES (@codigo_producto, @nombre, @descripcion, @precio, @cantidad, @disponibilidad, @id_categoria)" SelectCommand="SELECT * FROM [PRODUCTOS]" UpdateCommand="UPDATE [PRODUCTOS] SET [codigo_producto] = @codigo_producto, [nombre] = @nombre, [descripcion] = @descripcion, [precio] = @precio, [cantidad] = @cantidad, [disponibilidad] = @disponibilidad, [id_categoria] = @id_categoria WHERE [id_producto] = @id_producto">
                 <DeleteParameters>
                     <asp:Parameter Name="id_producto" Type="Int32" />
@@ -59,6 +60,8 @@
                     <asp:Parameter Name="id_producto" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+
+            <h1>Categorias</h1>
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="id_categoria" DataSourceID="categoriasDataSource" ForeColor="Black" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
                 <Columns>

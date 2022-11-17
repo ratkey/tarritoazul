@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forms\datosUsario.aspx" />
     <Content Include="forms\addProducto.aspx" />
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
@@ -92,6 +93,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\datosUsario.aspx.cs">
+      <DependentUpon>datosUsario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\datosUsario.aspx.designer.cs">
+      <DependentUpon>datosUsario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\addProducto.aspx.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

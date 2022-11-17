@@ -24,13 +24,27 @@ namespace tarritoazul.com.forms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //pbStatus.Visible = false;
+
+            if (!IsPostBack)
+            {
+                //Revisar si la url contiene el parametro id
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
+                {
+                    Log("modificando");
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    producto.SelectFromDB(id);
+                    SetValuesFromModel();
+                    Log("Producto: " + producto.ToString());
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
             //Si no existe el producto
+            //Log("Producto: " + producto.ToString());
+
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
@@ -39,6 +53,9 @@ namespace tarritoazul.com.forms
                 subirArchivos();
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " registrado 😁');", true);
+                //Response.Redirect("~/forms/addProducto.aspx?id=" + producto.Id_Producto);
+
+                regresar();
             }
             else //Si ya existe el producto
             {
@@ -53,6 +70,7 @@ namespace tarritoazul.com.forms
                     subirArchivos();
                 }
                 Log("Producto actualizado");
+                regresar();
             }
             Log("Producto: " + producto.ToString());
         }
@@ -64,9 +82,14 @@ namespace tarritoazul.com.forms
                 producto.Eliminar();
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
-                producto = new Producto();
-                CleanForm();
+                regresar();
             }
+        }
+
+        protected void regresar()
+        {
+            producto = new Producto();
+            Response.Redirect("~/forms/administracion.aspx");
         }
 
         //Pasa los valores del formulario al objeto producto

@@ -137,6 +137,7 @@ namespace tarritoazul.com.Models
             }
         }
 
+        //Genera un codigo de producto a partir del nombre del producto + 5 letras random
         public string GenerateProductCode(string nombre)
         {
             Random rnd = new Random();

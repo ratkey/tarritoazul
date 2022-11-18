@@ -56,7 +56,7 @@ namespace tarritoazul.com.Models
 
             //Definir la consulta
             string SQLInsert = String.Format("insert into REGISTROS( usuario, correo, contrasena) output INSERTED.id_registro " +
-            "values('{0}','{1}',{2});", Usuario, Correo, Contrasena);
+            "values('{0}','{1}','{2}');", Usuario, Correo, Contrasena);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 

@@ -155,6 +155,7 @@ namespace tarritoazul.com.Models
             return nombre;
         }
 
+        override
         public string ToString()
         {
             return "id_producto: " + Id_Producto + ", nombre: " + Nombre + ", descripcion: " + Descripcion +

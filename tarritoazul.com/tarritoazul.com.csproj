@@ -136,6 +136,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Etiqueta.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ta.Designer.cs">

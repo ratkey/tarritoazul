@@ -12,6 +12,7 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            pnlProductos.CssClass = "catalogo";
             FillPage();
         }
 
@@ -31,21 +32,35 @@ namespace tarritoazul.com
                     ImageButton imageButton = new ImageButton();
                     Label lblNombre = new Label();
                     Label lblPrecio = new Label();
+                    Label lblDescripcion = new Label();
+                    Button btnCarrito = new Button();
+
+                    productoPanel.CssClass = "card";
+                    imageButton.CssClass = "imagen";
+                    lblNombre.CssClass = "nombre";
+                    lblPrecio.CssClass = "price";
+                    lblDescripcion.CssClass = "descripcion";
+                    btnCarrito.CssClass = "boton";
 
                     //Cambiar las propiedades de los controles
-                    imageButton.ImageUrl = "~/imgs/producto/" + "arete01.jpg";
+                    imageButton.ImageUrl = "~/imgs/producto/" + "arete02.jpg";
                     //imageButton.CssClass = "";
                     //imageButton.PostBackUrl = "";
 
                     lblNombre.Text = producto.Nombre;
                     lblPrecio.Text = "$" + producto.Precio;
+                    lblDescripcion.Text = producto.Descripcion;
+                    btnCarrito.Text = "Añadir al carrito";
 
                     //Agregar el control al Panel
                     productoPanel.Controls.Add(imageButton);
-                    productoPanel.Controls.Add(new Literal {Text = "<br />"});
+                    //productoPanel.Controls.Add(new Literal {Text = "<br />"});
                     productoPanel.Controls.Add(lblNombre);
-                    productoPanel.Controls.Add(new Literal {Text = "<br />"});
+                    //productoPanel.Controls.Add(new Literal {Text = "<br />"});
                     productoPanel.Controls.Add(lblPrecio);
+                    //productoPanel.Controls.Add(new Literal { Text = "<br />" });
+                    productoPanel.Controls.Add(lblDescripcion);
+                    productoPanel.Controls.Add(btnCarrito);
 
                     //Agregar paneles ddinamicos al panel estatico padre
                     pnlProductos.Controls.Add(productoPanel);

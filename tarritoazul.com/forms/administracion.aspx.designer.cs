@@ -15,15 +15,6 @@ namespace tarritoazul.com.forms
     {
 
         /// <summary>
-        /// productosGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView productosGridView;
-
-        /// <summary>
         /// btnAddProducto control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddProducto;
+
+        /// <summary>
+        /// productosGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView productosGridView;
 
         /// <summary>
         /// productosDataSource control.

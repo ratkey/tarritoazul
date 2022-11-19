@@ -32,6 +32,14 @@ header {
     border-radius: 0;
 }
 
+.btn_outline {
+
+    border: 2px;
+    border-style: solid;
+    border-color: #628094;
+    
+}
+
 .btn_green {
     background-color: #628094; /* Green */
 }
@@ -42,6 +50,7 @@ header {
 
 .btn_white {
     background-color: rgb(255,255,255); /* white */
+    color: black;
 }
 
 .btn:hover {

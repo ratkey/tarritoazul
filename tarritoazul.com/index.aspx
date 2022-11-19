@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <div class="catalogo">
-            <div class="card">
+            <%--<div class="card">
                 <img src="imgs/producto/arete01.jpg" alt="Denim Jeans" style="width: 100%" />
                 <h1>Waflitos</h1>
                 <p class="price">$299</p>
@@ -49,6 +49,8 @@
                 <p>
                     <button>Añadir al carrito</button>
                 </p>
-            </div>
+            </div>--%>
+            <asp:Panel ID="pnlProductos" runat="server">
+            </asp:Panel>
         </div>
 </asp:Content>

@@ -55,8 +55,8 @@
                             <a class="nav-link" href="carrito.aspx">🛒Carrito</a>
                         </li>
                     </ul>
-                    <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn_outline btn_white" PostBackUrl="~/forms/registro.aspx" Style="margin-right: 5px" />
-                    <asp:Button ID="btnIniciarSecion" runat="server" Text="Iniciar seción" CssClass="btn btn_red" PostBackUrl="~/forms/registro.aspx" />
+                    <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-outline-green" PostBackUrl="~/forms/registro.aspx" Style="margin-right: 5px" />
+                    <asp:Button ID="btnIniciarSecion" runat="server" Text="Iniciar seción" CssClass="btn btn-solid-green" PostBackUrl="~/forms/registro.aspx" />
                 </div>
             </div>
         </nav>

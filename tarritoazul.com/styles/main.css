@@ -20,37 +20,63 @@ header {
 }
 
 .btn {
+    color: black;
     font-size: medium;
     border: none;
-    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 0;
+    border-radius: 3px;
 }
 
-.btn_outline {
-
-    border: 2px;
-    border-style: solid;
+.btn-solid-green {
+    color: white;
     border-color: #628094;
-    
-}
-
-.btn_green {
     background-color: #628094; /* Green */
 }
 
-.btn_red{
+.btn-outline-green {
+    color: #628094;
+    border-color: #628094;
+    background-color: #628094;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+    background-color: transparent;
+}
+
+.btn-solid-red{
+    color: white;
+    border-color: #946262;
     background-color: #946262; /* red */
 }
 
-.btn_white {
-    background-color: rgb(255,255,255); /* white */
+.btn-outline-red {
+    color: #946262;
+    border-color: #946262;
+    background-color: #946262; /* red */
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+    background-color: transparent;
+}
+
+.btn-solid-black {
+    color: white;
+    border-color: black;
+    background-color: black; /* black */
+}
+
+.btn-outline-black {
     color: black;
+    border-color: black;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
 }
 
 .btn:hover {

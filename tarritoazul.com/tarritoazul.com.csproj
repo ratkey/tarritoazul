@@ -85,8 +85,6 @@
     <Content Include="imgs\producto\arete04.jpg" />
     <Content Include="imgs\producto\arete05.jpg" />
     <Content Include="index.aspx" />
-    <Content Include="index_placeholder.aspx" />
-    <Content Include="index.html" />
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\index.css" />
     <Content Include="styles\login.css" />
@@ -136,13 +134,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="index_placeholder.aspx.cs">
-      <DependentUpon>index_placeholder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index_placeholder.aspx.designer.cs">
-      <DependentUpon>index_placeholder.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

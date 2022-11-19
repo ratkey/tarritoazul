@@ -49,6 +49,32 @@ namespace tarritoazul.com.Models
                 return null;
             }
         }
+
+        //Cambiar este metodo al modelo MediaModel
+        public string GetProductMedia(int id_producto)
+        {
+            string url = "";
+            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [PRODUCTOS] on PRODUCTOS.id_producto = MEDIA.id_producto and PRODUCTOS.id_producto = " + id_producto, con);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        url = (string)reader["src_url"];
+                    }
+                }
+
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                return url;
+        }
     }
 
     

@@ -42,9 +42,19 @@ namespace tarritoazul.com
                     lblDescripcion.CssClass = "descripcion";
                     btnCarrito.CssClass = "boton";
 
+                    //Obtener la primera imagen del producto
+                    string img = productoModel.GetProductMedia(producto.Id_Producto);
+
                     //Cambiar las propiedades de los controles
-                    imageButton.ImageUrl = "~/imgs/producto/" + "arete02.jpg";
-                    //imageButton.CssClass = "";
+                    if (img != "")
+                    {
+                        imageButton.ImageUrl = "~/imgs/producto/" + img;
+                    }
+                    else
+                    {
+                        imageButton.ImageUrl = "~/imgs/producto/" + "placeholder.jpg";
+                    }
+                    Log(img);
                     //imageButton.PostBackUrl = "";
 
                     lblNombre.Text = producto.Nombre;

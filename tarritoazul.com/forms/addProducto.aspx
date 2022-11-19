@@ -5,7 +5,7 @@
     <title>Producto</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
-    <section class="formulario bgGradient">
+    <section class="formulario">
         <div class="add_product">
             <h2 class="titulo">Añadir producto</h2>
             <div class="item1">
@@ -46,22 +46,23 @@
                     <asp:TextBox ID="tbEtiquetas" runat="server" CssClass="input" TextMode="MultiLine"></asp:TextBox>
                 </div>
             </div>
-    
+            <div class="file_up">
+                <h2 class="titulo">Imagenes</h2>
+                <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
+                <br />
+                <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
+            </div>
         </div>
-        <br />
-        <div class="file_up">
-            <h2 class="titulo">Imagenes</h2>
-            <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
-            <br />
-            <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
+        
+
+        <div class="botones">
+            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-solid-green btnGuardar" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-solid-red btnEliminar" OnClick="btnEliminar_Click" />
         </div>
-        <br />
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-solid-green" OnClick="btnGuardar_Click" />
-        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-solid-red" OnClick="btnEliminar_Click" />
-        <br />
-    
+        
+        
         <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
     </section>
-    
+    <br>
     <asp:SqlDataSource ID="CategoriasConnectionString" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" SelectCommand="SELECT * FROM [CATEGORIAS]"></asp:SqlDataSource>
 </asp:Content>

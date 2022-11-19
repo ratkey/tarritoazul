@@ -4,55 +4,33 @@
     <title>Administracion</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
-    <h1>Productos</h1>
-    <asp:GridView ID="productosGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="id_producto" DataSourceID="productosDataSource" ForeColor="Black" GridLines="Vertical" OnRowEditing="GridView1_RowEditing" Width="100%">
-        <AlternatingRowStyle BackColor="#CCCCCC" />
+    <h1>Productos <asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="btn btn-solid-green" OnClick="btnAddProducto_Click" /></h1>
+    <asp:GridView ID="productosGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="ID" DataSourceID="productosDataSource" OnRowEditing="GridView1_RowEditing">
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="id_producto" HeaderText="id_producto" InsertVisible="False" ReadOnly="True" SortExpression="id_producto" />
-            <asp:BoundField DataField="codigo_producto" HeaderText="codigo_producto" SortExpression="codigo_producto" />
-            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
-            <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
-            <asp:BoundField DataField="precio" HeaderText="precio" SortExpression="precio" />
-            <asp:BoundField DataField="cantidad" HeaderText="cantidad" SortExpression="cantidad" />
-            <asp:BoundField DataField="disponibilidad" HeaderText="disponibilidad" SortExpression="disponibilidad" />
-            <asp:BoundField DataField="id_categoria" HeaderText="id_categoria" SortExpression="id_categoria" />
+            <asp:CommandField ShowEditButton="True" ButtonType="Button" DeleteText="Eliminar" EditText="Editar" ControlStyle-CssClass="btn btn-solid-green" CancelText="Cancelar" ShowHeader="False" HeaderText="Controles">
+<ControlStyle CssClass="btn btn-solid-green"></ControlStyle>
+            </asp:CommandField>
+            <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID"/>
+            <asp:BoundField DataField="Código" HeaderText="Código" SortExpression="Código"  />
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+            <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+            <asp:BoundField DataField="Disponibilidad" HeaderText="Disponibilidad" SortExpression="Disponibilidad"/>
+            <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
+            <asp:BoundField DataField="Categoría" HeaderText="Categoría" SortExpression="Categoría" />
         </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+        <SortedAscendingHeaderStyle BackColor="#487575" />
+        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+        <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>
     <br />
-    <center>
-        <asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="btn btn-solid-green" OnClick="btnAddProducto_Click" /></center>
-    <asp:SqlDataSource ID="productosDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" DeleteCommand="DELETE FROM [PRODUCTOS] WHERE [id_producto] = @id_producto" InsertCommand="INSERT INTO [PRODUCTOS] ([codigo_producto], [nombre], [descripcion], [precio], [cantidad], [disponibilidad], [id_categoria]) VALUES (@codigo_producto, @nombre, @descripcion, @precio, @cantidad, @disponibilidad, @id_categoria)" SelectCommand="SELECT * FROM [PRODUCTOS]" UpdateCommand="UPDATE [PRODUCTOS] SET [codigo_producto] = @codigo_producto, [nombre] = @nombre, [descripcion] = @descripcion, [precio] = @precio, [cantidad] = @cantidad, [disponibilidad] = @disponibilidad, [id_categoria] = @id_categoria WHERE [id_producto] = @id_producto">
-        <DeleteParameters>
-            <asp:Parameter Name="id_producto" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="codigo_producto" Type="String" />
-            <asp:Parameter Name="nombre" Type="String" />
-            <asp:Parameter Name="descripcion" Type="String" />
-            <asp:Parameter Name="precio" Type="Double" />
-            <asp:Parameter Name="cantidad" Type="Int32" />
-            <asp:Parameter Name="disponibilidad" Type="String" />
-            <asp:Parameter Name="id_categoria" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="codigo_producto" Type="String" />
-            <asp:Parameter Name="nombre" Type="String" />
-            <asp:Parameter Name="descripcion" Type="String" />
-            <asp:Parameter Name="precio" Type="Double" />
-            <asp:Parameter Name="cantidad" Type="Int32" />
-            <asp:Parameter Name="disponibilidad" Type="String" />
-            <asp:Parameter Name="id_categoria" Type="Int32" />
-            <asp:Parameter Name="id_producto" Type="Int32" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="productosDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TAConnectionString %>" DeleteCommand="DELETE FROM PRODUCTOS WHERE id_producto = @ID" SelectCommand="SELECT PRODUCTOS.id_producto AS ID, PRODUCTOS.codigo_producto AS Código, PRODUCTOS.nombre AS Nombre, PRODUCTOS.precio AS Precio, PRODUCTOS.cantidad AS Cantidad, PRODUCTOS.disponibilidad AS Disponibilidad, PRODUCTOS.descripcion AS Descripción, CATEGORIAS.nombre AS 'Categoría' FROM PRODUCTOS INNER JOIN CATEGORIAS ON CATEGORIAS.id_categoria = PRODUCTOS.id_categoria" UpdateCommand="UPDATE PRODUCTOS SET codigo_producto =, nombre =, descripcion =, precio =, cantidad =, disponibilidad =, id_categoria =">
     </asp:SqlDataSource>
 
     <h1>Categorias</h1>

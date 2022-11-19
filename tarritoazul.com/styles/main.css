@@ -19,27 +19,80 @@ header {
     background-attachment: fixed;
 }
 
-.button_accept, .button_cancel{
+.btn {
+    color: black;
     font-size: medium;
     border: none;
-    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
 }
 
-.button_accept{
+.btn-solid-green {
+    color: white;
+    border-color: #628094;
     background-color: #628094; /* Green */
 }
 
-.button_cancel{
+.btn-outline-green {
+    color: #628094;
+    border-color: #628094;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn-solid-red{
+    color: white;
+    border-color: #946262;
     background-color: #946262; /* red */
 }
 
-.button_accept:hover, .button_cancel:hover{
+.btn-outline-red {
+    color: #946262;
+    border-color: #946262;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn-solid-black {
+    color: white;
+    border-color: black;
+    background-color: black; /* black */
+}
+
+.btn-outline-black {
+    color: black;
+    border-color: black;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn-solid-orange {
+    color: white;
+    border-color: #c2ba71;
+    background-color: #c2ba71; /* Green */
+}
+
+.btn-outline-orange {
+    color: #c2ba71;
+    border-color: #c2ba71;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 

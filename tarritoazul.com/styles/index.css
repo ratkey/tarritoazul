@@ -14,7 +14,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
     text-align: center;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     
     min-width: 250px;
     text-align: center;
@@ -42,7 +42,7 @@
 }
 
 .card img{
-    border-radius: 5px 5px 0 0;
+    /*border-radius: 5px 5px 0 0;*/
 }
 
 .card button:hover {

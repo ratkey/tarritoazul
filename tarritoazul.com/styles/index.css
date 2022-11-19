@@ -1,8 +1,4 @@
-﻿.logo {
-    width: 300px;
-}
-
-/* Catalogo */
+﻿/* Catalogo */
 .catalogo{
     display: grid;
     grid-auto-rows: minmax(250px, auto);

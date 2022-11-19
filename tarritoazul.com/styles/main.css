@@ -19,7 +19,7 @@ header {
     background-attachment: fixed;
 }
 
-.button_accept, .button_cancel{
+.btn {
     font-size: medium;
     border: none;
     color: white;
@@ -29,17 +29,22 @@ header {
     display: inline-block;
     font-size: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0;
 }
 
-.button_accept{
+.btn_green {
     background-color: #628094; /* Green */
 }
 
-.button_cancel{
+.btn_red{
     background-color: #946262; /* red */
 }
 
-.button_accept:hover, .button_cancel:hover{
+.btn_white {
+    background-color: rgb(255,255,255); /* white */
+}
+
+.btn:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 

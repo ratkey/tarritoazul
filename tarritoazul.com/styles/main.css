@@ -41,11 +41,10 @@ header {
 .btn-outline-green {
     color: #628094;
     border-color: #628094;
-    background-color: #628094;
+    background-color: transparent;
     border: 2px;
     padding: 8px 18px;
     border-style: solid;
-    background-color: transparent;
 }
 
 .btn-solid-red{
@@ -57,11 +56,10 @@ header {
 .btn-outline-red {
     color: #946262;
     border-color: #946262;
-    background-color: #946262; /* red */
+    background-color: transparent;
     border: 2px;
     padding: 8px 18px;
     border-style: solid;
-    background-color: transparent;
 }
 
 .btn-solid-black {
@@ -73,6 +71,21 @@ header {
 .btn-outline-black {
     color: black;
     border-color: black;
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn-solid-orange {
+    color: white;
+    border-color: #c2ba71;
+    background-color: #c2ba71; /* Green */
+}
+
+.btn-outline-orange {
+    color: #c2ba71;
+    border-color: #c2ba71;
     background-color: transparent;
     border: 2px;
     padding: 8px 18px;

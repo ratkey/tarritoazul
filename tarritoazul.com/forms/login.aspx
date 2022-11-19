@@ -10,8 +10,8 @@
     
     <!-- Links -->
     <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="~/styles/main.css" />
+    <link rel="stylesheet" href="~/styles/login.css">
 
     <title>Login</title>
 </head>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- links -->
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/addProducto.css" />
+    <link rel="stylesheet" href="~/styles/main.css" />
+    <link rel="stylesheet" href="~/styles/addProducto.css" />
 
     <title>Agregar producto</title>
 </head>
@@ -65,8 +65,8 @@
         <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
     </div>
     <br />
-    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="button_accept" OnClick="btnGuardar_Click"/>
-    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="button_cancel" OnClick="btnEliminar_Click" />
+    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn_green" OnClick="btnGuardar_Click"/>
+    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn_red" OnClick="btnEliminar_Click" />
     <br />
      
     <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>

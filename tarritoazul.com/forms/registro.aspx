@@ -123,7 +123,7 @@
         <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" CssClass="btn btn-solid-green"/>
         <br />
         <p style="font-size: 12pt;">
-            ¿Ya tienes una cuenta? <a href="" target="_blank">Inicie Sesión</a>
+            ¿Ya tienes una cuenta? <asp:HyperLink ID="linkIniciarSecionForm" runat="server" NavigateUrl="~/forms/login.aspx">Inicie Sesión</asp:HyperLink>
         </p>
         <asp:ValidationSummary ID="summary" runat="server" />
     </div>

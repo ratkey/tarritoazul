@@ -36,11 +36,10 @@ t1{
     color: red;
 }
 
-/* Ocultar banner y botones del nav-bar */
 #banner, #banner .logo{
     height: 0px ;
 }
 
-.nav-botones {
+#nav-botones {
     visibility: hidden;
 }

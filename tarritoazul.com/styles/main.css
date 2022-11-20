@@ -8,8 +8,15 @@
     background-color: #a1c4c6;
 }
 
+#content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .logo {
-    width: 300px;
+    width: 200px;
 }
 
 body {

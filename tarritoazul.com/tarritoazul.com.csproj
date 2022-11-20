@@ -71,7 +71,7 @@
     <Content Include="forms\administracion.aspx" />
     <Content Include="forms\datosUsario.aspx" />
     <Content Include="forms\addProducto.aspx" />
-    <Content Include="forms\Domicilio.aspx" />
+    <Content Include="forms\domicilio.aspx" />
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
     <Content Include="imgs\favicon.ico" />
@@ -87,6 +87,7 @@
     <Content Include="imgs\producto\arete05.jpg" />
     <Content Include="index.aspx" />
     <Content Include="styles\addProducto.css" />
+    <Content Include="styles\formulario.css" />
     <Content Include="styles\index.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\registro.css" />
@@ -115,12 +116,12 @@
     <Compile Include="forms\addProducto.aspx.designer.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\Domicilio.aspx.cs">
-      <DependentUpon>Domicilio.aspx</DependentUpon>
+    <Compile Include="forms\domicilio.aspx.cs">
+      <DependentUpon>domicilio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\Domicilio.aspx.designer.cs">
-      <DependentUpon>Domicilio.aspx</DependentUpon>
+    <Compile Include="forms\domicilio.aspx.designer.cs">
+      <DependentUpon>domicilio.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

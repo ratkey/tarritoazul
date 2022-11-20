@@ -17,8 +17,6 @@
     <!-- Links -->
     <link rel="icon" type="image/png" href="~/imgs/favicon.ico" />
     <link rel="stylesheet" href="~/styles/main.css" />
-
-    <title>Tarritoazul</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

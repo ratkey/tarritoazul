@@ -42,6 +42,15 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.Image imgLogo;
 
         /// <summary>
+        /// linkMarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink linkMarca;
+
+        /// <summary>
         /// linkInicio control.
         /// </summary>
         /// <remarks>

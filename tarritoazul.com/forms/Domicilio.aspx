@@ -1,14 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Domicilio.aspx.cs" Inherits="tarritoazul.com.forms.Domicilio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Domicilio.aspx.cs" Inherits="tarritoazul.com.forms.Domicilio" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../styles/addProducto.css" />
+    <title>Producto</title>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
+    <div>
             <table>
                 <tr>
                     <td>
@@ -106,6 +104,4 @@
             </table>
             <asp:ValidationSummary ID="summary" runat="server" />
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

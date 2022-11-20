@@ -1,21 +1,30 @@
 ﻿/* Catalogo */
 
 .catalogo{
-    display: grid;
-    grid-auto-rows: minmax(250px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-    grid-gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
     border-radius: 3px;
     
     min-width: 250px;
-    max-width: 500px;
+    max-width: 200px;
     text-align: center;
+
+    
+}
+
+@media (max-width: 510px) {
+    .card{
+        max-width: 450px;
+        margin: auto;
+    }
 }
 
 .imagen {
@@ -33,7 +42,7 @@
     font-weight: bold;
 }
 
-.card .boton {
+.boton {
     border: none;
     outline: 0;
     padding: 12px;
@@ -48,10 +57,6 @@
 
 .card .descripcion{
     min-height: 60px;
-}
-
-.card img{
-    /*border-radius: 5px 5px 0 0;*/
 }
 
 .card .boton:hover {

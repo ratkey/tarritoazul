@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
-    CodeBehind="Domicilio.aspx.cs" Inherits="tarritoazul.com.forms.Domicilio" %>
+    CodeBehind="domicilio.aspx.cs" Inherits="tarritoazul.com.forms.Domicilio" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="../styles/formulario.css" />

@@ -87,6 +87,7 @@
     <Content Include="imgs\producto\arete05.jpg" />
     <Content Include="index.aspx" />
     <Content Include="styles\addProducto.css" />
+    <Content Include="styles\formulario.css" />
     <Content Include="styles\index.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\registro.css" />

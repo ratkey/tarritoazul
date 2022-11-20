@@ -15,15 +15,6 @@ namespace tarritoazul.com.forms
     {
 
         /// <summary>
-        /// TbEstado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbEstado;
-
-        /// <summary>
         /// RfvEstado control.
         /// </summary>
         /// <remarks>
@@ -33,13 +24,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvEstado;
 
         /// <summary>
-        /// TbMunicipio control.
+        /// TbEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbMunicipio;
+        protected global::System.Web.UI.WebControls.TextBox TbEstado;
 
         /// <summary>
         /// RfvMunicipio control.
@@ -51,13 +42,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvMunicipio;
 
         /// <summary>
-        /// TbCalle control.
+        /// TbMunicipio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbCalle;
+        protected global::System.Web.UI.WebControls.TextBox TbMunicipio;
 
         /// <summary>
         /// RfvCalle control.
@@ -69,13 +60,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle;
 
         /// <summary>
-        /// TbCalle1 control.
+        /// TbCalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbCalle1;
+        protected global::System.Web.UI.WebControls.TextBox TbCalle;
 
         /// <summary>
         /// RfvCalle1 control.
@@ -87,13 +78,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle1;
 
         /// <summary>
-        /// TbCalle2 control.
+        /// TbCalle1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbCalle2;
+        protected global::System.Web.UI.WebControls.TextBox TbCalle1;
 
         /// <summary>
         /// RfvCalle2 control.
@@ -105,6 +96,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle2;
 
         /// <summary>
+        /// TbCalle2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbCalle2;
+
+        /// <summary>
         /// TbNumInt control.
         /// </summary>
         /// <remarks>
@@ -112,15 +112,6 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbNumInt;
-
-        /// <summary>
-        /// TbNumExt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbNumExt;
 
         /// <summary>
         /// RfvNumExt control.
@@ -132,13 +123,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvNumExt;
 
         /// <summary>
-        /// TbCP control.
+        /// TbNumExt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbCP;
+        protected global::System.Web.UI.WebControls.TextBox TbNumExt;
 
         /// <summary>
         /// RfvCP control.
@@ -159,13 +150,13 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RevCP;
 
         /// <summary>
-        /// TbDesc control.
+        /// TbCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbDesc;
+        protected global::System.Web.UI.WebControls.TextBox TbCP;
 
         /// <summary>
         /// RfvDesc control.
@@ -177,6 +168,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvDesc;
 
         /// <summary>
+        /// TbDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbDesc;
+
+        /// <summary>
         /// BtnGuardar control.
         /// </summary>
         /// <remarks>
@@ -184,6 +184,15 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnGuardar;
+
+        /// <summary>
+        /// BtnEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
         /// <summary>
         /// summary control.

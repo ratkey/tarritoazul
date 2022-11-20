@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro.aspx.cs" Inherits="tarritoazul.com.forms.registro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="registro.aspx.cs" Inherits="tarritoazul.com.forms.registro" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head runat="server">
-    <!-- Meta -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../styles/registro.css" />
     <script type="text/javascript">
         function ValidateCheckBox(sender, args) {
             if (
@@ -19,17 +13,9 @@
             }
         }
     </script>
-
-    <!-- Links -->
-    <link rel="stylesheet" href="~/styles/main.css" />
-    <link rel="stylesheet" href="~/styles/registro.css" />
-    <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
-
     <title>Registro de usuario</title>
-</head>
-
-<body>
-
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <div class="registro_box">
         <div class="logo_fondo">
             <img class="logo" src="../imgs/logo.png" />
@@ -38,7 +24,6 @@
         <t1>Crear una cuenta</t1>
         <br />
         <br />
-        <form id="form1" runat="server">
             <table>
                 <tr>
                     <td>
@@ -141,8 +126,5 @@
             ¿Ya tienes una cuenta? <a href="" target="_blank">Inicie Sesión</a>
         </p>
         <asp:ValidationSummary ID="summary" runat="server" />
-        </form>
     </div>
-</body>
-
-</html>
+</asp:Content>

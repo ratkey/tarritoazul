@@ -35,3 +35,11 @@ t1{
     text-align: start;
     color: red;
 }
+
+#banner, #banner .logo{
+    height: 0px ;
+}
+
+#nav-botones {
+    visibility: hidden;
+}

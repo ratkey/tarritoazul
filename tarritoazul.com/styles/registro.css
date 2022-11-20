@@ -35,3 +35,12 @@ t1{
     text-align: start;
     color: red;
 }
+
+/* Ocultar banner y botones del nav-bar */
+#banner, #banner .logo{
+    height: 0px ;
+}
+
+.nav-botones {
+    visibility: hidden;
+}

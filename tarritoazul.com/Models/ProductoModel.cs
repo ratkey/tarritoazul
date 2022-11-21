@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
-using tarritoazul.com.forms;
 
 namespace tarritoazul.com.Models
 {
@@ -73,9 +68,7 @@ namespace tarritoazul.com.Models
             {
                 MessageBox.Show(ex.Message);
             }
-                return url;
+            return url;
         }
     }
-
-    
 }

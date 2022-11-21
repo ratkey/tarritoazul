@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Web;
-using System.Web.Services.Description;
-using System.Web.UI;
 using System.Windows.Forms;
-using tarritoazul.com.taTableAdapters;
 
 namespace tarritoazul.com.Models
 {
@@ -70,7 +61,7 @@ namespace tarritoazul.com.Models
             //Definir la consulta
             string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad, id_categoria) output INSERTED.id_producto " +
             "values('{0}','{1}',{2},{3},'{4}','{5}',{6});", Codigo_producto, Nombre, Precio, Cantidad, Descripcion, Disponibilidad, Id_Categoria);
-            
+
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
             try
@@ -118,7 +109,7 @@ namespace tarritoazul.com.Models
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from PRODUCTOS where id_producto = {0};", Id_Producto);
-            
+
             SqlCommand cmd = new SqlCommand(SQLDelete, con);
 
             try
@@ -155,8 +146,7 @@ namespace tarritoazul.com.Models
             return nombre;
         }
 
-        override
-        public string ToString()
+        public override string ToString()
         {
             return "id_producto: " + Id_Producto + ", nombre: " + Nombre + ", descripcion: " + Descripcion +
                 ", precio: " + Precio + ", cantidad: " + Cantidad + ", disponibilidad: " + Disponibilidad + ", id_categoria: " + Id_Categoria;

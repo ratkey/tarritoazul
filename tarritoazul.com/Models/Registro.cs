@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
@@ -21,7 +18,6 @@ namespace tarritoazul.com.Models
         public string Usuario { get; set; }
         public string Correo { get; set; }
         public string Contrasena { get; set; }
-
 
         public void SelectFromDB(int id_registro)
         {
@@ -52,8 +48,6 @@ namespace tarritoazul.com.Models
 
         public void Insertar() //insertar Producto a la BD y obtener el ID
         {
-
-
             //Definir la consulta
             string SQLInsert = String.Format("insert into REGISTROS( usuario, correo, contrasena) output INSERTED.id_registro " +
             "values('{0}','{1}','{2}');", Usuario, Correo, Contrasena);
@@ -124,9 +118,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-
-        override
-        public string ToString()
+        public override string ToString()
         {
             return "id_registro: " + Id_Registro + ", usuario: " + Usuario +
                 ", correo: " + Correo + ", contrasena: " + Contrasena;

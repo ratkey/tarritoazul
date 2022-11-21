@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
-using tarritoazul.com.forms;
 
 namespace tarritoazul.com.Models
 {
@@ -21,7 +17,6 @@ namespace tarritoazul.com.Models
         public int Id_Etiqueta { get; set; }
         public string Nombre { get; set; }
 
-
         public void SelectFromDB(int id_etiqueta)
         {
             SqlCommand command = new SqlCommand("Select * from [ETIQUETAS] where Id_Etiqueta=@idp", con);
@@ -35,7 +30,6 @@ namespace tarritoazul.com.Models
                     {
                         Id_Etiqueta = (int)reader["id_etiqueta"];
                         Nombre = (string)reader["nombre"];
-
                     }
                 }
 
@@ -120,8 +114,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        override
-        public string ToString()
+        public override string ToString()
         {
             return "id_etiqueta: " + Id_Etiqueta + " nombre: " + Nombre;
         }

@@ -19,7 +19,7 @@ namespace tarritoazul.com.Models
         public string Correo { get; set; }
         public string Contrasena { get; set; }
 
-        public void SelectFromDB(int id_registro)
+        public void SelectById(int id_registro)
         {
             SqlCommand command = new SqlCommand("Select * from [REGISTROS] where id_registro=@idp", con);
             command.Parameters.AddWithValue("@idp", id_registro);

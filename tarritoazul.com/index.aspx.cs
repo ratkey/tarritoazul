@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using tarritoazul.com.Models;
@@ -21,12 +19,12 @@ namespace tarritoazul.com
             //Obtiene una lista de todos los productos
             ProductoModel productoModel = new ProductoModel();
             List<Producto> productos = productoModel.GetAllProductos();
-
+            
             //Asegurarse de que los productos existen en la BD
             if (productos != null)
             {
                 //Crear un nuevo Panel con un ImageButton y 2 labels para cada producto
-                foreach(Producto producto in productos)
+                foreach (Producto producto in productos)
                 {
                     Panel productoPanel = new Panel();
                     ImageButton imageButton = new ImageButton();

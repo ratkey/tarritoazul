@@ -17,7 +17,7 @@ namespace tarritoazul.com.Models
         public int Id_Etiqueta { get; set; }
         public string Nombre { get; set; }
 
-        public void SelectFromDB(int id_etiqueta)
+        public void SelectById(int id_etiqueta)
         {
             SqlCommand command = new SqlCommand("Select * from [ETIQUETAS] where Id_Etiqueta=@idp", con);
             command.Parameters.AddWithValue("@idp", id_etiqueta);

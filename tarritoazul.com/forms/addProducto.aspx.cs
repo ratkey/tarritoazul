@@ -1,30 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using tarritoazul.com.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Page = System.Web.UI.Page;
 
 namespace tarritoazul.com.forms
 {
     public partial class addProducto : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         public static Producto producto = new Producto();
+        public static ProductoModel productoModel = new ProductoModel();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 //Revisar si la url contiene el parametro id
@@ -32,7 +24,7 @@ namespace tarritoazul.com.forms
                 {
                     Log("modificando");
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    producto.SelectFromDB(id);
+                    producto = productoModel.SelectById(id);
                     SetValuesFromModel();
                     Log("Producto: " + producto.ToString());
                 }
@@ -48,7 +40,7 @@ namespace tarritoazul.com.forms
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
-                producto.Insertar();
+                productoModel.Insertar(producto);
                 //Subir los archivos del FileUpload control
                 subirArchivos();
                 //Mensaje de registro exitoso
@@ -60,7 +52,7 @@ namespace tarritoazul.com.forms
             else //Si ya existe el producto
             {
                 //Actualizar el producto
-                producto.Actualizar();
+                productoModel.Actualizar(producto);
                 //Mensaje de actualizacion exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " actualizado 😵');", true);
                 //Validar si hay archivos seleccionados
@@ -79,7 +71,7 @@ namespace tarritoazul.com.forms
         {
             if (producto.Id_Producto > 0)
             {
-                producto.Eliminar();
+                productoModel.Eliminar(producto);
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
                 regresar();
@@ -104,7 +96,8 @@ namespace tarritoazul.com.forms
         }
 
         //Pasa los valores del objeto producto al formulario
-        protected void SetValuesFromModel() {
+        protected void SetValuesFromModel()
+        {
             tbNombre.Text = producto.Nombre;
             tbDescripcion.Text = producto.Descripcion;
             tbPrecio.Text = producto.Precio.ToString();

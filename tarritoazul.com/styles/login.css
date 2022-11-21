@@ -2,7 +2,7 @@ t1{
     font-size: 20pt;
 }
 
-.logo{
+.form_logo{
     width: 150px;
 }
 
@@ -24,4 +24,12 @@ t1{
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+}
+
+#banner, #banner .logo {
+    height: 0px;
+}
+
+#nav-botones {
+    visibility: hidden;
 }

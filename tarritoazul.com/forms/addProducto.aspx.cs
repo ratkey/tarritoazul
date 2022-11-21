@@ -34,8 +34,6 @@ namespace tarritoazul.com.forms
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
-            //Si no existe el producto
-            //Log("Producto: " + producto.ToString());
 
             if (producto.Id_Producto == -1)
             {
@@ -43,28 +41,20 @@ namespace tarritoazul.com.forms
                 productoModel.Insertar(producto);
                 //Subir los archivos del FileUpload control
                 subirArchivos();
-                //Mensaje de registro exitoso
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " registrado 😁');", true);
-                //Response.Redirect("~/forms/addProducto.aspx?id=" + producto.Id_Producto);
-
                 regresar();
             }
             else //Si ya existe el producto
             {
                 //Actualizar el producto
                 productoModel.Actualizar(producto);
-                //Mensaje de actualizacion exitoso
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " actualizado 😵');", true);
                 //Validar si hay archivos seleccionados
                 if (FileUpload_Control.HasFiles)
                 {
                     //Subir los archivos
                     subirArchivos();
                 }
-                Log("Producto actualizado");
                 regresar();
             }
-            Log("Producto: " + producto.ToString());
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

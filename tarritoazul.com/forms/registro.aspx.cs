@@ -2,13 +2,13 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
+using tarritoazul.com.Models;
 
 namespace tarritoazul.com.forms
 {
     public partial class registro : System.Web.UI.Page
     {
-        private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        private string SQLInsert;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,19 +16,14 @@ namespace tarritoazul.com.forms
 
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
-            String cotNombre, cotEmail, cotContrasena;
-            cotNombre = TbNombre.Text;
-            cotEmail = TbEmail.Text;
-            cotContrasena = TbContrasena.Text;
+            Registro registro = new Registro();
+            RegistroModel registroModel = new RegistroModel();
 
-            con.Open();
+            registro.Usuario = TbNombre.Text;
+            registro.Correo = TbEmail.Text;
+            registro.Contrasena = TbContrasena.Text;
 
-            SQLInsert = String.Format("insert into REGISTROS(usuario, correo, contrasena)" +
-            "values('{0}','{1}','{2}');", cotNombre, cotEmail, cotContrasena);
-
-            SqlCommand cmd = new SqlCommand(SQLInsert, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            registroModel.Insertar(registro);
 
             string script = "alert('Usuario registrado correctamente 👍');";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);

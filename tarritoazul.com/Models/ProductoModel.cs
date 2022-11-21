@@ -95,16 +95,15 @@ namespace tarritoazul.com.Models
                         p.Disponibilidad = (string)reader["disponibilidad"];
                         p.Id_Categoria = (int)reader["id_categoria"];
 
+                        con.Close();
                         return p;
                     }
                     else
                     {
+                        con.Close();
                         return null;
                     }
                 }
-
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
             }
             catch (SqlException ex)
             {
@@ -113,7 +112,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Insertar(Producto p) //insertar Producto a la BD y obtener el ID
+        public Producto Insertar(Producto p) //insertar Producto a la BD y obtener el ID
         {
             //Genera un codigo de producto a partir del nombre
             p.Codigo_producto = GenerateProductCode(p.Nombre);
@@ -132,10 +131,12 @@ namespace tarritoazul.com.Models
                 //Cerrar la coneccion con la BD si se encuentra abierta
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
+                return p;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return null;
             }
         }
 

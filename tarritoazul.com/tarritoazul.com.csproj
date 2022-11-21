@@ -157,26 +157,10 @@
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
-    <Content Include="ta.xsc">
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Content>
-    <None Include="ta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ta.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="ta.xss">
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -30,6 +30,8 @@ body {
     background-attachment: fixed;
 }
 
+/*Botones---------------------------------------------*/
+
 .btn {
     color: black;
     font-size: medium;
@@ -43,11 +45,30 @@ body {
     border-radius: 3px;
 }
 
-.btn-solid-green {
+.btn-primario {
     color: white;
     border-color: #628094;
     background-color: #628094; /* Green */
 }
+
+.btn-secundario {
+    color: white;
+    border-color: #628094;
+    background-color: #628094; /* Green */
+}
+
+.btn-peligro {
+    color: white;
+    border-color: #946262;
+    background-color: #946262; /* red */
+}
+
+.btn-exito {
+    color: white;
+    border-color: #946262;
+    background-color: #946262; /* red */
+}
+
 
 .btn-outline-green {
     color: #628094;
@@ -58,11 +79,7 @@ body {
     border-style: solid;
 }
 
-.btn-solid-red{
-    color: white;
-    border-color: #946262;
-    background-color: #946262; /* red */
-}
+
 
 .btn-outline-red {
     color: #946262;

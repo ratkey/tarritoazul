@@ -52,7 +52,7 @@ namespace tarritoazul.com.Models
         public string GetProductMedia(int id_producto)
         {
             string url = "";
-            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [PRODUCTOS] on PRODUCTOS.id_producto = MEDIA.id_producto and PRODUCTOS.id_producto = " + id_producto, con);
+            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [USUARIOS] on USUARUIOS.id_usuario = MEDIA.id_usuario and USUARIOS.id_usuario = " + id_usuario, con);
             try
             {
                 con.Open();
@@ -77,7 +77,7 @@ namespace tarritoazul.com.Models
         //Regresa un prodcuto de la BD basado en su id_producto
         public Producto SelectById(int id)
         {
-            SqlCommand command = new SqlCommand("Select * from [PRODUCTOS] where id_producto=@idp", con);
+            SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
             try
             {
@@ -86,17 +86,19 @@ namespace tarritoazul.com.Models
                 {
                     if (reader.Read())
                     {
-                        Producto p = new Producto();
-                        p.Id_Producto = (int)reader["id_producto"];
-                        p.Codigo_producto = (string)reader["codigo_producto"];
-                        p.Nombre = (string)reader["nombre"];
-                        p.Descripcion = (string)reader["descripcion"];
-                        p.Precio = float.Parse(reader["precio"].ToString());
-                        p.Cantidad = (int)reader["cantidad"];
-                        p.Disponibilidad = (string)reader["disponibilidad"];
-                        p.Id_Categoria = (int)reader["id_categoria"];
+                        Usuario p = new Usuario();
+                        p.Id_Usuario = (int)reader["id_usuario"];
+                        p.Nombre = (string)reader["nombre"]
+                        p.Ap_Paterno = (string)reader["ap_paterno"];
+                        p.Ap_Materno = (string)reader["ap_materno"];
+                        p.Telefono = (string)reader["telefono"];
+                        p.Fecha_Nacimiento = (string)reader["fecha_nacimiento"];
+                        p.Avatar_Img = (string)reader["avatar_img"];
+                        p.Id_Registro = (int)reader["id_registro"];
+                        Usuario.Add(p);
+                    }
 
-                        con.Close();
+                    con.Close();
                         return p;
                     }
                     else
@@ -113,13 +115,13 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public Producto Insertar(Producto p) //insertar Producto a la BD y obtener el ID
+        public Usuario Insertar(Usuario p) //insertar Producto a la BD y obtener el ID
         {
             //Genera un codigo de producto a partir del nombre
-            p.Codigo_producto = GenerateProductCode(p.Nombre);
+            p.Codigo_producto = GenerateusuarioCode(p.Nombre);
             //Definir la consulta
-            string SQLInsert = String.Format("insert into PRODUCTOS(codigo_producto, nombre, precio, cantidad, descripcion, disponibilidad, id_categoria) output INSERTED.id_producto " +
-            "values('{0}','{1}',{2},{3},'{4}','{5}',{6});", p.Codigo_producto, p.Nombre, p.Precio, p.Cantidad, p.Descripcion, p.Disponibilidad, p.Id_Categoria);
+            string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro) output INSERTED.id_producto " +
+            "values('{0}','{1}',{2},{3},'{4}','{5}',{6},{7});", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
@@ -128,7 +130,7 @@ namespace tarritoazul.com.Models
                 //Abrir la coneccion con la BD
                 con.Open();
                 //Ejecutar la insercion y obtener el ID generado
-                p.Id_Producto = (int)cmd.ExecuteScalar();
+                p.Id_Usuario = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
@@ -141,12 +143,11 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Actualizar(Producto p)
+        public void Actualizar(Usuario p)
         {
             //Definir la consulta
-            string SQLUpdate = String.Format("update PRODUCTOS " +
-                "set nombre='{0}', descripcion='{1}', precio={2}, cantidad={3}, disponibilidad='{4}', id_categoria={5} " +
-                "where id_producto={6};", p.Nombre, p.Descripcion, p.Precio, p.Cantidad, p.Disponibilidad, p.Id_Categoria, p.Id_Producto);
+            string SQLUpdate = String.Format("update USUARIOS " +
+                "set nombre='{0}', ap_paterno='{1}', ap_materno={2}, telefono={3}, fecha_nacimiento='{4}', avatar_img={5}, id_registro={6};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
@@ -166,10 +167,10 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Producto p)
+        public void Eliminar(Usuarios p)
         {
             //Definir la consulta
-            string SQLDelete = String.Format("delete from PRODUCTOS where id_producto = {0};", p.Id_Producto);
+            string SQLDelete = String.Format("delete from Usuarios where id_usuario = {0};", p.Id_Usuario);
 
             SqlCommand cmd = new SqlCommand(SQLDelete, con);
 

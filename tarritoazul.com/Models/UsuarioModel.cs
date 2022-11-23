@@ -12,7 +12,7 @@ namespace tarritoazul.com.Models
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los usuaio de la base de datos
-        public List<Usuario> GetAllProductos()
+        public List<Usuario> GetAllUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
             SqlCommand command = new SqlCommand("Select * from [USUARIO]", con);
@@ -188,24 +188,6 @@ namespace tarritoazul.com.Models
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        //Genera un codigo de producto a partir del nombre del producto + 5 letras random
-        public string GenerateusuarioCode(string nombre)
-        {
-            Random rnd = new Random();
-            nombre = nombre.ToUpper();
-            nombre = nombre.Replace(" ", "");
-            if (nombre.Length > 5)
-            {
-                nombre = nombre.Substring(0, 5);
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                int let = rnd.Next(65, 90);
-                nombre += (char)let;
-            }
-            return nombre;
         }
     }
 }

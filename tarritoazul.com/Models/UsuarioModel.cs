@@ -76,7 +76,7 @@ namespace tarritoazul.com.Models
             return url;
         }
 
-        //Regresa un prodcuto de la BD basado en su id_producto
+        //Regresa un prodcuto de la BD basado en su id_usuario
         public Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
@@ -114,7 +114,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public Usuario Insertar(Usuario p) //insertar Producto a la BD y obtener el ID
+        public Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
         {
             //Definir la consulta
             string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro) output INSERTED.id_usuario " +
@@ -144,7 +144,7 @@ namespace tarritoazul.com.Models
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update USUARIOS " +
-                "set nombre='{0}', ap_paterno='{1}', ap_materno={2}, telefono={3}, fecha_nacimiento='{4}', avatar_img={5}, id_registro={6};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
+                "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 

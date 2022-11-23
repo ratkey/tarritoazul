@@ -14,16 +14,17 @@ namespace tarritoazul.com
         {
             Usuario u = new Usuario();
             UsuarioModel m = new UsuarioModel();
+            
 
-            u.Nombre = "irvin";
-                   u.Ap_Paterno = "martinez";
-                u.Ap_Materno = "lamas";
-            u.Telefono = "3113537228";
+            u.Nombre = "irving";
+                   u.Ap_Paterno = "gonzalez";
+                u.Ap_Materno = "jimenes";
+            u.Telefono = "1111111111";
             u.Fecha_Nacimiento = "09/22/2003";
-            u.Avatar_Img = "foto.png";
+            u.Avatar_Img = "imagen.png";
             u.Id_Registro = 1;
 
-            m.Insertar(u);
+            m.Actualizar(u);  
 
 
         }

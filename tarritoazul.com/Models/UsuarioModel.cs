@@ -49,7 +49,7 @@ namespace tarritoazul.com.Models
         }
 
         //Cambiar este metodo al modelo MediaModel
-        public string GetProductMedia(int id_producto)
+        public string GetusuarioMedia(int id_usuario)
         {
             string url = "";
             SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [USUARIOS] on USUARUIOS.id_usuario = MEDIA.id_usuario and USUARIOS.id_usuario = " + id_usuario, con);
@@ -75,7 +75,7 @@ namespace tarritoazul.com.Models
         }
 
         //Regresa un prodcuto de la BD basado en su id_producto
-        public Producto SelectById(int id)
+        public Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
@@ -118,7 +118,7 @@ namespace tarritoazul.com.Models
         public Usuario Insertar(Usuario p) //insertar Producto a la BD y obtener el ID
         {
             //Genera un codigo de producto a partir del nombre
-            p.Codigo_producto = GenerateusuarioCode(p.Nombre);
+            p.Codigo_usuario = GenerateusuarioCode(p.Nombre);
             //Definir la consulta
             string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro) output INSERTED.id_producto " +
             "values('{0}','{1}',{2},{3},'{4}','{5}',{6},{7});", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
@@ -191,7 +191,7 @@ namespace tarritoazul.com.Models
         }
 
         //Genera un codigo de producto a partir del nombre del producto + 5 letras random
-        public string GenerateProductCode(string nombre)
+        public string GenerateusuarioCode(string nombre)
         {
             Random rnd = new Random();
             nombre = nombre.ToUpper();

@@ -12,10 +12,10 @@ namespace tarritoazul.com.Models
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los usuaio de la base de datos
-        public List<Producto> GetAllProductos()
+        public List<Usuario> GetAllProductos()
         {
-            List<Producto> usuarios = new List<Producto>();
-            SqlCommand command = new SqlCommand("Select * from [U]", con);
+            List<Usuario> usuarios = new List<Usuario>();
+            SqlCommand command = new SqlCommand("Select * from [USUARIO]", con);
             try
             {
                 con.Open();
@@ -23,23 +23,23 @@ namespace tarritoazul.com.Models
                 {
                     while (reader.Read())
                     {
-                        Producto p = new Producto();
-                        p.Id_Producto = (int)reader["id_producto"];
-                        p.Codigo_producto = (string)reader["codigo_producto"];
-                        p.Nombre = (string)reader["nombre"];
-                        p.Descripcion = (string)reader["descripcion"];
-                        p.Precio = float.Parse(reader["precio"].ToString());
-                        p.Cantidad = (int)reader["cantidad"];
-                        p.Disponibilidad = (string)reader["disponibilidad"];
-                        p.Id_Categoria = (int)reader["id_categoria"];
-                        productos.Add(p);
+                        Usuario p = new Usuario();
+                        p.Id_Usuario = (int)reader["id_usuario"];
+                        p.Nombre = (string)reader["nombre"]
+                        p.Ap_Paterno = (string)reader["ap_paterno"];
+                        p.Ap_Materno = (string)reader["ap_materno"];
+                        p.Telefono = (string)reader["telefono"];
+                        p.Fecha_Nacimiento = (string)reader["fecha_nacimiento"];
+                        p.Avatar_Img = (string)reader["avatar_img"];
+                        p.Id_Registro= (int)reader["id_registro"];
+                        Usuario.Add(p);
                     }
                 }
 
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
 
-                return productos;
+                return Usuario;
             }
             catch (SqlException ex)
             {

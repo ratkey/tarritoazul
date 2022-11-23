@@ -16,6 +16,7 @@ namespace tarritoazul.com.Models
 
         public int Id_Etiqueta { get; set; }
         public string Nombre { get; set; }
+        
 
         public void SelectById(int id_etiqueta)
         {

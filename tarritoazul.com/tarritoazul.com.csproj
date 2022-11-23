@@ -71,6 +71,7 @@
     <Content Include="forms\administracion.aspx" />
     <Content Include="forms\datosUsario.aspx" />
     <Content Include="forms\addProducto.aspx" />
+    <Content Include="forms\DetalleProducto.aspx" />
     <Content Include="forms\domicilio.aspx" />
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="forms\addProducto.aspx.designer.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.designer.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\domicilio.aspx.cs">
       <DependentUpon>domicilio.aspx</DependentUpon>

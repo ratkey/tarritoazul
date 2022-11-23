@@ -85,7 +85,7 @@
     <Content Include="imgs\producto\arete03.jpg" />
     <Content Include="imgs\producto\arete04.jpg" />
     <Content Include="imgs\producto\arete05.jpg" />
-    <Content Include="index.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\administracion.css" />
     <Content Include="styles\formulario.css" />
@@ -138,12 +138,12 @@
     <Compile Include="forms\registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -156,27 +156,12 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />
+    <Compile Include="Models\RegistroModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
-    <Content Include="ta.xsc">
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Content>
-    <None Include="ta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ta.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="ta.xss">
-      <DependentUpon>ta.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,22 +5,14 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class Etiqueta
+    public class RegistroModel
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        public Etiqueta()
+        public Registro SelectById(int id_registro)
         {
-            Id_Etiqueta = -1;
-        }
-
-        public int Id_Etiqueta { get; set; }
-        public string Nombre { get; set; }
-
-        public void SelectById(int id_etiqueta)
-        {
-            SqlCommand command = new SqlCommand("Select * from [ETIQUETAS] where Id_Etiqueta=@idp", con);
-            command.Parameters.AddWithValue("@idp", id_etiqueta);
+            SqlCommand command = new SqlCommand("Select * from [REGISTROS] where id_registro=@idp", con);
+            command.Parameters.AddWithValue("@idp", id_registro);
             try
             {
                 con.Open();
@@ -28,25 +20,33 @@ namespace tarritoazul.com.Models
                 {
                     if (reader.Read())
                     {
-                        Id_Etiqueta = (int)reader["id_etiqueta"];
-                        Nombre = (string)reader["nombre"];
+                        Registro r = new Registro();
+                        r.Id_Registro = (int)reader["id_registro"];
+                        r.Usuario = (string)reader["Usuario"];
+                        r.Correo = (string)reader["Correo"];
+                        r.Contrasena = (string)reader["Contrasena"];
+                        con.Close();
+                        return r;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return null;
                     }
                 }
-
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return null;
             }
         }
 
-        public void Insertar() //insertar Producto a la BD y obtener el ID
+        public Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID
         {
             //Definir la consulta
-            string SQLInsert = String.Format("insert into ETIQUETAS(nombre) output INSERTED.id_etiqueta " +
-            "values('{0}');", Nombre);
+            string SQLInsert = String.Format("insert into REGISTROS( usuario, correo, contrasena) output INSERTED.id_registro " +
+            "values('{0}','{1}','{2}');", r.Usuario, r.Correo, r.Contrasena);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
@@ -55,23 +55,24 @@ namespace tarritoazul.com.Models
                 //Abrir la coneccion con la BD
                 con.Open();
                 //Ejecutar la insercion y obtener el ID generado
-                Id_Etiqueta = (int)cmd.ExecuteScalar();
+                r.Id_Registro = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
+                return r;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return null;
             }
         }
 
-        public void Actualizar()
+        public void Actualizar(Registro r)
         {
             //Definir la consulta
-            string SQLUpdate = String.Format("update ETIQUETAS " +
-                "set nombre='{0}' " +
-                "where id_etiqueta={1};", Nombre, Id_Etiqueta);
+            string SQLUpdate = String.Format("update REGISTROS " +
+                "set usuario='{0}', correo='{1}', contrasena='{2}'" +
+                "where id_registro={3};", r.Usuario, r.Correo, r.Contrasena, r.Id_Registro);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
@@ -82,8 +83,7 @@ namespace tarritoazul.com.Models
                 //Ejecutar la instruccion
                 cmd.ExecuteNonQuery();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -91,10 +91,10 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar()
+        public void Eliminar(Registro r)
         {
             //Definir la consulta
-            string SQLDelete = String.Format("delete from ETIQUETAS where id_etiqueta = {0};", Id_Etiqueta);
+            string SQLDelete = String.Format("delete from REGISTROS where id_registro = {0};", r.Id_Registro);
 
             SqlCommand cmd = new SqlCommand(SQLDelete, con);
 
@@ -105,18 +105,12 @@ namespace tarritoazul.com.Models
                 //Ejecutar la instruccion
                 cmd.ExecuteNonQuery();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        public override string ToString()
-        {
-            return "id_etiqueta: " + Id_Etiqueta + " nombre: " + Nombre;
         }
     }
 }

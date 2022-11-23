@@ -78,7 +78,10 @@
                     <p>Fecha de nacimiento:</p>
                 </td>
                 <td>
-                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    <asp:TextBox ID="tbFechadenac" runat="server" TextMode="Date" ></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbFechadenac" ErrorMessage="Le fecha de nacimiento es un campo obligatorio" Text="*"></asp:RequiredFieldValidator>
                 </td>
 
             </tr>

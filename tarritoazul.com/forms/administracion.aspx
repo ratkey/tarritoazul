@@ -7,12 +7,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <h1>Productos
-        <asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="btn btn-solid-green" OnClick="btnAddProducto_Click" /></h1>
+        <asp:Button ID="btnAddProducto" runat="server" Text="Nuevo producto" CssClass="btn btn-primario" OnClick="btnAddProducto_Click" /></h1>
     <asp:GridView ID="productosGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" DataSourceID="productosDataSource" OnRowEditing="GridView1_RowEditing" CssClass="tabla" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowEditButton="True" ButtonType="Button" DeleteText="Eliminar" EditText="Editar" CancelText="Cancelar" ShowHeader="False" HeaderText="Controles">
-                <ControlStyle CssClass="btn btn-solid-orange"></ControlStyle>
+                <ControlStyle CssClass="btn btn-secundario"></ControlStyle>
             </asp:CommandField>
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />

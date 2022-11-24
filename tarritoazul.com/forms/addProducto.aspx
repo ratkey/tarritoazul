@@ -81,8 +81,8 @@
 
 
         <div class="botones">
-            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-solid-green btnGuardar" OnClick="btnGuardar_Click" />
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-solid-red btnEliminar" OnClick="btnEliminar_Click" />
+            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primario btnGuardar" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-peligro btnEliminar" OnClick="btnEliminar_Click" />
         </div>
 
 

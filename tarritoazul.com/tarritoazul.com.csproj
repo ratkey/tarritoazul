@@ -92,7 +92,7 @@
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\administracion.css" />
     <Content Include="styles\formulario.css" />
-    <Content Include="styles\index.css" />
+    <Content Include="styles\catalogo.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\registro.css" />
     <Content Include="styles\main.css" />

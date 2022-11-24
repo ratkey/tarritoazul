@@ -120,7 +120,7 @@
                 ErrorMessage="Debes a ceptar las condiciones de uso 👮‍♀️"
                 ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
         </p>
-        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" CssClass="btn btn-solid-green"/>
+        <asp:Button ID="BtContinuar" runat="server" Text="Continuar" OnClick="BtContinuar_Click" CssClass="btn btn-primario"/>
         <br />
         <p style="font-size: 12pt;">
             ¿Ya tienes una cuenta? <asp:HyperLink ID="linkIniciarSecionForm" runat="server" NavigateUrl="~/forms/login.aspx">Inicie Sesión</asp:HyperLink>

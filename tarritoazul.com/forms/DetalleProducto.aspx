@@ -31,9 +31,9 @@
           	 Text="*"
           	 runat="server"/>
                 <br /><br />
-                 <asp:Button ID="BtnAgregar" runat="server" Text="Agregar al carrito" CssClass="btn btn-solid-green" />
+                 <asp:Button ID="BtnAgregar" runat="server" Text="Agregar al carrito" CssClass="btn btn-primario" />
                 <br /><br />
-                 <asp:Button ID="BtnComprar" runat="server" Text="Comprar Ahora" CssClass="btn btn-solid-green" />
+                 <asp:Button ID="BtnComprar" runat="server" Text="Comprar Ahora" CssClass="btn btn-primario" />
             </td>
         </tr>
          <asp:ValidationSummary 

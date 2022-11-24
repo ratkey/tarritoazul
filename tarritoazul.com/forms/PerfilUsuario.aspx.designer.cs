@@ -15,76 +15,76 @@ namespace tarritoazul.com
     {
 
         /// <summary>
-        /// Control LbProducto.
+        /// Control LbNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbProducto;
+        protected global::System.Web.UI.WebControls.Label LbNombre;
 
         /// <summary>
-        /// Control LbPrecio.
+        /// Control LbApPaterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbPrecio;
+        protected global::System.Web.UI.WebControls.Label LbApPaterno;
 
         /// <summary>
-        /// Control LbDescripcion.
+        /// Control LbApMaterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbDescripcion;
+        protected global::System.Web.UI.WebControls.Label LbApMaterno;
 
         /// <summary>
-        /// Control LbCantidad.
+        /// Control LbNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbCantidad;
+        protected global::System.Web.UI.WebControls.Label LbNacimiento;
 
         /// <summary>
-        /// Control TbCantidad.
+        /// Control LbTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbCantidad;
+        protected global::System.Web.UI.WebControls.Label LbTelefono;
 
         /// <summary>
-        /// Control RangeCantidad.
+        /// Control LbCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeCantidad;
+        protected global::System.Web.UI.WebControls.Label LbCorreo;
 
         /// <summary>
-        /// Control BtnAgregar.
+        /// Control LbDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAgregar;
+        protected global::System.Web.UI.WebControls.Label LbDireccion;
 
         /// <summary>
-        /// Control BtnComprar.
+        /// Control BtnEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnComprar;
+        protected global::System.Web.UI.WebControls.Button BtnEditar;
 
         /// <summary>
         /// Control Summary.

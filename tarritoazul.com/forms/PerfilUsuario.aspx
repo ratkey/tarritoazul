@@ -7,33 +7,31 @@
             <td style="width: 350px;">
                 <%--Td de relleno para centrar la tabla pq no se--%>
             </td>
+            <tr>
             <%--td de la imagen--%>
             <td style="max-width: 150px; overflow: hidden;">
-                <iframe src="https://m.media-amazon.com/images/I/71fCb8S9dtL._SY500_.jpg" height="600" width="510"> </iframe>
+                <iframe src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6CYfo7p4XPPIU74i7cBTuirx751i1tnm0Xw5fND8Qad2Y6BYOYdapnDXlcQvFVru9mfA&usqp=CAU" height="250" width="200"> </iframe>
             </td>
 
             <%--td de los labels y botones--%>
             <td>
-                <asp:Label ID="LbProducto" runat="server" Text="AretesCoso"></asp:Label>
-                <br /> <br />
-                <asp:Label ID="LbPrecio" runat="server" Text="15$"></asp:Label>
-                <br /> <br />
-                <asp:Label ID="LbDescripcion" runat="server" Text="Aretes con forma de coso que huelen a lima"></asp:Label>
-                <br /> <br />
-                <asp:Label ID="LbCantidad" runat="server" Text="Cantidad:"></asp:Label>
-                <asp:TextBox ID="TbCantidad" runat="server" TextMode="Number" Text="1" width="10px"></asp:TextBox>
-	 <asp:RangeValidator id="RangeCantidad"
-          	 ControlToValidate="TbCantidad"
-          	 MinimumValue="0"
-          	 MaximumValue="999"
-          	 Type="Integer"
-          	 EnableClientScript="false"
-          	 Text="*"
-          	 runat="server"/>
+                <asp:Label ID="LbNombre" runat="server" Text="Nombre"></asp:Label>
+                
+                <asp:Label ID="LbApPaterno" runat="server" Text="Apellido1"></asp:Label>
+                
+                <asp:Label ID="LbApMaterno" runat="server" Text="Apellido2"></asp:Label>
                 <br /><br />
-                 <asp:Button ID="BtnAgregar" runat="server" Text="Agregar al carrito" CssClass="btn btn-solid-green" />
+                <asp:Label ID="LbNacimiento" runat="server" Text="Fecha de nacer"></asp:Label>
                 <br /><br />
-                 <asp:Button ID="BtnComprar" runat="server" Text="Comprar Ahora" CssClass="btn btn-solid-green" />
+                <asp:Label ID="LbTelefono" runat="server" Text="Fecha de telefono"></asp:Label>
+                <br /><br />
+                <asp:Label ID="LbCorreo" runat="server" Text="Fecha de email"></asp:Label>
+                <br /><br />
+                <asp:Label ID="LbDireccion" runat="server" Text="Dirección (recordemos que tener más de 3 direcciónes es motivo de demanda legal segun el articulo 56° de la constitución"></asp:Label>
+                <br /><br />
+                 <asp:Button ID="BtnEditar" runat="server" Text="Editar las fechas de mi perfil" CssClass="btn btn-solid-green" />
+                <br /><br />
+              
             </td>
         </tr>
         <asp:ValidationSummary 

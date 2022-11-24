@@ -16,7 +16,6 @@ namespace tarritoazul.com.Models
 {
     public class Media
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         public Media()
         {
@@ -24,7 +23,7 @@ namespace tarritoazul.com.Models
         }
 
         public int Id_Media { get; set; }
-        public string src_url { get; set; }
+        public string Src_Url { get; set; }
         public string Tipo { get; set; }
         public int Id_Producto { get; set; }
     }

@@ -2,36 +2,52 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Web;
-using System.Web.Services.Description;
-using System.Web.UI;
 using System.Windows.Forms;
-using tarritoazul.com.taTableAdapters;
 
 namespace tarritoazul.com.Models
 {
-    public class Media
+    public class MediaModel
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        public Media()
+        //obtiene toda la Media de la base de datos
+        public List<Media> GetAllMedia()
         {
-            Id_Media = -1;
+            List<Media> media = new List<Media>();
+            SqlCommand command = new SqlCommand("Select * from [MEDIA]", con);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Media p = new Media();
+                        p.Id_Media = (int)reader["id_media"];
+                        p.Src_Url = (string)reader["src_url"];
+                        p.Tipo = (string)reader["tipo"];
+                        p.Id_Producto = (int)reader["id_producto"];
+                        media.Add(p);
+                    }
+                }
+
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+
+                return media;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
-        public int Id_Media { get; set; }
-        public string src_url { get; set; }
-        public string Tipo { get; set; }
-        public int Id_Producto { get; set; }
-
-        public void SelectFromDB(int id_media)
+        //Cambiar este metodo al modelo MediaModel
+        public string GetProductMedia(int id_producto)
         {
-            SqlCommand command = new SqlCommand("Select * from [MEDIA] where id_media=@idm", con);
-            command.Parameters.AddWithValue("@idm", id_media);
+            string url = "";
+            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [PRODUCTOS] on PRODUCTOS.id_producto = MEDIA.id_producto and PRODUCTOS.id_producto = " + id_producto, con);
             try
             {
                 con.Open();
@@ -39,10 +55,7 @@ namespace tarritoazul.com.Models
                 {
                     if (reader.Read())
                     {
-                        Id_media = (int)reader["id_media"];
-                        src_url = (string)reader["src_url"];
-                        tipo = (string)reader["tipo"];
-                        id_producto = (int)reader["id_producto"];
+                        url = (string)reader["src_url"];
                     }
                 }
 
@@ -53,14 +66,49 @@ namespace tarritoazul.com.Models
             {
                 MessageBox.Show(ex.Message);
             }
+            return url;
         }
 
-        public void Insertar()
+        //Regresa una Media de la BD basado en su id_media
+        public Media SelectById(int id)
         {
+            SqlCommand command = new SqlCommand("Select * from [MEDIA] where id_media=@idm", con);
+            command.Parameters.AddWithValue("@idm", id);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Media p = new Media();
+                        p.Id_Media = (int)reader["id_media"];
+                        p.Src_Url = (string)reader["src_url"];
+                        p.Tipo = (string)reader["tipo"];
+                        p.Id_Producto = (int)reader["id_producto"];
 
+                        con.Close();
+                        return p;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public Media Insertar(Media p) //insertar Media a la BD y obtener el ID
+        {
             //Definir la consulta
-            string SQLInsert = String.Format("insert into MEDIA(src_url, tipo, id_producto) output INSERTED.id_media " +
-            "values('{0}','{1}','{2}','{3}');", src_url, tipo, id_producto);
+            string SQLInsert = String.Format("insert into Media(src_url, tipo, id_producto) output INSERTED.id_media  " +
+            "values('{0}','{1}','{2}','{3}');", p.Src_Url, p.Tipo, p.Id_Producto);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
@@ -69,23 +117,25 @@ namespace tarritoazul.com.Models
                 //Abrir la coneccion con la BD
                 con.Open();
                 //Ejecutar la insercion y obtener el ID generado
-                Id_media = (int)cmd.ExecuteScalar();
+                p.Id_Media = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
+                return p;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return null;
             }
         }
 
-        public void Actualizar()
+        public void Actualizar(Media p)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update MEDIA " +
-                "set src_url='{0}', tipo='{1}', id_producto={2}, " +
-                "where id_media={3};", src_url, tipo, id_producto);
+                 "set src_url='{0}', tipo='{1}', id_producto={2}, " +
+                 "where id_media={3};", p.Src_Url, p.Tipo, p.Id_Producto);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
@@ -105,10 +155,10 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar()
+        public void Eliminar(Media p)
         {
             //Definir la consulta
-            string SQLDelete = String.Format("delete from MEDIA where id_media = {0};", Id_media);
+            string SQLDelete = String.Format("delete from MEDIA where id_media = {0};", p.Id_Media);
 
             SqlCommand cmd = new SqlCommand(SQLDelete, con);
 
@@ -128,9 +178,5 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public string ToString()
-        {
-            return "id_media: " + Id_media + ", src_url: " + src_url + ", tipo: " + tipo + ", id_producto: " + id_producto;
-        }
     }
 }

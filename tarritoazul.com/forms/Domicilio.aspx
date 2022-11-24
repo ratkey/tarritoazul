@@ -97,7 +97,7 @@
                 <tr class="centrar">
                     <td>
                         <asp:Button ID="BtnGuardar" runat="server" Text="Guardar"
-                            CssClass="btn btn-solid-green btnGuardar" />
+                            CssClass="btn btn-primario btnGuardar" />
                     </td>
                     <td>
                         <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar"

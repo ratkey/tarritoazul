@@ -4,12 +4,16 @@
     --color1: #d1b0d3;
     /* Secundario */
     --color2: #a1c4c6;
-    /* Peligro */
+    /* Advertencia */
     --color3: #e0d5c5;
     /* Exito */
     --color4: #e7e7d9;
 
     --color5: #f8f9f9;
+
+
+    /* Peligro */
+    --color6: #f54b4b;
 }
 
 
@@ -69,9 +73,14 @@ body {
     background-color: var(--color2);
 }
 
-.btn-peligro {
+.btn-advertencia {
     color: white;
     background-color: var(--color3);
+}
+
+.btn-peligro {
+    color: white;
+    background-color: var(--color6);
 }
 
 .btn-exito {
@@ -106,7 +115,7 @@ input[type=file]::-webkit-file-upload-button {
     font-size: medium;
     border: none;
     color: white;
-    background-color: #628094; /* Green */
+    background-color: var(--color2); /* Green */
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;

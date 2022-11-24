@@ -17,7 +17,7 @@ namespace tarritoazul.com.Models
         public List<Usuario> GetAllUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
-            SqlCommand command = new SqlCommand("Select * from [USUARIO]", con);
+            SqlCommand command = new SqlCommand("Select * from [USUARIOS]", con);
             try
             {
                 con.Open();
@@ -31,7 +31,7 @@ namespace tarritoazul.com.Models
                         p.Ap_Paterno = (string)reader["ap_paterno"];
                         p.Ap_Materno = (string)reader["ap_materno"];
                         p.Telefono = (string)reader["telefono"];
-                        p.Fecha_Nacimiento = (string)reader["fecha_nacimiento"];
+                        p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
                         p.Id_Registro= (int)reader["id_registro"];
                         usuarios.Add(p);
@@ -50,33 +50,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        //Cambiar este metodo al modelo MediaModel
-        public string GetusuarioMedia(int id_usuario)
-        {
-            string url = "";
-            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [USUARIOS] on USUARUIOS.id_usuario = MEDIA.id_usuario and USUARIOS.id_usuario = " + id_usuario, con);
-            try
-            {
-                con.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        url = (string)reader["src_url"];
-                    }
-                }
-
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return url;
-        }
-
-        //Regresa un prodcuto de la BD basado en su id_usuario
+        //Regresa un usuario de la BD basado en su id_usuario
         public Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
@@ -94,7 +68,7 @@ namespace tarritoazul.com.Models
                         p.Ap_Paterno = (string)reader["ap_paterno"];
                         p.Ap_Materno = (string)reader["ap_materno"];
                         p.Telefono = (string)reader["telefono"];
-                        p.Fecha_Nacimiento = (string)reader["fecha_nacimiento"];
+                        p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
                         p.Id_Registro = (int)reader["id_registro"];
                         con.Close();

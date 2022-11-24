@@ -12,21 +12,12 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario u = new Usuario();
-            UsuarioModel m = new UsuarioModel();
-            
 
-            u.Nombre = "irving";
-                   u.Ap_Paterno = "gonzalez";
-                u.Ap_Materno = "jimenes";
-            u.Telefono = "1111111111";
-            u.Fecha_Nacimiento = "09/22/2003";
-            u.Avatar_Img = "imagen.png";
-            u.Id_Registro = 1;
+        }
 
-            m.Actualizar(u);  
-
-
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

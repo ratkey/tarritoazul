@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
-using tarritoazul.com.Models;
 
 namespace tarritoazul.com.Models
 {
@@ -33,7 +30,7 @@ namespace tarritoazul.com.Models
                         p.Telefono = (string)reader["telefono"];
                         p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
-                        p.Id_Registro= (int)reader["id_registro"];
+                        p.Id_Registro = (int)reader["id_registro"];
                         usuarios.Add(p);
                     }
                 }

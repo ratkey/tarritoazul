@@ -7,119 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tarritoazul.com
+namespace tarritoazul.com.forms
 {
 
 
-    public partial class MasterPage
+    public partial class DetalleProducto
     {
 
         /// <summary>
-        /// head control.
+        /// LbProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label LbProducto;
 
         /// <summary>
-        /// form1 control.
+        /// LbPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label LbPrecio;
 
         /// <summary>
-        /// imgLogo control.
+        /// LbDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
+        protected global::System.Web.UI.WebControls.Label LbDescripcion;
 
         /// <summary>
-        /// linkMarca control.
+        /// LbCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkMarca;
+        protected global::System.Web.UI.WebControls.Label LbCantidad;
 
         /// <summary>
-        /// linkInicio control.
+        /// TbCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkInicio;
+        protected global::System.Web.UI.WebControls.TextBox TbCantidad;
 
         /// <summary>
-        /// linkContacto control.
+        /// RangeCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkContacto;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeCantidad;
 
         /// <summary>
-        /// linkFAQs control.
+        /// BtnAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkFAQs;
+        protected global::System.Web.UI.WebControls.Button BtnAgregar;
 
         /// <summary>
-        /// linkCarrito control.
+        /// BtnComprar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkCarrito;
+        protected global::System.Web.UI.WebControls.Button BtnComprar;
 
         /// <summary>
-        /// btnAdmin control.
+        /// Summary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdmin;
-
-        /// <summary>
-        /// btnRegistrarse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrarse;
-
-        /// <summary>
-        /// btnIniciarSecion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIniciarSecion;
-
-        /// <summary>
-        /// Contenido control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Contenido;
+        protected global::System.Web.UI.WebControls.ValidationSummary Summary;
     }
 }

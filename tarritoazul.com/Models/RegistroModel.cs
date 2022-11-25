@@ -9,10 +9,11 @@ namespace tarritoazul.com.Models
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        public Registro SelectById(int id_registro)
+        //validar registro
+        public Registro validar_registro(string usuario, string contr)
         {
-            SqlCommand command = new SqlCommand("Select * from [REGISTROS] where id_registro=@idp", con);
-            command.Parameters.AddWithValue("@idp", id_registro);
+            string SQLSelect = "select * from REGISTROS where usuario='{0}' or correo='{1}' and contrasena='{2}'", usuario, usuario, contr;
+            SqlCommand command = new SqlCommand(SQLSelect, con);
             try
             {
                 con.Open();
@@ -22,24 +23,21 @@ namespace tarritoazul.com.Models
                     {
                         Registro r = new Registro();
                         r.Id_Registro = (int)reader["id_registro"];
-                        r.Usuario = (string)reader["Usuario"];
-                        r.Correo = (string)reader["Correo"];
-                        r.Contrasena = (string)reader["Contrasena"];
+                        r.Usuario = (string)reader["usuario"];
+                        r.Correo = (string)reader["correo"];
+                        r.Contrasena = (string)reader["contrasena"];
                         con.Close();
                         return r;
-                    }
-                    else
-                    {
-                        con.Close();
-                        return null;
                     }
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+
+            con.Close();
+            return null;
         }
 
         public Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID

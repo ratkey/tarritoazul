@@ -87,6 +87,8 @@
     <Content Include="imgs\producto\arete03.jpg" />
     <Content Include="imgs\producto\arete04.jpg" />
     <Content Include="imgs\producto\arete05.jpg" />
+    <Content Include="default.aspx" />
+    <Content Include="forms\PerfilUsuario.aspx" />
     <Content Include="MasterPage.Master" />
     <Content Include="prueba.aspx" />
     <Content Include="styles\addProducto.css" />
@@ -167,6 +169,13 @@
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\RegistroModel.cs" />
+    <Compile Include="forms\PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -70,7 +70,7 @@
   <ItemGroup>
     <Content Include="default.aspx" />
     <Content Include="forms\administracion.aspx" />
-    <Content Include="forms\datosUsario.aspx" />
+    <Content Include="forms\datosUsuario.aspx" />
     <Content Include="forms\addProducto.aspx" />
     <Content Include="forms\DetalleProducto.aspx" />
     <Content Include="forms\domicilio.aspx" />
@@ -115,12 +115,12 @@
     <Compile Include="forms\administracion.aspx.designer.cs">
       <DependentUpon>administracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\datosUsario.aspx.cs">
-      <DependentUpon>datosUsario.aspx</DependentUpon>
+    <Compile Include="forms\datosUsuario.aspx.cs">
+      <DependentUpon>datosUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\datosUsario.aspx.designer.cs">
-      <DependentUpon>datosUsario.aspx</DependentUpon>
+    <Compile Include="forms\datosUsuario.aspx.designer.cs">
+      <DependentUpon>datosUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\addProducto.aspx.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
@@ -165,6 +165,7 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Etiqueta.cs" />
+    <Compile Include="Models\LoginControler.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />

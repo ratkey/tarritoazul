@@ -8,7 +8,7 @@ namespace tarritoazul.com.Models
 {
     public class UsuarioModel
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los usuaio de la base de datos
         public List<Usuario> GetAllUsuarios()
@@ -51,6 +51,44 @@ namespace tarritoazul.com.Models
         public Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
+            command.Parameters.AddWithValue("@idp", id);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Usuario p = new Usuario();
+                        p.Id_Usuario = (int)reader["id_usuario"];
+                        p.Nombre = (string)reader["nombre"];
+                        p.Ap_Paterno = (string)reader["ap_paterno"];
+                        p.Ap_Materno = (string)reader["ap_materno"];
+                        p.Telefono = (string)reader["telefono"];
+                        p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
+                        p.Avatar_Img = (string)reader["avatar_img"];
+                        p.Id_Registro = (int)reader["id_registro"];
+                        con.Close();
+                        return p;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        //Regresa un usuario de la BD basado en su id_registro
+        public static Usuario SelectByRegistroId(int id)
+        {
+            SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_registro=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
             try
             {

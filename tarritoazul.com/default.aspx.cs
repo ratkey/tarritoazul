@@ -17,11 +17,32 @@ namespace tarritoazul.com
         private void FillPage()
         {
             //Obtiene una lista de todos los productos
-            ProductoModel productoModel = new ProductoModel();
-            List<Producto> productos = productoModel.GetAllProductos();
+            List<Producto> productos = ProductoModel.GetAllProductos();
+            LlenarCatalogo(productos);
             
-            //Asegurarse de que los productos existen en la BD
-            if (productos != null)
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            //vaciar el catalogo
+            pnlProductos.Controls.Clear();
+
+            string busqueda = tbBuscar.Text;
+
+            //Obtiene una lista de todos los productos
+            List<Producto> productos = ProductoModel.GetProductsByName(busqueda);
+            LlenarCatalogo(productos);
+        }
+
+        private void LlenarCatalogo(List<Producto> productos)
+        {
+            //Asegurarse de que haya productos en la lista
+            if (productos.Count > 0)
             {
                 //Crear un nuevo Panel con un ImageButton y 2 labels para cada producto
                 foreach (Producto producto in productos)
@@ -41,7 +62,7 @@ namespace tarritoazul.com
                     btnCarrito.CssClass = "boton";
 
                     //Obtener la primera imagen del producto
-                    string img = productoModel.GetProductMedia(producto.Id_Producto);
+                    string img = ProductoModel.GetProductMedia(producto.Id_Producto);
 
                     //Cambiar las propiedades de los controles
                     if (img != "")
@@ -82,9 +103,16 @@ namespace tarritoazul.com
             }
         }
 
-        public void Log(string msg)
+        protected void tbBuscar_TextChanged(object sender, EventArgs e)
         {
-            Page.Response.Write("<script>console.log('" + msg + "');</script>");
+            //vaciar el catalogo
+            pnlProductos.Controls.Clear();
+
+            string busqueda = tbBuscar.Text;
+
+            //Obtiene una lista de todos los productos
+            List<Producto> productos = ProductoModel.GetProductsByName(busqueda);
+            LlenarCatalogo(productos);
         }
     }
 }

@@ -7,13 +7,12 @@ namespace tarritoazul.com.Models
 {
     public class RegistroModel
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        //validar registro
-        public Registro validar_registro(string usuario, string contr)
+        public static Registro SelectById(int id_registro)
         {
-            string SQLSelect = "select * from REGISTROS where usuario='{0}' or correo='{1}' and contrasena='{2}'", usuario, usuario, contr;
-            SqlCommand command = new SqlCommand(SQLSelect, con);
+            SqlCommand command = new SqlCommand("Select * from [REGISTROS] where id_registro=@idp", con);
+            command.Parameters.AddWithValue("@idp", id_registro);
             try
             {
                 con.Open();
@@ -23,9 +22,9 @@ namespace tarritoazul.com.Models
                     {
                         Registro r = new Registro();
                         r.Id_Registro = (int)reader["id_registro"];
-                        r.Usuario = (string)reader["usuario"];
-                        r.Correo = (string)reader["correo"];
-                        r.Contrasena = (string)reader["contrasena"];
+                        r.Usuario = (string)reader["Usuario"];
+                        r.Correo = (string)reader["Correo"];
+                        r.Contrasena = (string)reader["Contrasena"];
                         con.Close();
                         return r;
                     }
@@ -35,12 +34,11 @@ namespace tarritoazul.com.Models
             {
                 MessageBox.Show(ex.Message);
             }
-
             con.Close();
             return null;
         }
 
-        public Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID
+        public static Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID
         {
             //Definir la consulta
             string SQLInsert = String.Format("insert into REGISTROS( usuario, correo, contrasena) output INSERTED.id_registro " +
@@ -65,7 +63,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Actualizar(Registro r)
+        public static void Actualizar(Registro r)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update REGISTROS " +
@@ -89,7 +87,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Registro r)
+        public static void Eliminar(Registro r)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from REGISTROS where id_registro = {0};", r.Id_Registro);

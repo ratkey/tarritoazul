@@ -17,13 +17,12 @@ namespace tarritoazul.com.forms
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro();
-            RegistroModel registroModel = new RegistroModel();
 
             registro.Usuario = TbNombre.Text;
             registro.Correo = TbEmail.Text;
             registro.Contrasena = TbContrasena.Text;
 
-            registroModel.Insertar(registro);
+            RegistroModel.Insertar(registro);
 
             string script = "alert('Usuario registrado correctamente 👍');";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);

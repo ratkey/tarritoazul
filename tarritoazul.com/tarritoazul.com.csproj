@@ -164,6 +164,7 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\CarritoControler.cs" />
     <Compile Include="Models\Etiqueta.cs" />
     <Compile Include="Models\LoginControler.cs" />
     <Compile Include="Models\Producto.cs" />

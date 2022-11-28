@@ -40,6 +40,8 @@ namespace tarritoazul.com
                     lblDescripcion.CssClass = "descripcion";
                     btnCarrito.CssClass = "boton";
 
+                    //btnCarrito.OnClientClick = " ";
+
                     //Obtener la primera imagen del producto
                     string img = productoModel.GetProductMedia(producto.Id_Producto);
 

@@ -107,7 +107,7 @@ namespace tarritoazul.com.Models
         public Media Insertar(Media p) //insertar Media a la BD y obtener el ID
         {
             //Definir la consulta
-            string SQLInsert = String.Format("insert into Media(src_url, tipo, id_producto) output INSERTED.id_media  " +
+            string SQLInsert = String.Format("insert into MEDIA(src_url, tipo, id_producto) output INSERTED.id_media  " +
             "values('{0}','{1}','{2}','{3}');", p.Src_Url, p.Tipo, p.Id_Producto);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
@@ -135,7 +135,7 @@ namespace tarritoazul.com.Models
             //Definir la consulta
             string SQLUpdate = String.Format("update MEDIA " +
                  "set src_url='{0}', tipo='{1}', id_producto={2}, " +
-                 "where id_media={3};", p.Src_Url, p.Tipo, p.Id_Producto);
+                 "where id_media={3};", p.Src_Url, p.Tipo, p.Id_Producto, p.Id_Media);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 

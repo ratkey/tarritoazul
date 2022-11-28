@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forms\ConfirmarPedido.aspx" />
     <Content Include="forms\administracion.aspx" />
     <Content Include="forms\datosUsario.aspx" />
     <Content Include="forms\addProducto.aspx" />
@@ -96,6 +97,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\ConfirmarPedido.aspx.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmarPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\administracion.aspx.cs">
       <DependentUpon>administracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

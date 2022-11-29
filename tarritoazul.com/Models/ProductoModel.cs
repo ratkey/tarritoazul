@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class ProductoModel
+    public static class ProductoModel
     {
         private static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        
+
         //obtiene todos los Prodctos de la base de datos
         public static List<Producto> GetAllProductos()
         {
@@ -34,17 +34,49 @@ namespace tarritoazul.com.Models
                         productos.Add(p);
                     }
                 }
-
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
-
-                return productos;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+
+            con.Close();
+            return productos;
+        }
+
+        //obtiene todos los Prodctos de la base de datos por nombre
+        public static List<Producto> GetProductsByName(string nombre)
+        {
+            List<Producto> productos = new List<Producto>();
+            string SQLSelect = string.Format("Select * from [PRODUCTOS] where nombre like '%{0}%'", nombre);
+            SqlCommand command = new SqlCommand(SQLSelect, con);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id_Producto = (int)reader["id_producto"];
+                        p.Codigo_producto = (string)reader["codigo_producto"];
+                        p.Nombre = (string)reader["nombre"];
+                        p.Descripcion = (string)reader["descripcion"];
+                        p.Precio = float.Parse(reader["precio"].ToString());
+                        p.Cantidad = (int)reader["cantidad"];
+                        p.Disponibilidad = (string)reader["disponibilidad"];
+                        p.Id_Categoria = (int)reader["id_categoria"];
+                        productos.Add(p);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            con.Close();
+            return productos;
         }
 
         //Cambiar este metodo al modelo MediaModel

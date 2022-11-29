@@ -165,6 +165,8 @@
     </Compile>
     <Compile Include="Models\CarritoControler.cs" />
     <Compile Include="Models\Etiqueta.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\MediaModel.cs" />
     <Compile Include="Models\LoginControler.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoModel.cs" />

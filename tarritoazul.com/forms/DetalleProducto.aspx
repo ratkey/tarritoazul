@@ -36,7 +36,7 @@
                     runat="server" />
                 <br />
                 <br />
-                <asp:Button ID="BtnAgregar" runat="server" Text="Agregar al carrito" CssClass="btn btn-primario" OnClick="BtnAgregar_Click" />
+                <asp:Button ID="BtnAgregar" runat="server" Text="Agregar al carrito" CssClass="btn btn-primario" OnClick="BtnAgregar_Click" CausesValidation="False" />
                 <br />
                 <br />
                 <asp:Button ID="BtnComprar" runat="server" Text="Comprar Ahora" CssClass="btn btn-primario" />

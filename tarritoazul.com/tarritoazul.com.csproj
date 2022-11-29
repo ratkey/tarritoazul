@@ -155,6 +155,7 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Etiqueta.cs" />
+    <Compile Include="Models\EtiquetaModel.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />

@@ -87,7 +87,6 @@
     <Content Include="imgs\producto\arete03.jpg" />
     <Content Include="imgs\producto\arete04.jpg" />
     <Content Include="imgs\producto\arete05.jpg" />
-    <Content Include="default.aspx" />
     <Content Include="forms\PerfilUsuario.aspx" />
     <Content Include="MasterPage.Master" />
     <Content Include="prueba.aspx" />

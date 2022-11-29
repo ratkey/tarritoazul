@@ -7,7 +7,7 @@
     /* Advertencia */
     --color3: #e0d5c5;
     /* Exito */
-    --color4: #e7e7d9;
+    --color4: #70e248;
 
     --color5: #f8f9f9;
 
@@ -100,6 +100,15 @@ body {
 .btn-outline-secundario {
     color: var(--color2);
     border-color: var(--color2);
+    background-color: transparent;
+    border: 2px;
+    padding: 8px 18px;
+    border-style: solid;
+}
+
+.btn-outline-exito {
+    color: var(--color4);
+    border-color: var(--color4);
     background-color: transparent;
     border: 2px;
     padding: 8px 18px;

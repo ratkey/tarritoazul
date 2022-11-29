@@ -15,40 +15,49 @@ namespace tarritoazul.com.forms
     {
 
         /// <summary>
-        /// LbProducto control.
+        /// imgProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbProducto;
+        protected global::System.Web.UI.WebControls.Image imgProducto;
 
         /// <summary>
-        /// LbPrecio control.
+        /// lbNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbPrecio;
+        protected global::System.Web.UI.WebControls.Label lbNombre;
 
         /// <summary>
-        /// LbDescripcion control.
+        /// lbPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbDescripcion;
+        protected global::System.Web.UI.WebControls.Label lbPrecio;
 
         /// <summary>
-        /// LbCantidad control.
+        /// lbDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbCantidad;
+        protected global::System.Web.UI.WebControls.Label lbDescripcion;
+
+        /// <summary>
+        /// lbCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbCantidad;
 
         /// <summary>
         /// TbCantidad control.

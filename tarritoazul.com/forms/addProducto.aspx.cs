@@ -13,7 +13,6 @@ namespace tarritoazul.com.forms
         private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         public static Producto producto = new Producto();
-        public static ProductoModel productoModel = new ProductoModel();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +23,7 @@ namespace tarritoazul.com.forms
                 {
                     Log("modificando");
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    producto = productoModel.SelectById(id);
+                    producto = ProductoModel.SelectById(id);
                     SetValuesFromModel();
                     Log("Producto: " + producto.ToString());
                 }
@@ -38,7 +37,7 @@ namespace tarritoazul.com.forms
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
-                productoModel.Insertar(producto);
+                ProductoModel.Insertar(producto);
                 //Subir los archivos del FileUpload control
                 subirArchivos();
                 regresar();
@@ -46,7 +45,7 @@ namespace tarritoazul.com.forms
             else //Si ya existe el producto
             {
                 //Actualizar el producto
-                productoModel.Actualizar(producto);
+                ProductoModel.Actualizar(producto);
                 //Validar si hay archivos seleccionados
                 if (FileUpload_Control.HasFiles)
                 {
@@ -61,7 +60,7 @@ namespace tarritoazul.com.forms
         {
             if (producto.Id_Producto > 0)
             {
-                productoModel.Eliminar(producto);
+                ProductoModel.Eliminar(producto);
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
                 regresar();

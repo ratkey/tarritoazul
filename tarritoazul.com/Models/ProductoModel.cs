@@ -8,10 +8,10 @@ namespace tarritoazul.com.Models
 {
     public class ProductoModel
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        private static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         
         //obtiene todos los Prodctos de la base de datos
-        public List<Producto> GetAllProductos()
+        public static List<Producto> GetAllProductos()
         {
             List<Producto> productos = new List<Producto>();
             SqlCommand command = new SqlCommand("Select * from [PRODUCTOS]", con);
@@ -48,7 +48,7 @@ namespace tarritoazul.com.Models
         }
 
         //Cambiar este metodo al modelo MediaModel
-        public string GetProductMedia(int id_producto)
+        public static string GetProductMedia(int id_producto)
         {
             string url = "";
             SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [PRODUCTOS] on PRODUCTOS.id_producto = MEDIA.id_producto and PRODUCTOS.id_producto = " + id_producto, con);
@@ -74,7 +74,7 @@ namespace tarritoazul.com.Models
         }
 
         //Regresa un prodcuto de la BD basado en su id_producto
-        public Producto SelectById(int id)
+        public static Producto SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [PRODUCTOS] where id_producto=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
@@ -112,7 +112,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public Producto Insertar(Producto p) //insertar Producto a la BD y obtener el ID
+        public static Producto Insertar(Producto p) //insertar Producto a la BD y obtener el ID
         {
             //Genera un codigo de producto a partir del nombre
             p.Codigo_producto = GenerateProductCode(p.Nombre);
@@ -140,7 +140,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Actualizar(Producto p)
+        public static void Actualizar(Producto p)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update PRODUCTOS " +
@@ -165,7 +165,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Producto p)
+        public static void Eliminar(Producto p)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from PRODUCTOS where id_producto = {0};", p.Id_Producto);
@@ -189,7 +189,7 @@ namespace tarritoazul.com.Models
         }
 
         //Genera un codigo de producto a partir del nombre del producto + 5 letras random
-        public string GenerateProductCode(string nombre)
+        public static string GenerateProductCode(string nombre)
         {
             Random rnd = new Random();
             nombre = nombre.ToUpper();

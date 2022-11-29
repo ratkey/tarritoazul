@@ -25,6 +25,7 @@ namespace tarritoazul.com.forms
             }
         }
 
+        //Pasar los atributos del producto al formulario
         private void SetValues(Producto p)
         {
             lbNombre.Text = p.Nombre;
@@ -32,7 +33,17 @@ namespace tarritoazul.com.forms
             lbDescripcion.Text = p.Descripcion;
 
             string img = ProductoModel.GetProductMedia(p.Id_Producto);
-            imgProducto.ImageUrl = "~/imgs/producto/" + img;
+            string imgurl = "~/imgs/producto/";
+            if (img != "")
+            {
+                imgurl += img;
+            }
+            else
+            {
+                imgurl += "placeholder.jpg";
+            }
+            Log(img);
+            imgProducto.ImageUrl = imgurl;
         }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)

@@ -34,9 +34,11 @@ namespace tarritoazul.com
                 btnCerrarSesion.Visible = false;
                 btnAdmin.Visible = false;
             }
-
+            
+            //Si hay elementos en el carrtio
             if (Session["carrito"] != null)
             {
+                //Obtener la lista de productos del carrito
                 List<Producto> listaCarrito = (List<Producto>)Session["carrito"];
                 Log("Productos en el carrito: " + listaCarrito.Count);
                 linkCarrito.Text = "🛒Carrito (" + listaCarrito.Count + ")";

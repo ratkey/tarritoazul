@@ -48,10 +48,10 @@ namespace tarritoazul.com.forms
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
+            //Agrega el producto al Session["carrito"]
             CarritoControler.AddProducto(producto);
+            //Recarga la pagina para que se actualice
             Response.Redirect(Request.Path);
-            //List<Producto> listaProd = (List<Producto>)Session["carrito"];
-            //Log("Carrito: " + listaProd.Count);
         }
 
         public void Log(string msg)

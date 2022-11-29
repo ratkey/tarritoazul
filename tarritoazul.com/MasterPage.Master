@@ -28,6 +28,29 @@
                 <asp:Image CssClass="logo" ID="imgLogo" runat="server" ImageUrl="~/imgs/logo.png" />
             </div>
 
+           
+
+
+
+
+       <%-- footer--------------------------------------------------%>
+             <footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     
             <%--Navigator----------------------------------------------%>
             <div id="navigator">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">

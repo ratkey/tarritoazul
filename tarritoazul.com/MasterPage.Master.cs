@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using tarritoazul.com.Models;
 
 namespace tarritoazul.com
@@ -33,6 +34,15 @@ namespace tarritoazul.com
                 btnCerrarSesion.Visible = false;
                 btnAdmin.Visible = false;
             }
+            
+            //Si hay elementos en el carrtio
+            if (Session["carrito"] != null)
+            {
+                //Obtener la lista de productos del carrito
+                List<Producto> listaCarrito = (List<Producto>)Session["carrito"];
+                Log("Productos en el carrito: " + listaCarrito.Count);
+                linkCarrito.Text = "🛒Carrito (" + listaCarrito.Count + ")";
+            }
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -42,6 +52,11 @@ namespace tarritoazul.com
             Session["usuario"] = null;
             //redireccionar a la pagina principal
             Response.Redirect("~/default.aspx");
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace tarritoazul.com.Models
 {
     public static class ProductoModel
     {
-        public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        private static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los Prodctos de la base de datos
         public static List<Producto> GetAllProductos()

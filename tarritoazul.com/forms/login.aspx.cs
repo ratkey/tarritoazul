@@ -11,7 +11,7 @@ namespace tarritoazul.com.forms
             string cotContr = TbContrasenia.Text;
 
             int id_registro = LoginControler.ValidarLogin(cotUser, cotContr);
-            if(id_registro != -1)
+            if (id_registro != -1)
             {
                 //Obtener el registro y guardarlo en la Session
                 Registro registro = RegistroControler.SelectById(id_registro);
@@ -19,7 +19,7 @@ namespace tarritoazul.com.forms
 
                 //Obtener el Usuario y guardarlo en la Session
                 Usuario usuario = UsuarioControler.SelectByRegistroId(id_registro);
-                if(usuario != null)
+                if (usuario != null)
                 {
                     Session["usuario"] = usuario;
                     Response.Redirect("~/default.aspx");
@@ -28,7 +28,6 @@ namespace tarritoazul.com.forms
                 {
                     Response.Redirect("~/forms/datosUsuario.aspx");
                 }
-
             }
             else
             {

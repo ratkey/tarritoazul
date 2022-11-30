@@ -112,18 +112,14 @@ namespace tarritoazul.com.Models
                         con.Close();
                         return p;
                     }
-                    else
-                    {
-                        con.Close();
-                        return null;
-                    }
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+            con.Close();
+            return null;
         }
 
         public static Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
@@ -157,7 +153,7 @@ namespace tarritoazul.com.Models
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update USUARIOS " +
-                "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6}, sexo='{7}' "+
+                "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6}, sexo='{7}' " +
                 " where id_usuario={8};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro, p.Sexo, p.Id_Usuario);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);

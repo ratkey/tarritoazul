@@ -1,17 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using tarritoazul.com.Models;
 
-namespace tarritoazul.com
+namespace tarritoazul.com.forms
 {
-    public partial class DatosUsuarios : System.Web.UI.Page
+    public partial class addUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void btGuardar_Click(object sender, EventArgs e)
         {
-            if(Session["registro"] != null)
+            if (Session["registro"] != null)
             {
                 Registro r = (Registro)Session["registro"];
                 Usuario u = new Usuario();
@@ -23,7 +29,7 @@ namespace tarritoazul.com
                 u.Fecha_Nacimiento = tbFechadenac.Text;
                 u.Telefono = tbTelefono.Text;
                 u.Id_Registro = r.Id_Registro;
-                
+
                 UsuarioControler.Insertar(u);
                 Session["usuario"] = u;
             }

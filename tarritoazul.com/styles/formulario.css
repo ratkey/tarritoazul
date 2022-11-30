@@ -8,7 +8,7 @@
     color: red;
 }
 
-.formulario, .formulario-narrow {
+.formulario {
     display: grid;
     justify-content: center;
 }

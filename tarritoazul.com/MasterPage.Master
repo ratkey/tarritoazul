@@ -1,6 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="tarritoazul.com.MasterPage" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 
 <html>
 <head runat="server">
@@ -34,22 +42,28 @@
 
 
        <%-- footer--------------------------------------------------%>
-             <footer>
+         <footer>
+        <strong>Domocilio:</strong>Carretera Federal 200 Km:9<br />
+        <strong>Ciudad:</strong>Xalisco,Nayarit <br />
+        <strong>Telefono:</strong>3113524940<br />
+             <br />
+
+
+
+                    Aretes artesenales con compras totalmente online
+              
+                <br />
+             para mas informacion
+                     ver <a href="https://instagram.com/tarrito_azul?igshid=YmMyMTA2M2Y=">Tarrito_azul </a>
+            </blockquote>
+        </div>
+        <br /><br />
+        <br />
+    </footer>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
      
             <%--Navigator----------------------------------------------%>
             <div id="navigator">

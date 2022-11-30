@@ -172,17 +172,17 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Domicilio.cs" />
-    <Compile Include="Controlers\DomicilioModel.cs" />
+    <Compile Include="Controlers\DomicilioControler.cs" />
     <Compile Include="Controlers\CarritoControler.cs" />
     <Compile Include="Models\Etiqueta.cs" />
-    <Compile Include="Controlers\EtiquetaModel.cs" />
+    <Compile Include="Controlers\EtiquetaControler.cs" />
     <Compile Include="Models\Media.cs" />
-    <Compile Include="Controlers\MediaModel.cs" />
+    <Compile Include="Controlers\MediaControler.cs" />
     <Compile Include="Controlers\LoginControler.cs" />
     <Compile Include="Models\Producto.cs" />
-    <Compile Include="Controlers\ProductoModel.cs" />
+    <Compile Include="Controlers\ProductoControler.cs" />
     <Compile Include="Models\Registro.cs" />
-    <Compile Include="Controlers\RegistroModel.cs" />
+    <Compile Include="Controlers\RegistroControler.cs" />
     <Compile Include="forms\PerfilUsuario.aspx.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,7 +191,7 @@
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Controlers\UsuarioModel.cs" />
+    <Compile Include="Controlers\UsuarioControler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="prueba.aspx.cs">
       <DependentUpon>prueba.aspx</DependentUpon>

@@ -22,7 +22,7 @@ namespace tarritoazul.com.forms
             registro.Correo = TbEmail.Text;
             registro.Contrasena = TbContrasena.Text;
 
-            RegistroModel.Insertar(registro);
+            RegistroControler.Insertar(registro);
 
             string script = "alert('Usuario registrado correctamente 👍');";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);

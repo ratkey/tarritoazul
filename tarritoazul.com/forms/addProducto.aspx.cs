@@ -23,7 +23,7 @@ namespace tarritoazul.com.forms
                 {
                     Log("modificando");
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    producto = ProductoModel.SelectById(id);
+                    producto = ProductoControler.SelectById(id);
                     SetValuesFromModel();
                     Log("Producto: " + producto.ToString());
                 }
@@ -37,7 +37,7 @@ namespace tarritoazul.com.forms
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
-                ProductoModel.Insertar(producto);
+                ProductoControler.Insertar(producto);
                 //Subir los archivos del FileUpload control
                 subirArchivos();
                 regresar();
@@ -45,7 +45,7 @@ namespace tarritoazul.com.forms
             else //Si ya existe el producto
             {
                 //Actualizar el producto
-                ProductoModel.Actualizar(producto);
+                ProductoControler.Actualizar(producto);
                 //Validar si hay archivos seleccionados
                 if (FileUpload_Control.HasFiles)
                 {
@@ -60,7 +60,7 @@ namespace tarritoazul.com.forms
         {
             if (producto.Id_Producto > 0)
             {
-                ProductoModel.Eliminar(producto);
+                ProductoControler.Eliminar(producto);
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
                 regresar();

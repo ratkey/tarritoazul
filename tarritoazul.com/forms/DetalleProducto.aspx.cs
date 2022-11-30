@@ -19,7 +19,7 @@ namespace tarritoazul.com.forms
                 if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
                 {
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    producto = ProductoModel.SelectById(id);
+                    producto = ProductoControler.SelectById(id);
                     SetValues(producto);
                 }
             }
@@ -32,7 +32,7 @@ namespace tarritoazul.com.forms
             lbPrecio.Text = p.Precio.ToString();
             lbDescripcion.Text = p.Descripcion;
 
-            string img = ProductoModel.GetProductMedia(p.Id_Producto);
+            string img = ProductoControler.GetProductMedia(p.Id_Producto);
             string imgurl = "~/imgs/producto/";
             if (img != "")
             {

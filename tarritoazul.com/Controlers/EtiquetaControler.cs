@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class EtiquetaModel
+    public class EtiquetaControler
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
         //obtiene todos los Prodctos de la base de datos

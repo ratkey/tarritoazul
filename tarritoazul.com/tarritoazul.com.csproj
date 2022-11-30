@@ -68,10 +68,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forms\ConfirmarPedido.aspx" />
     <Content Include="default.aspx" />
     <Content Include="forms\administracion.aspx" />
-    <Content Include="forms\datosUsario.aspx" />
+    <Content Include="forms\datosUsuario.aspx" />
     <Content Include="forms\addProducto.aspx" />
+    <Content Include="forms\DetalleProducto.aspx" />
     <Content Include="forms\domicilio.aspx" />
     <Content Include="forms\login.aspx" />
     <Content Include="forms\registro.aspx" />
@@ -86,18 +88,26 @@
     <Content Include="imgs\producto\arete03.jpg" />
     <Content Include="imgs\producto\arete04.jpg" />
     <Content Include="imgs\producto\arete05.jpg" />
+    <Content Include="forms\PerfilUsuario.aspx" />
     <Content Include="MasterPage.Master" />
     <Content Include="prueba.aspx" />
     <Content Include="styles\addProducto.css" />
     <Content Include="styles\administracion.css" />
     <Content Include="styles\formulario.css" />
-    <Content Include="styles\index.css" />
+    <Content Include="styles\catalogo.css" />
     <Content Include="styles\login.css" />
     <Content Include="styles\registro.css" />
     <Content Include="styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\ConfirmarPedido.aspx.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmarPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,12 +122,12 @@
     <Compile Include="forms\administracion.aspx.designer.cs">
       <DependentUpon>administracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\datosUsario.aspx.cs">
-      <DependentUpon>datosUsario.aspx</DependentUpon>
+    <Compile Include="forms\datosUsuario.aspx.cs">
+      <DependentUpon>datosUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\datosUsario.aspx.designer.cs">
-      <DependentUpon>datosUsario.aspx</DependentUpon>
+    <Compile Include="forms\datosUsuario.aspx.designer.cs">
+      <DependentUpon>datosUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\addProducto.aspx.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
@@ -125,6 +135,13 @@
     </Compile>
     <Compile Include="forms\addProducto.aspx.designer.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.designer.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\domicilio.aspx.cs">
       <DependentUpon>domicilio.aspx</DependentUpon>
@@ -154,12 +171,26 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\CarritoControler.cs" />
     <Compile Include="Models\Etiqueta.cs" />
+
     <Compile Include="Models\EtiquetaModel.cs" />
+
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\MediaModel.cs" />
+    <Compile Include="Models\LoginControler.cs" />
+
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\RegistroModel.cs" />
+    <Compile Include="forms\PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

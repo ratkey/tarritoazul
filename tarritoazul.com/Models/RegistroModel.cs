@@ -7,9 +7,9 @@ namespace tarritoazul.com.Models
 {
     public class RegistroModel
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        public Registro SelectById(int id_registro)
+        public static Registro SelectById(int id_registro)
         {
             SqlCommand command = new SqlCommand("Select * from [REGISTROS] where id_registro=@idp", con);
             command.Parameters.AddWithValue("@idp", id_registro);
@@ -28,21 +28,17 @@ namespace tarritoazul.com.Models
                         con.Close();
                         return r;
                     }
-                    else
-                    {
-                        con.Close();
-                        return null;
-                    }
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+            con.Close();
+            return null;
         }
 
-        public Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID
+        public static Registro Insertar(Registro r) //insertar Registro a la BD y obtener el ID
         {
             //Definir la consulta
             string SQLInsert = String.Format("insert into REGISTROS( usuario, correo, contrasena) output INSERTED.id_registro " +
@@ -67,7 +63,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Actualizar(Registro r)
+        public static void Actualizar(Registro r)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update REGISTROS " +
@@ -91,7 +87,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Registro r)
+        public static void Eliminar(Registro r)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from REGISTROS where id_registro = {0};", r.Id_Registro);

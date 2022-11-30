@@ -40,7 +40,7 @@
             </tr>
         </table>
         <br />
-        <asp:Button ID="BtLogin" runat="server" Text="Iniciar sesión" CssClass="btn btn-solid-green" />
+        <asp:Button ID="BtLogin" runat="server" Text="Iniciar sesión" CssClass="btn btn-primario" />
         <br />
         <p style="font-size: 12pt;">
             ¿Aún no tienes una cuenta?

@@ -7,101 +7,146 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace tarritoazul.com.forms
+namespace tarritoazul.com
 {
 
 
-    public partial class login
+    public partial class ConfirmarPedido
     {
 
         /// <summary>
-        /// Control LbUsuario.
+        /// Control LbNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbUsuario;
+        protected global::System.Web.UI.WebControls.Label LbNombre;
 
         /// <summary>
-        /// Control TbUsuario.
+        /// Control LbDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbUsuario;
+        protected global::System.Web.UI.WebControls.Label LbDescripcion;
 
         /// <summary>
-        /// Control RfvUsuario.
+        /// Control LbPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvUsuario;
+        protected global::System.Web.UI.WebControls.Label LbPrecio;
 
         /// <summary>
-        /// Control RevUsuario.
+        /// Control LbCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevUsuario;
+        protected global::System.Web.UI.WebControls.Label LbCP;
 
         /// <summary>
-        /// Control LbContrasenia.
+        /// Control LbColonia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbContrasenia;
+        protected global::System.Web.UI.WebControls.Label LbColonia;
 
         /// <summary>
-        /// Control TbContrasenia.
+        /// Control LbCalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbContrasenia;
+        protected global::System.Web.UI.WebControls.Label LbCalle;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control LbExt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label LbExt;
 
         /// <summary>
-        /// Control RegularExpressionValidator1.
+        /// Control LbCalle1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.Label LbCalle1;
 
         /// <summary>
-        /// Control BtLogin.
+        /// Control LbCalle2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtLogin;
+        protected global::System.Web.UI.WebControls.Label LbCalle2;
 
         /// <summary>
-        /// Control linkIniciarSecionForm.
+        /// Control LbDescripcionDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkIniciarSecionForm;
+        protected global::System.Web.UI.WebControls.Label LbDescripcionDomicilio;
+
+        /// <summary>
+        /// Control LbMunicipio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbMunicipio;
+
+        /// <summary>
+        /// Control LbEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbEstado;
+
+        /// <summary>
+        /// Control LbNombreCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbNombreCliente;
+
+        /// <summary>
+        /// Control LbTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbTelefono;
+
+        /// <summary>
+        /// Control BtnComprar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnComprar;
     }
 }

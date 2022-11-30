@@ -7,101 +7,92 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace tarritoazul.com.forms
+namespace tarritoazul.com
 {
 
 
-    public partial class login
+    public partial class PerfilUsuario
     {
 
         /// <summary>
-        /// Control LbUsuario.
+        /// Control LbNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbUsuario;
+        protected global::System.Web.UI.WebControls.Label LbNombre;
 
         /// <summary>
-        /// Control TbUsuario.
+        /// Control LbApPaterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbUsuario;
+        protected global::System.Web.UI.WebControls.Label LbApPaterno;
 
         /// <summary>
-        /// Control RfvUsuario.
+        /// Control LbApMaterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvUsuario;
+        protected global::System.Web.UI.WebControls.Label LbApMaterno;
 
         /// <summary>
-        /// Control RevUsuario.
+        /// Control LbNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevUsuario;
+        protected global::System.Web.UI.WebControls.Label LbNacimiento;
 
         /// <summary>
-        /// Control LbContrasenia.
+        /// Control LbTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbContrasenia;
+        protected global::System.Web.UI.WebControls.Label LbTelefono;
 
         /// <summary>
-        /// Control TbContrasenia.
+        /// Control LbCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbContrasenia;
+        protected global::System.Web.UI.WebControls.Label LbCorreo;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control LbDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label LbDireccion;
 
         /// <summary>
-        /// Control RegularExpressionValidator1.
+        /// Control BtnEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.Button BtnEditar;
 
         /// <summary>
-        /// Control BtLogin.
+        /// Control Summary.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtLogin;
-
-        /// <summary>
-        /// Control linkIniciarSecionForm.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkIniciarSecionForm;
+        protected global::System.Web.UI.WebControls.ValidationSummary Summary;
     }
 }

@@ -11,224 +11,188 @@ namespace tarritoazul.com.forms
 {
 
 
-    public partial class registro
+    public partial class Domicilio
     {
 
         /// <summary>
-        /// LbNombre control.
+        /// RfvEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvEstado;
 
         /// <summary>
-        /// RequiredNombre control.
+        /// TbEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredNombre;
+        protected global::System.Web.UI.WebControls.TextBox TbEstado;
 
         /// <summary>
-        /// RegularNombre control.
+        /// RfvMunicipio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvMunicipio;
 
         /// <summary>
-        /// TbNombre control.
+        /// TbMunicipio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbNombre;
+        protected global::System.Web.UI.WebControls.TextBox TbMunicipio;
 
         /// <summary>
-        /// LbEmail control.
+        /// RfvCalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle;
 
         /// <summary>
-        /// RequiredEmail control.
+        /// TbCalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmail;
+        protected global::System.Web.UI.WebControls.TextBox TbCalle;
 
         /// <summary>
-        /// RevEmail control.
+        /// RfvCalle1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle1;
 
         /// <summary>
-        /// TbEmail control.
+        /// TbCalle1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbEmail;
+        protected global::System.Web.UI.WebControls.TextBox TbCalle1;
 
         /// <summary>
-        /// LbConfirmarEmail control.
+        /// RfvCalle2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbConfirmarEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCalle2;
 
         /// <summary>
-        /// RequiredConfirmarEmail control.
+        /// TbCalle2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmarEmail;
+        protected global::System.Web.UI.WebControls.TextBox TbCalle2;
 
         /// <summary>
-        /// RevConfirmarEmail control.
+        /// TbNumInt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevConfirmarEmail;
+        protected global::System.Web.UI.WebControls.TextBox TbNumInt;
 
         /// <summary>
-        /// CompareEmail control.
+        /// RfvNumExt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvNumExt;
 
         /// <summary>
-        /// TbConfirmarEmail control.
+        /// TbNumExt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbConfirmarEmail;
+        protected global::System.Web.UI.WebControls.TextBox TbNumExt;
 
         /// <summary>
-        /// LbContrasena control.
+        /// RfvCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbContrasena;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCP;
 
         /// <summary>
-        /// RequiredContrasena control.
+        /// RevCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredContrasena;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevCP;
 
         /// <summary>
-        /// TbContrasena control.
+        /// TbCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbContrasena;
+        protected global::System.Web.UI.WebControls.TextBox TbCP;
 
         /// <summary>
-        /// LbConfirmarContraseña control.
+        /// RfvDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbConfirmarContraseña;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvDesc;
 
         /// <summary>
-        /// RequiredConfirmarContrasena control.
+        /// TbDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredConfirmarContrasena;
+        protected global::System.Web.UI.WebControls.TextBox TbDesc;
 
         /// <summary>
-        /// CompareContrasena control.
+        /// BtnGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareContrasena;
+        protected global::System.Web.UI.WebControls.Button BtnGuardar;
 
         /// <summary>
-        /// TbConfirmarContrasena control.
+        /// BtnEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbConfirmarContrasena;
-
-        /// <summary>
-        /// Cbprivacidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Cbprivacidad;
-
-        /// <summary>
-        /// CustomValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
-
-        /// <summary>
-        /// BtContinuar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtContinuar;
-
-        /// <summary>
-        /// linkIniciarSecionForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkIniciarSecionForm;
+        protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
         /// <summary>
         /// summary control.

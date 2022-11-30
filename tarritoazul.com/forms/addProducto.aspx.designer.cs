@@ -15,15 +15,6 @@ namespace tarritoazul.com.forms
     {
 
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// tbNombre control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbNombre;
+
+        /// <summary>
+        /// RequiredNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredNombre;
 
         /// <summary>
         /// tbDescripcion control.
@@ -42,6 +42,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
 
         /// <summary>
+        /// RequiredDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredDescripcion;
+
+        /// <summary>
         /// tbPrecio control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,24 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.TextBox tbPrecio;
 
         /// <summary>
+        /// RegularPrecio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularPrecio;
+
+        /// <summary>
+        /// RequiredPrecio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPrecio;
+
+        /// <summary>
         /// tbCantidad control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,24 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbCantidad;
+
+        /// <summary>
+        /// RegularCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularCantidad;
+
+        /// <summary>
+        /// RequiredCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredCantidad;
 
         /// <summary>
         /// ddlDisponibilidad control.
@@ -157,6 +202,15 @@ namespace tarritoazul.com.forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label FileUploadStatus;
+
+        /// <summary>
+        /// summary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary summary;
 
         /// <summary>
         /// CategoriasConnectionString control.

@@ -1,72 +1,76 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using tarritoazul.com.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Page = System.Web.UI.Page;
 
 namespace tarritoazul.com.forms
 {
     public partial class addProducto : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+        private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         public static Producto producto = new Producto();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //pbStatus.Visible = false;
+            if (!IsPostBack)
+            {
+                //Revisar si la url contiene el parametro id
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
+                {
+                    Log("modificando");
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    producto = ProductoModel.SelectById(id);
+                    SetValuesFromModel();
+                    Log("Producto: " + producto.ToString());
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             GetValuesFromForm();
-            //Si no existe el producto
+
             if (producto.Id_Producto == -1)
             {
                 //Insertar producto nuevo en la base de datos
-                producto.Insertar();
+                ProductoModel.Insertar(producto);
                 //Subir los archivos del FileUpload control
                 subirArchivos();
-                //Mensaje de registro exitoso
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " registrado 😁');", true);
+                regresar();
             }
             else //Si ya existe el producto
             {
                 //Actualizar el producto
-                producto.Actualizar();
-                //Mensaje de actualizacion exitoso
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " actualizado 😵');", true);
+                ProductoModel.Actualizar(producto);
                 //Validar si hay archivos seleccionados
                 if (FileUpload_Control.HasFiles)
                 {
                     //Subir los archivos
                     subirArchivos();
                 }
-                Log("Producto actualizado");
+                regresar();
             }
-            Log("Producto: " + producto.ToString());
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             if (producto.Id_Producto > 0)
             {
-                producto.Eliminar();
+                ProductoModel.Eliminar(producto);
                 //Mensaje de registro exitoso
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", "alert('Producto: " + producto.Nombre + " eliminado 💥');", true);
-                producto = new Producto();
-                CleanForm();
+                regresar();
             }
+        }
+
+        protected void regresar()
+        {
+            producto = new Producto();
+            Response.Redirect("~/forms/administracion.aspx");
         }
 
         //Pasa los valores del formulario al objeto producto
@@ -81,7 +85,8 @@ namespace tarritoazul.com.forms
         }
 
         //Pasa los valores del objeto producto al formulario
-        protected void SetValuesFromModel() {
+        protected void SetValuesFromModel()
+        {
             tbNombre.Text = producto.Nombre;
             tbDescripcion.Text = producto.Descripcion;
             tbPrecio.Text = producto.Precio.ToString();

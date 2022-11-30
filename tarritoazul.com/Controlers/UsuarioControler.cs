@@ -11,7 +11,7 @@ namespace tarritoazul.com.Models
         public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los usuaio de la base de datos
-        public List<Usuario> GetAllUsuarios()
+        public static List<Usuario> GetAllUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
             SqlCommand command = new SqlCommand("Select * from [USUARIOS]", con);
@@ -49,7 +49,7 @@ namespace tarritoazul.com.Models
         }
 
         //Regresa un usuario de la BD basado en su id_usuario
-        public Usuario SelectById(int id)
+        public static Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
@@ -126,7 +126,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
+        public static Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
         {
             //Definir la consulta
             string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro, sexo) output INSERTED.id_usuario " +
@@ -152,7 +152,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Actualizar(Usuario p)
+        public static void Actualizar(Usuario p)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update USUARIOS " +
@@ -177,7 +177,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Usuario p)
+        public static void Eliminar(Usuario p)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from Usuarios where id_usuario = {0};", p.Id_Usuario);

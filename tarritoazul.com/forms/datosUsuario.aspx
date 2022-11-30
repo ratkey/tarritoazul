@@ -43,7 +43,6 @@
                     <asp:TextBox ID="tbMaterno" runat="server" Width="300px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredMaterno" runat="server" ControlToValidate="tbMaterno" ErrorMessage="-El apellido materno es campo obligatorio" Text="*"></asp:RequiredFieldValidator><br />
                     <asp:RegularExpressionValidator ID="RegMaterno" runat="server" ControlToValidate="tbMaterno" ErrorMessage="-El  apellido materno solo puede contener letras y espacio en blanco" Text="*" ValidationExpression="^[a-zA-Z\s]*$"></asp:RegularExpressionValidator><br />
                 </td>
             </tr>
@@ -78,7 +77,7 @@
                     <p>Fecha de nacimiento:</p>
                 </td>
                 <td>
-                    <asp:TextBox ID="tbFechadenac" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="tbFechadenac" runat="server" TextMode="Date" ></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbFechadenac" ErrorMessage="Le fecha de nacimiento es un campo obligatorio" Text="*"></asp:RequiredFieldValidator>
@@ -89,7 +88,7 @@
 
 
                 <td>
-                    <asp:Button ID="btGuardar" runat="server" Text="Guardar" OnClick="btGuardar_Click" />
+                    <asp:Button ID="btGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
         </table>

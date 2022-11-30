@@ -23,8 +23,13 @@ namespace tarritoazul.com.forms
             registro.Contrasena = TbContrasena.Text;
 
             RegistroControler.Insertar(registro);
-
+            Session["registro"] = registro;
             Response.Redirect("~/forms/datosUsuario.aspx");
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

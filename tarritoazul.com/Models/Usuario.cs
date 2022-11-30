@@ -20,6 +20,7 @@ namespace tarritoazul.com.Models
         public string Fecha_Nacimiento { get; set; }
         public string Avatar_Img { get; set; }
         public int Id_Registro { get; set; }
+        public string Sexo { get; set; }
 
         public override string ToString()
         {

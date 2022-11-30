@@ -43,7 +43,6 @@
                     <asp:TextBox ID="tbMaterno" runat="server" Width="300px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredMaterno" runat="server" ControlToValidate="tbMaterno" ErrorMessage="-El apellido materno es campo obligatorio" Text="*"></asp:RequiredFieldValidator><br />
                     <asp:RegularExpressionValidator ID="RegMaterno" runat="server" ControlToValidate="tbMaterno" ErrorMessage="-El  apellido materno solo puede contener letras y espacio en blanco" Text="*" ValidationExpression="^[a-zA-Z\s]*$"></asp:RegularExpressionValidator><br />
                 </td>
             </tr>
@@ -89,7 +88,7 @@
 
 
                 <td>
-                    <asp:Button ID="btGuardar" runat="server" Text="Guardar" />
+                    <asp:Button ID="btGuardar" runat="server" Text="Guardar" OnClick="btGuardar_Click" />
                 </td>
             </tr>
         </table>

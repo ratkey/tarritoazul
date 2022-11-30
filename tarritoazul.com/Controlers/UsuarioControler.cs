@@ -11,7 +11,7 @@ namespace tarritoazul.com.Models
         public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
         //obtiene todos los usuaio de la base de datos
-        public List<Usuario> GetAllUsuarios()
+        public static List<Usuario> GetAllUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
             SqlCommand command = new SqlCommand("Select * from [USUARIOS]", con);
@@ -31,6 +31,7 @@ namespace tarritoazul.com.Models
                         p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
                         p.Id_Registro = (int)reader["id_registro"];
+                        p.Sexo = (string)reader["sexo"];
                         usuarios.Add(p);
                     }
                 }
@@ -48,7 +49,7 @@ namespace tarritoazul.com.Models
         }
 
         //Regresa un usuario de la BD basado en su id_usuario
-        public Usuario SelectById(int id)
+        public static Usuario SelectById(int id)
         {
             SqlCommand command = new SqlCommand("Select * from [USUARIOS] where id_usuario=@idp", con);
             command.Parameters.AddWithValue("@idp", id);
@@ -68,6 +69,7 @@ namespace tarritoazul.com.Models
                         p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
                         p.Id_Registro = (int)reader["id_registro"];
+                        p.Sexo = (string)reader["sexo"];
                         con.Close();
                         return p;
                     }
@@ -106,6 +108,7 @@ namespace tarritoazul.com.Models
                         p.Fecha_Nacimiento = reader["fecha_nacimiento"].ToString();
                         p.Avatar_Img = (string)reader["avatar_img"];
                         p.Id_Registro = (int)reader["id_registro"];
+                        p.Sexo = (string)reader["sexo"];
                         con.Close();
                         return p;
                     }
@@ -123,11 +126,11 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
+        public static Usuario Insertar(Usuario p) //insertar usuario a la BD y obtener el ID
         {
             //Definir la consulta
-            string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro) output INSERTED.id_usuario " +
-            "values('{0}','{1}','{2}',{3},'{4}','{5}',{6});", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
+            string SQLInsert = String.Format("insert into USUARIOS( nombre, ap_paterno, ap_materno, telefono, fecha_nacimiento, avatar_img, id_registro, sexo) output INSERTED.id_usuario " +
+            "values('{0}','{1}','{2}',{3},'{4}','{5}',{6},'{7}');", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro, p.Sexo);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
@@ -138,22 +141,24 @@ namespace tarritoazul.com.Models
                 //Ejecutar la insercion y obtener el ID generado
                 p.Id_Usuario = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                MessageBox.Show(SQLInsert);
+                con.Close();
                 return p;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+            con.Close();
+            return null;
         }
 
-        public void Actualizar(Usuario p)
+        public static void Actualizar(Usuario p)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update USUARIOS " +
-                "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro);
+                "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6}, sexo='{7}' "+
+                " where id_usuario={8};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro, p.Sexo, p.Id_Usuario);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
@@ -173,7 +178,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Usuario p)
+        public static void Eliminar(Usuario p)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from Usuarios where id_usuario = {0};", p.Id_Usuario);

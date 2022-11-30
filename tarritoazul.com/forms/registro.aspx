@@ -27,7 +27,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:Label ID="LbNombre" runat="server" Text="Nombre:"></asp:Label>
+                    <asp:Label ID="LbNombre" runat="server" Text="Nombre de usuario:"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredNombre" runat="server" ControlToValidate="TbNombre"
                         CssClass="error" Text="*" ErrorMessage="Nombre es un campo obligatorio 😧">
                     </asp:RequiredFieldValidator>

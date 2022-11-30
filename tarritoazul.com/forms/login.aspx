@@ -22,6 +22,8 @@
             <tr>
                 <td>
                     <asp:TextBox ID="TbUsuario" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RfvUsuario" runat="server" ControlToValidate="TbUsuario" ErrorMessage="Campo Obligatorio" CssClass="validaciones"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RevUsuario" runat="server" ControlToValidate="TbUsuario" ErrorMessage="Formato invalido"  CssClass="validaciones" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -31,6 +33,9 @@
             <tr>
                 <td>
                     <asp:TextBox ID="TbContrasenia" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TbContrasenia" ErrorMessage="Campo Obligatorio" CssClass="validaciones"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TbContrasenia" ErrorMessage="Formato invalido"  CssClass="validaciones" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+               
                 </td>
             </tr>
         </table>

@@ -7,30 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tarritoazul.com
+namespace tarritoazul.com.forms
 {
 
 
-    public partial class DatosUsuarios
+    public partial class addUsuario
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// tbNombres control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNombres;
 
         /// <summary>
         /// requiredNombres control.
@@ -51,13 +33,13 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularNombres;
 
         /// <summary>
-        /// tbPaterno control.
+        /// tbNombres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPaterno;
+        protected global::System.Web.UI.WebControls.TextBox tbNombres;
 
         /// <summary>
         /// RequiredPaterno control.
@@ -78,13 +60,13 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegPaterno;
 
         /// <summary>
-        /// tbMaterno control.
+        /// tbPaterno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbMaterno;
+        protected global::System.Web.UI.WebControls.TextBox tbPaterno;
 
         /// <summary>
         /// RegMaterno control.
@@ -96,6 +78,15 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegMaterno;
 
         /// <summary>
+        /// tbMaterno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbMaterno;
+
+        /// <summary>
         /// ddlSexo control.
         /// </summary>
         /// <remarks>
@@ -103,15 +94,6 @@ namespace tarritoazul.com
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
-
-        /// <summary>
-        /// tbTelefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTelefono;
 
         /// <summary>
         /// requiredTelefono control.
@@ -132,13 +114,13 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularTelefono;
 
         /// <summary>
-        /// tbFechadenac control.
+        /// tbTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFechadenac;
+        protected global::System.Web.UI.WebControls.TextBox tbTelefono;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -148,6 +130,15 @@ namespace tarritoazul.com
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
+        /// tbFechadenac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFechadenac;
 
         /// <summary>
         /// btGuardar control.

@@ -68,10 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forms\addUsuario.aspx" />
     <Content Include="forms\ConfirmarPedido.aspx" />
     <Content Include="default.aspx" />
     <Content Include="forms\administracion.aspx" />
-    <Content Include="forms\datosUsuario.aspx" />
     <Content Include="forms\addProducto.aspx" />
     <Content Include="forms\DetalleProducto.aspx" />
     <Content Include="forms\domicilio.aspx" />
@@ -101,6 +101,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\addUsuario.aspx.cs">
+      <DependentUpon>addUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\addUsuario.aspx.designer.cs">
+      <DependentUpon>addUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\ConfirmarPedido.aspx.cs">
       <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,13 +128,6 @@
     </Compile>
     <Compile Include="forms\administracion.aspx.designer.cs">
       <DependentUpon>administracion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="forms\datosUsuario.aspx.cs">
-      <DependentUpon>datosUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="forms\datosUsuario.aspx.designer.cs">
-      <DependentUpon>datosUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\addProducto.aspx.cs">
       <DependentUpon>addProducto.aspx</DependentUpon>

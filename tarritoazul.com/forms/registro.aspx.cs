@@ -24,7 +24,7 @@ namespace tarritoazul.com.forms
 
             RegistroControler.Insertar(registro);
             Session["registro"] = registro;
-            Response.Redirect("~/forms/datosUsuario.aspx");
+            Response.Redirect("~/forms/addUsuario.aspx");
         }
 
         public void Log(string msg)

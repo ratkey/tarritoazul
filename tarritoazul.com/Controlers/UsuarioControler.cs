@@ -141,15 +141,16 @@ namespace tarritoazul.com.Models
                 //Ejecutar la insercion y obtener el ID generado
                 p.Id_Usuario = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                
+                con.Close();
                 return p;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
             }
+            con.Close();
+            return null;
         }
 
         public static void Actualizar(Usuario p)

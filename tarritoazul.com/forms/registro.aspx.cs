@@ -24,8 +24,7 @@ namespace tarritoazul.com.forms
 
             RegistroControler.Insertar(registro);
 
-            string script = "alert('Usuario registrado correctamente 👍');";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
+            Response.Redirect("~/forms/datosUsuario.aspx");
         }
     }
 }

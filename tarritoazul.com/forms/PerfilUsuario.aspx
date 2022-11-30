@@ -11,7 +11,12 @@
             <%--td de la imagen--%>
             <td style="max-width: 150px; overflow: hidden;">
                 <iframe src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6CYfo7p4XPPIU74i7cBTuirx751i1tnm0Xw5fND8Qad2Y6BYOYdapnDXlcQvFVru9mfA&usqp=CAU" height="250" width="200"> </iframe>
+                <br />
+                <asp:FileUpload ID="Perfil" runat="server" /><br />
+            
             </td>
+
+
 
             <%--td de los labels y botones--%>
             <td>
@@ -38,4 +43,8 @@
                               id="Summary" 
                               runat="server"/>
     </table>
+     
+
+        
 </asp:Content>
+

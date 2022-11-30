@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class EtiquetaModel
+    public class EtiquetaControler
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+
         //obtiene todos los Prodctos de la base de datos
         public List<Etiqueta> GetAllEtiqueta()
         {
@@ -84,7 +83,6 @@ namespace tarritoazul.com.Models
                         Etiqueta p = new Etiqueta();
                         p.Id_Etiqueta = (int)reader["id_etiqueta"];
                         p.Nombre = (string)reader["nombre"];
-
 
                         con.Close();
                         return p;
@@ -174,10 +172,5 @@ namespace tarritoazul.com.Models
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-
-
-
     }
 }

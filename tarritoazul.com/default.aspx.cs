@@ -17,7 +17,7 @@ namespace tarritoazul.com
         private void FillPage()
         {
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoModel.GetAllProductos();
+            List<Producto> productos = ProductoControler.GetAllProductos();
             LlenarCatalogo(productos);
             
         }
@@ -35,7 +35,7 @@ namespace tarritoazul.com
             string busqueda = tbBuscar.Text;
 
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoModel.GetProductsByName(busqueda);
+            List<Producto> productos = ProductoControler.GetProductsByName(busqueda);
             LlenarCatalogo(productos);
         }
 
@@ -68,7 +68,7 @@ namespace tarritoazul.com
                     btnVer.PostBackUrl = "~/forms/DetalleProducto.aspx?id=" + producto.Id_Producto;
                     
                     //Obtener la primera imagen del producto
-                    string img = ProductoModel.GetProductMedia(producto.Id_Producto);
+                    string img = ProductoControler.GetProductMedia(producto.Id_Producto);
 
                     //Cambiar las propiedades de los controles
                     if (img != "")
@@ -113,7 +113,7 @@ namespace tarritoazul.com
             string busqueda = tbBuscar.Text;
 
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoModel.GetProductsByName(busqueda);
+            List<Producto> productos = ProductoControler.GetProductsByName(busqueda);
             LlenarCatalogo(productos);
         }
     }

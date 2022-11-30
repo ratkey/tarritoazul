@@ -14,11 +14,11 @@ namespace tarritoazul.com.forms
             if(id_registro != -1)
             {
                 //Obtener el registro y guardarlo en la Session
-                Registro registro = RegistroModel.SelectById(id_registro);
+                Registro registro = RegistroControler.SelectById(id_registro);
                 Session["registro"] = registro;
 
                 //Obtener el Usuario y guardarlo en la Session
-                Usuario usuario = UsuarioModel.SelectByRegistroId(id_registro);
+                Usuario usuario = UsuarioControler.SelectByRegistroId(id_registro);
                 if(usuario != null)
                 {
                     Session["usuario"] = usuario;

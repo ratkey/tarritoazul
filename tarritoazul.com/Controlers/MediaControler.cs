@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class MediaModel
+    public class MediaControler
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
@@ -177,6 +177,5 @@ namespace tarritoazul.com.Models
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

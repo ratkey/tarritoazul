@@ -14,7 +14,7 @@
 
         public override string ToString()
         {
-            return "id_media: " +Id_Media+ "src_url: " +Src_Url+ "tipo: " +Tipo+ "id_producto: " + Id_Producto;
+            return "id_media: " + Id_Media + "src_url: " + Src_Url + "tipo: " + Tipo + "id_producto: " + Id_Producto;
         }
     }
 }

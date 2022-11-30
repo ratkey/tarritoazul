@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class RegistroModel
+    public class RegistroControler
     {
         public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

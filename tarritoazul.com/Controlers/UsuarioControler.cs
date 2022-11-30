@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
-    public class UsuarioModel
+    public class UsuarioControler
     {
         public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

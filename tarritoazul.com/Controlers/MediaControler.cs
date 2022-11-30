@@ -177,6 +177,5 @@ namespace tarritoazul.com.Models
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

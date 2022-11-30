@@ -8,6 +8,8 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             //Si hay una sesion iniciada
             if (Session["registro"] != null && Session["usuario"] != null)
             {
@@ -42,6 +44,19 @@ namespace tarritoazul.com
                 List<Producto> listaCarrito = (List<Producto>)Session["carrito"];
                 Log("Productos en el carrito: " + listaCarrito.Count);
                 linkCarrito.Text = "🛒Carrito (" + listaCarrito.Count + ")";
+            }
+
+            //obtener la pagina actual
+            string currentPage = this.Page.Request.FilePath;
+
+            //mostrar u ocultar los botones
+            if (currentPage == "/forms/login.aspx")
+            {
+                btnIniciarSecion.Visible = false;
+            }
+            else if (currentPage == "/forms/registro.aspx")
+            {
+                btnRegistrarse.Visible = false;
             }
         }
 

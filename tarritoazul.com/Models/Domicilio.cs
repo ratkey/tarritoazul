@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Windows.Forms;
-
-namespace tarritoazul.com.Models
+﻿namespace tarritoazul.com.Models
 {
     public class Domicilio
     {
-        
-
         public Domicilio()
         {
             Id_domicilio = -1;
@@ -28,16 +19,11 @@ namespace tarritoazul.com.Models
         public string Entre_calle_2 { get; set; }
         public string Descripcion_domicilio { get; set; }
         public int Id_usuario { get; set; }
-        
 
-        
-
-     
-
-        public string ToString()
+        public override string ToString()
         {
             return "id_domicilio: " + Id_domicilio + ", codigo_postal : " + Codigo_postal + ", estado: " + Estado +
-                ", municipio: " + Municipio + ", colonia: " + Colonia + ", calle: " + Calle + ", numero_exterior: " + Numero_exterior + 
+                ", municipio: " + Municipio + ", colonia: " + Colonia + ", calle: " + Calle + ", numero_exterior: " + Numero_exterior +
                 ", numero_interior: " + Numero_interior + ", entre_calle_1: " + Entre_calle_1 + ", entre_calle_2: " + Entre_calle_2 + ", descripcion_domicilio: " + Descripcion_domicilio + ", id_usuario: " + Id_usuario;
         }
     }

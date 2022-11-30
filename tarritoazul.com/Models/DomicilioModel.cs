@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Windows.Forms;
 
 namespace tarritoazul.com.Models
 {
     public class DomicilioModel
     {
-        private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-        public Domicilio SelectFromDB(int id_domicilio)
+        private static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
+
+        //Retorna un domicilio de la BD segun su id_domicilio
+        public static Domicilio SelectById(int id_domicilio)
         {
             SqlCommand command = new SqlCommand("Select * from [DOMICILIOS] where id_domicilio=@idp", con);
             command.Parameters.AddWithValue("@idp", id_domicilio);
@@ -35,23 +35,62 @@ namespace tarritoazul.com.Models
                         d.Entre_calle_2 = (string)reader["entre_calle_2"];
                         d.Descripcion_domicilio = (string)reader["descripcion_domicilio"];
                         d.Id_usuario = (int)reader["id_usuario"];
+
+                        con.Close();
                         return d;
                     }
                 }
-
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            con.Close();
             return null;
         }
 
-        public Domicilio Insertar(Domicilio d) //insertar Domicilio a la BD y obtener el ID
+        //obtiene todos los Domicilios perteneceientes a un usuario
+        public static List<Domicilio> GetDomiciliosByIdUsuario(string id_usuario)
         {
+            List<Domicilio> domicilios = new List<Domicilio>();
+            string SQLSelect = string.Format("Select * from [DOMICILIOS] where id_usuario='{0}'", id_usuario);
+            SqlCommand command = new SqlCommand(SQLSelect, con);
+            try
+            {
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Domicilio d = new Domicilio();
+                        d.Id_domicilio = (int)reader["id_domicilio"];
+                        d.Codigo_postal = (string)reader["codigo_postal"];
+                        d.Estado = (string)reader["estado"];
+                        d.Municipio = (string)reader["municipio"];
+                        d.Colonia = (string)reader["colonia"];
+                        d.Calle = (string)reader["calle"];
+                        d.Numero_exterior = (string)reader["numero_exterior"];
+                        d.Numero_interior = (string)reader["numero_interior"];
+                        d.Entre_calle_1 = (string)reader["entre_calle_1"];
+                        d.Entre_calle_2 = (string)reader["entre_calle_2"];
+                        d.Descripcion_domicilio = (string)reader["descripcion_domicilio"];
+                        d.Id_usuario = (int)reader["id_usuario"];
 
+                        domicilios.Add(d);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            con.Close();
+            return domicilios;
+        }
+
+        public static Domicilio Insertar(Domicilio d) //insertar Domicilio a la BD y obtener el ID
+        {
             //Definir la consulta
             string SQLInsert = String.Format("insert into DOMICILIOS(codigo_postal, estado, municipio, colonia, calle, numero_exterior, numero_interior, entre_calle_1, entre_calle_2, descripcion_domicilio, id_usuario) output INSERTED.id_domicilio " +
             "values({0},'{1}','{2}','{3}','{4}',{5},{6},'{7}','{8}','{9}',{10});", d.Codigo_postal, d.Estado, d.Municipio, d.Colonia, d.Calle, d.Numero_exterior, d.Numero_interior, d.Entre_calle_1, d.Entre_calle_2, d.Descripcion_domicilio, d.Id_usuario);
@@ -64,20 +103,20 @@ namespace tarritoazul.com.Models
                 con.Open();
                 //Ejecutar la insercion y obtener el ID generado
                 d.Id_domicilio = (int)cmd.ExecuteScalar();
+
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
                 return d;
             }
-            
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            con.Close();
             return null;
         }
 
-        public void Actualizar(Domicilio d)
+        public static void Actualizar(Domicilio d)
         {
             //Definir la consulta
             string SQLUpdate = String.Format("update DOMICILIOS " +
@@ -92,8 +131,7 @@ namespace tarritoazul.com.Models
                 //Ejecutar la instruccion
                 cmd.ExecuteNonQuery();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -101,7 +139,7 @@ namespace tarritoazul.com.Models
             }
         }
 
-        public void Eliminar(Domicilio d)
+        public static void Eliminar(Domicilio d)
         {
             //Definir la consulta
             string SQLDelete = String.Format("delete from DOMICILIOS where id_domicilio = {0};", d.Id_domicilio);
@@ -115,8 +153,7 @@ namespace tarritoazul.com.Models
                 //Ejecutar la instruccion
                 cmd.ExecuteNonQuery();
                 //Cerrar la coneccion con la BD si se encuentra abierta
-                if (con.State == System.Data.ConnectionState.Open)
-                    con.Close();
+                con.Close();
             }
             catch (SqlException ex)
             {

@@ -1,34 +1,13 @@
-t1{
-    font-size: 20pt;
-}
 
 .form_logo{
-    width: 150px;
+    width: 50px;
 }
 
 .logo_fondo{
     width: 100%;
-    background-color: #a1c4c6;
-}
-
-.login_box{
-    width: 300px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 20px auto auto auto;
-}
-
-.login_box table{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+    text-align:center;
 }
 
 #banner, #banner .logo {
     height: 0px;
-}
-
-#nav-botones {
-    visibility: hidden;
 }

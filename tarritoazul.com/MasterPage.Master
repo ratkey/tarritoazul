@@ -36,35 +36,6 @@
                 <asp:Image CssClass="logo" ID="imgLogo" runat="server" ImageUrl="~/imgs/logo.png" />
             </div>
 
-           
-
-
-
-
-       <%-- footer--------------------------------------------------%>
-         <footer>
-        <strong>Domocilio:</strong>Carretera Federal 200 Km:9<br />
-        <strong>Ciudad:</strong>Xalisco,Nayarit <br />
-        <strong>Telefono:</strong>3113524940<br />
-             <br />
-
-
-
-                    Aretes artesenales con compras totalmente online
-              
-                <br />
-             para mas informacion
-                     ver <a href="https://instagram.com/tarrito_azul?igshid=YmMyMTA2M2Y=">Tarrito_azul </a>
-            </blockquote>
-        </div>
-        <br /><br />
-        <br />
-    </footer>
-
-
-
-
-     
             <%--Navigator----------------------------------------------%>
             <div id="navigator">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -113,19 +84,32 @@
                 </asp:ContentPlaceHolder>
             </div>
 
+            <%-- footer--------------------------------------------------%>
+            <footer>
+                <strong>Domocilio:</strong>Carretera Federal 200 Km:9<br />
+                <strong>Ciudad:</strong>Xalisco,Nayarit
+                <br />
+                <strong>Telefono:</strong>3113524940<br />
+                <br />
+                Aretes artesenales con compras totalmente online
+                <br />
+                para mas informacion
+                     ver <a href="https://instagram.com/tarrito_azul?igshid=YmMyMTA2M2Y=">Tarrito_azul </a>
+            </footer>
+
             <%--Bootstrap scripts----------------------------------------------%>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous">
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous">
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous">
-            </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous">
+        </script>
         </div>
     </form>
 </body>

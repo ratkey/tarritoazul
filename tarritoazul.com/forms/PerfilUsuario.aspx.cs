@@ -13,7 +13,7 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["usuario"] = UsuarioControler.SelectById(5);
+            //Session["usuario"] = UsuarioControler.SelectById(5);
             if (Session["usuario"] == null)
             {
                 return;

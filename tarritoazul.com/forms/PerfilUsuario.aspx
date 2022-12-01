@@ -11,10 +11,12 @@
             </td>
             <tr>
                 <%--td de la imagen--%>
-                <td style="max-width: 150px;">
+                <td style="max-width: 200px;">
                     <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/imgs/producto/placeholder.jpg" CssClass="imgPerfil"/>
                     <br />
-                    <asp:FileUpload ID="Perfil" runat="server" /><br />
+                    <asp:FileUpload ID="fileUp" runat="server" />
+                    <asp:Button ID="btnSubirimg" runat="server" Text="Subir" CssClass="btn btn-primario" OnClick="btnSubirimg_Click"/>
+                    <br />
 
                 </td>
 

@@ -24,13 +24,22 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.Image imgPerfil;
 
         /// <summary>
-        /// Perfil control.
+        /// fileUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Perfil;
+        protected global::System.Web.UI.WebControls.FileUpload fileUp;
+
+        /// <summary>
+        /// btnSubirimg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubirimg;
 
         /// <summary>
         /// lbNombre control.

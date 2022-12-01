@@ -173,6 +173,31 @@ namespace tarritoazul.com.Models
             }
         }
 
+        public static void ActualizarImagen(Usuario p)
+        {
+            //Definir la consulta
+            string SQLUpdate = String.Format("update USUARIOS " +
+                "set avatar_img='{0}'" +
+                " where id_usuario={1};", p.Avatar_Img, p.Id_Usuario);
+            MessageBox.Show(SQLUpdate);
+            SqlCommand cmd = new SqlCommand(SQLUpdate, con);
+
+            try
+            {
+                //Abrir la coneccion con la BD
+                con.Open();
+                //Ejecutar la instruccion
+                cmd.ExecuteNonQuery();
+                //Cerrar la coneccion con la BD si se encuentra abierta
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public static void Eliminar(Usuario p)
         {
             //Definir la consulta

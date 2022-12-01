@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contacto.aspx" />
     <Content Include="forms\addUsuario.aspx" />
     <Content Include="forms\ConfirmarPedido.aspx" />
     <Content Include="default.aspx" />
@@ -101,6 +102,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\addUsuario.aspx.cs">
       <DependentUpon>addUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

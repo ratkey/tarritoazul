@@ -29,7 +29,7 @@ namespace tarritoazul.com.forms
         private void SetValues(Producto p)
         {
             lbNombre.Text = p.Nombre;
-            lbPrecio.Text = p.Precio.ToString();
+            lbPrecio.Text = "$" + p.Precio.ToString();
             lbDescripcion.Text = p.Descripcion;
 
             string img = ProductoControler.GetProductMedia(p.Id_Producto);
@@ -51,7 +51,7 @@ namespace tarritoazul.com.forms
             //Agrega el producto al Session["carrito"]
             CarritoControler.AddProducto(producto);
             //Recarga la pagina para que se actualice
-            Response.Redirect(Request.Path);
+            Response.Redirect("~/default.aspx");
         }
 
         public void Log(string msg)

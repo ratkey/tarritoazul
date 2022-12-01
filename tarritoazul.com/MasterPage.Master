@@ -94,11 +94,11 @@
             </script>
     </form>
     <%-- footer--------------------------------------------------%>
-            <footer>
+           <%-- <footer>
                 <strong>Domocilio: </strong>Carretera Federal 200 Km:9<br />
                 <strong>Ciudad: </strong>Xalisco,Nayarit
                 <br />
                 <strong>Telefono: </strong>3113524940<br />
-            </footer>
+            </footer>--%>
 </body>
 </html>

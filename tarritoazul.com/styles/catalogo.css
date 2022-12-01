@@ -63,3 +63,15 @@
     opacity: 0.7;
 }
 
+.buscarCatalogo {
+    width: 100%;
+    text-align: right;
+/*    padding: 10rem 3rem 2rem 3rem;*/
+/*    width: 58%;*/
+/*    align-items: end;*/
+    margin: 0px 0px 0px auto;
+}
+
+/*.btnBuscarCat{
+    float:left;
+}*/

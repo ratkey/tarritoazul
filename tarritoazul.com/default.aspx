@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <div class="buscarCatalogo">
-        <asp:TextBox ID="tbBuscar" runat="server" TextMode="Search" OnTextChanged="tbBuscar_TextChanged" CssClass="btn-outline-primario"></asp:TextBox>
-        <asp:Button ID="btnBuscar" runat="server" Text="🔎Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-exito"/>
+        <asp:TextBox ID="tbBuscar" runat="server" TextMode="Search" OnTextChanged="tbBuscar_TextChanged" CssClass="btn-outline-secundario tbBuscarCat"></asp:TextBox>
+        <asp:Button ID="btnBuscar" runat="server" Text="🔎Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-exito btnBuscarCat"/>
     </div>
     <div class="catalogo">
             <asp:Panel ID="pnlProductos" runat="server">

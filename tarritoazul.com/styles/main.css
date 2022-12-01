@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 :root {
+    --tarrito: #a1c4c6;
+
     /* Primario */
     --color1: #d1b0d3;
     /* Secundario */
@@ -8,10 +10,7 @@
     --color3: #e0d5c5;
     /* Exito */
     --color4: #70e248;
-
     --color5: #f8f9f9;
-
-
     /* Peligro */
     --color6: #f54b4b;
 }
@@ -132,4 +131,19 @@ input[type=file]::-webkit-file-upload-button {
     font-size: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 3px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 10px;
+    width: 100%;
+
+    bottom: 0px;
+    background-color: var(--tarrito);
+    color: white;
+    text-align: center;
+}
+
+body{
+    min-height: 1080px;
 }

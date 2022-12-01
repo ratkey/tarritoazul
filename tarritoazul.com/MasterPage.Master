@@ -22,8 +22,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <%--Banner-------------------------------------------%>
+        <%--Banner-------------------------------------------%>
             <div id="banner">
                 <asp:Image CssClass="logo" ID="imgLogo" runat="server" ImageUrl="~/imgs/logo.png" />
             </div>
@@ -78,6 +77,8 @@
                 </asp:ContentPlaceHolder>
             </div>
 
+            
+
             <%--Bootstrap scripts----------------------------------------------%>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -91,7 +92,13 @@
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous">
             </script>
-        </div>
     </form>
+    <%-- footer--------------------------------------------------%>
+            <footer>
+                <strong>Domocilio: </strong>Carretera Federal 200 Km:9<br />
+                <strong>Ciudad: </strong>Xalisco,Nayarit
+                <br />
+                <strong>Telefono: </strong>3113524940<br />
+            </footer>
 </body>
 </html>

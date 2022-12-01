@@ -11,7 +11,7 @@
         }
         .center {
             margin: auto;
-            width: 70%;
+            width: 95%;
             padding: 10px;
         }
     </style>

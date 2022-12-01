@@ -154,7 +154,7 @@ namespace tarritoazul.com.Models
             string SQLUpdate = String.Format("update USUARIOS " +
                 "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6}, sexo='{7}' " +
                 " where id_usuario={8};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro, p.Sexo, p.Id_Usuario);
-
+            MessageBox.Show(SQLUpdate);
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
             try

@@ -26,7 +26,7 @@ namespace tarritoazul.com.forms
                 }
                 else
                 {
-                    Response.Redirect("~/forms/datosUsuario.aspx");
+                    Response.Redirect("~/forms/addUsuario.aspx");
                 }
             }
             else

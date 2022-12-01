@@ -154,7 +154,32 @@ namespace tarritoazul.com.Models
             string SQLUpdate = String.Format("update USUARIOS " +
                 "set nombre='{0}', ap_paterno='{1}', ap_materno='{2}', telefono='{3}', fecha_nacimiento='{4}', avatar_img='{5}', id_registro={6}, sexo='{7}' " +
                 " where id_usuario={8};", p.Nombre, p.Ap_Paterno, p.Ap_Materno, p.Telefono, p.Fecha_Nacimiento, p.Avatar_Img, p.Id_Registro, p.Sexo, p.Id_Usuario);
+            MessageBox.Show(SQLUpdate);
+            SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
+            try
+            {
+                //Abrir la coneccion con la BD
+                con.Open();
+                //Ejecutar la instruccion
+                cmd.ExecuteNonQuery();
+                //Cerrar la coneccion con la BD si se encuentra abierta
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void ActualizarImagen(Usuario p)
+        {
+            //Definir la consulta
+            string SQLUpdate = String.Format("update USUARIOS " +
+                "set avatar_img='{0}'" +
+                " where id_usuario={1};", p.Avatar_Img, p.Id_Usuario);
+            MessageBox.Show(SQLUpdate);
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
             try

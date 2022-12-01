@@ -12,26 +12,55 @@ namespace tarritoazul.com.forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                //Revisar si la url contiene el parametro id
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["update"]))
+                {
+                    Usuario usuario = (Usuario)Session["usuario"];
+                    tbNombres.Text = usuario.Nombre;
+                    tbPaterno.Text = usuario.Ap_Paterno;
+                    tbMaterno.Text = usuario.Ap_Materno;
+                    ddlSexo.SelectedValue = usuario.Sexo;
+                    tbFechadenac.Text = usuario.Fecha_Nacimiento;
+                    tbTelefono.Text = usuario.Telefono;
+                }
+            }
+            
         }
-
         protected void btGuardar_Click(object sender, EventArgs e)
         {
             if (Session["registro"] != null)
             {
-                Registro r = (Registro)Session["registro"];
-                Usuario u = new Usuario();
+                Registro registro = (Registro)Session["registro"];
+                Usuario usuario = new Usuario();
 
-                u.Nombre = tbNombres.Text;
-                u.Ap_Paterno = tbPaterno.Text;
-                u.Ap_Materno = tbMaterno.Text;
-                u.Sexo = ddlSexo.SelectedValue;
-                u.Fecha_Nacimiento = tbFechadenac.Text;
-                u.Telefono = tbTelefono.Text;
-                u.Id_Registro = r.Id_Registro;
+                usuario.Nombre = tbNombres.Text;
+                usuario.Ap_Paterno = tbPaterno.Text;
+                usuario.Ap_Materno = tbMaterno.Text;
+                usuario.Sexo = ddlSexo.SelectedValue;
+                usuario.Fecha_Nacimiento = tbFechadenac.Text;
+                usuario.Telefono = tbTelefono.Text;
+                usuario.Id_Registro = registro.Id_Registro;
 
-                UsuarioControler.Insertar(u);
-                Session["usuario"] = u;
+                //Obtener una de las imagenes del banco de imagenes de usuario
+                Random rand = new Random();
+                int number = rand.Next(1, 20); //returns random number between 1-20
+                string random_avatar = number + ".png";
+
+                usuario.Avatar_Img = random_avatar;
+
+                if (Session["usuario"] == null)
+                {
+                    UsuarioControler.Insertar(usuario);
+                }
+                else
+                {
+                    Usuario us = (Usuario)Session["usuario"];
+                    usuario.Id_Usuario = us.Id_Usuario;
+                    UsuarioControler.Actualizar(usuario);
+                }
+                Session["usuario"] = usuario;
             }
             Response.Redirect("~/default.aspx");
         }

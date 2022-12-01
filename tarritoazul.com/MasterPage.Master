@@ -63,7 +63,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <asp:Button ID="btnIniciarSecion" runat="server" Text="Iniciar seción" CssClass="btn btn-primario" PostBackUrl="~/forms/login.aspx" Width="131" CausesValidation="False" />
-                                    <asp:Button ID="btnUser" runat="server" Text="" CssClass="btn btn-primario" Width="131" CausesValidation="False" />
+                                    <asp:Button ID="btnUser" runat="server" Text="" CssClass="btn btn-primario" Width="131" CausesValidation="False" PostBackUrl="~/forms/PerfilUsuario.aspx" />
                                 </li>
 
                             </ul>

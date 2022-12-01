@@ -22,6 +22,21 @@
         <h2>Eres bienvenido a nuestra fabrica</h2>
         <div id="map"></div>
     </div>
+
+
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v15.0" nonce="pTSDo9EG"></script>
+
+<table>
+	<tr>
+		<td>
+		<div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100067099912931" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100067099912931" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100067099912931">Aretes artesanales</a></blockquote></div>
+		</td>
+		<td>
+		<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Ya contamos con página web @tarrito_azul <a href="https://t.co/kqa0Oi7RdB">https://t.co/kqa0Oi7RdB</a></p>&mdash; cruz (@cruz02249127) <a href="https://twitter.com/cruz02249127/status/1598183160071671809?ref_src=twsrc%5Etfw">December 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</td>
+	</tr>
+</table>
     
     <script>
         //Funcion para inicializar y colocar el mapa en la pagina

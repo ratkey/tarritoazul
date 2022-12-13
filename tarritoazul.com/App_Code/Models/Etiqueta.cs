@@ -38,7 +38,7 @@ namespace Tarritoazul.Models
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -62,7 +62,7 @@ namespace Tarritoazul.Models
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -87,7 +87,7 @@ namespace Tarritoazul.Models
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Tarritoazul.Models
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 

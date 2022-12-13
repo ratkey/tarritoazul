@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tarritoazul.com.forms
+namespace Tarritoazul.User
 {
 
 
-    public partial class registro
+    public partial class Register
     {
 
         /// <summary>

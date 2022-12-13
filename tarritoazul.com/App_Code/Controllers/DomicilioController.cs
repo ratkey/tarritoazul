@@ -44,7 +44,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             con.Close();
             return null;
@@ -83,7 +83,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
 
             con.Close();
@@ -111,7 +111,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             con.Close();
             return null;
@@ -136,7 +136,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -158,7 +158,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

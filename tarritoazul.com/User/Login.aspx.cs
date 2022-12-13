@@ -2,9 +2,9 @@
 using Tarritoazul.Controllers;
 using Tarritoazul.Models;
 
-namespace tarritoazul.com.forms
+namespace Tarritoazul.User
 {
-    public partial class login : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

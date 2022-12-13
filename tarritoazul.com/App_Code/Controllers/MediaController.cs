@@ -7,15 +7,15 @@ using Tarritoazul.Models;
 
 namespace Tarritoazul.Controllers
 {
-    public class EtiquetaController
+    public class MediaController
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 
-        //obtiene todos los Prodctos de la base de datos
-        public List<Etiqueta> GetAllEtiqueta()
+        //obtiene toda la Media de la base de datos
+        public List<Media> GetAllMedia()
         {
-            List<Etiqueta> Etiqueta = new List<Etiqueta>();
-            SqlCommand command = new SqlCommand("Select * from [ETIQUETAS]", con);
+            List<Media> media = new List<Media>();
+            SqlCommand command = new SqlCommand("Select * from [MEDIA]", con);
             try
             {
                 con.Open();
@@ -23,31 +23,32 @@ namespace Tarritoazul.Controllers
                 {
                     while (reader.Read())
                     {
-                        Etiqueta p = new Etiqueta();
-                        p.Id_Etiqueta = (int)reader["id_etiqueta"];
-                        p.Nombre = (string)reader["nombre"];
-
-                        Etiqueta.Add(p);
+                        Media p = new Media();
+                        p.Id_Media = (int)reader["id_media"];
+                        p.Src_Url = (string)reader["src_url"];
+                        p.Tipo = (string)reader["tipo"];
+                        p.Id_Producto = (int)reader["id_producto"];
+                        media.Add(p);
                     }
                 }
 
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
 
-                return Etiqueta;
+                return media;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
                 return null;
             }
         }
 
         //Cambiar este metodo al modelo MediaModel
-        public string GetPEtiquetaMedia(int id_etiqueta)
+        public string GetProductMedia(int id_producto)
         {
             string url = "";
-            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [ETIQUETAS] on ETIQUETAS.id_etiqueta = MEDIA.id_etiqueta and ETIQUETAS.id_ = " + id_etiqueta, con);
+            SqlCommand command = new SqlCommand("Select top 1 src_url from [MEDIA] join [PRODUCTOS] on PRODUCTOS.id_producto = MEDIA.id_producto and PRODUCTOS.id_producto = " + id_producto, con);
             try
             {
                 con.Open();
@@ -64,16 +65,16 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             return url;
         }
 
-        //Regresa un prodcuto de la BD basado en su id_producto
-        public Etiqueta SelectById(int id)
+        //Regresa una Media de la BD basado en su id_media
+        public Media SelectById(int id)
         {
-            SqlCommand command = new SqlCommand("Select * from [ETIQUETAS] where id_etiqueta=@idp", con);
-            command.Parameters.AddWithValue("@idp", id);
+            SqlCommand command = new SqlCommand("Select * from [MEDIA] where id_media=@idm", con);
+            command.Parameters.AddWithValue("@idm", id);
             try
             {
                 con.Open();
@@ -81,9 +82,11 @@ namespace Tarritoazul.Controllers
                 {
                     if (reader.Read())
                     {
-                        Etiqueta p = new Etiqueta();
-                        p.Id_Etiqueta = (int)reader["id_etiqueta"];
-                        p.Nombre = (string)reader["nombre"];
+                        Media p = new Media();
+                        p.Id_Media = (int)reader["id_media"];
+                        p.Src_Url = (string)reader["src_url"];
+                        p.Tipo = (string)reader["tipo"];
+                        p.Id_Producto = (int)reader["id_producto"];
 
                         con.Close();
                         return p;
@@ -97,16 +100,16 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
                 return null;
             }
         }
 
-        public Etiqueta Insertar(Etiqueta p) //insertar Etiqueta a la BD y obtener el ID
+        public Media Insertar(Media p) //insertar Media a la BD y obtener el ID
         {
             //Definir la consulta
-            string SQLInsert = String.Format("insert into ETIQUETAS(id_Etiqueta, nombre) output INSERTED.id_etiqueta" +
-            "values({0},{1}", p.Nombre, p.Id_Etiqueta);
+            string SQLInsert = String.Format("insert into MEDIA(src_url, tipo, id_producto) output INSERTED.id_media  " +
+            "values('{0}','{1}','{2}','{3}');", p.Src_Url, p.Tipo, p.Id_Producto);
 
             SqlCommand cmd = new SqlCommand(SQLInsert, con);
 
@@ -115,7 +118,7 @@ namespace Tarritoazul.Controllers
                 //Abrir la coneccion con la BD
                 con.Open();
                 //Ejecutar la insercion y obtener el ID generado
-                p.Id_Etiqueta = (int)cmd.ExecuteScalar();
+                p.Id_Media = (int)cmd.ExecuteScalar();
                 //Cerrar la coneccion con la BD si se encuentra abierta
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
@@ -123,15 +126,17 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
                 return null;
             }
         }
 
-        public void Actualizar(Etiqueta p)
+        public void Actualizar(Media p)
         {
             //Definir la consulta
-            string SQLUpdate = String.Format("update ETIQUETA " + "set nombre='{0}', " + "where id_etiqueta={6};", p.Nombre, p.Id_Etiqueta);
+            string SQLUpdate = String.Format("update MEDIA " +
+                 "set src_url='{0}', tipo='{1}', id_producto={2}, " +
+                 "where id_media={3};", p.Src_Url, p.Tipo, p.Id_Producto, p.Id_Media);
 
             SqlCommand cmd = new SqlCommand(SQLUpdate, con);
 
@@ -147,14 +152,14 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
-        public void Eliminar(Etiqueta p)
+        public void Eliminar(Media p)
         {
             //Definir la consulta
-            string SQLDelete = String.Format("delete from ETIQUETAS where id_etiqueta = {0};", p.Id_Etiqueta);
+            string SQLDelete = String.Format("delete from MEDIA where id_media = {0};", p.Id_Media);
 
             SqlCommand cmd = new SqlCommand(SQLDelete, con);
 
@@ -170,7 +175,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

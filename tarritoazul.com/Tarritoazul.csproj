@@ -76,51 +76,51 @@
     <Content Include="forms\addProducto.aspx" />
     <Content Include="forms\DetalleProducto.aspx" />
     <Content Include="forms\domicilio.aspx" />
-    <Content Include="forms\login.aspx" />
-    <Content Include="forms\registro.aspx" />
-    <Content Include="imgs\avatar\1.png" />
-    <Content Include="imgs\avatar\2.png" />
-    <Content Include="imgs\avatar\3.png" />
-    <Content Include="imgs\avatar\4.png" />
-    <Content Include="imgs\avatar\5.png" />
-    <Content Include="imgs\avatar\6.png" />
-    <Content Include="imgs\avatar\7.png" />
-    <Content Include="imgs\avatar\8.png" />
-    <Content Include="imgs\avatar\9.png" />
-    <Content Include="imgs\avatar\10.png" />
-    <Content Include="imgs\avatar\11.png" />
-    <Content Include="imgs\avatar\12.png" />
-    <Content Include="imgs\avatar\13.png" />
-    <Content Include="imgs\avatar\14.png" />
-    <Content Include="imgs\avatar\15.png" />
-    <Content Include="imgs\avatar\16.png" />
-    <Content Include="imgs\avatar\17.png" />
-    <Content Include="imgs\avatar\18.png" />
-    <Content Include="imgs\avatar\19.png" />
-    <Content Include="imgs\avatar\20.png" />
-    <Content Include="imgs\favicon.ico" />
-    <Content Include="imgs\insta_logo.png" />
-    <Content Include="imgs\load.gif" />
-    <Content Include="imgs\logo.png" />
-    <Content Include="imgs\logosmall.png" />
-    <Content Include="imgs\logosmall_nobg.png" />
-    <Content Include="imgs\producto\arete01.jpg" />
-    <Content Include="imgs\producto\arete02.jpg" />
-    <Content Include="imgs\producto\arete03.jpg" />
-    <Content Include="imgs\producto\arete04.jpg" />
-    <Content Include="imgs\producto\arete05.jpg" />
+    <Content Include="User\Login.aspx" />
+    <Content Include="User\Register.aspx" />
+    <Content Include="Imgs\avatar\1.png" />
+    <Content Include="Imgs\avatar\2.png" />
+    <Content Include="Imgs\avatar\3.png" />
+    <Content Include="Imgs\avatar\4.png" />
+    <Content Include="Imgs\avatar\5.png" />
+    <Content Include="Imgs\avatar\6.png" />
+    <Content Include="Imgs\avatar\7.png" />
+    <Content Include="Imgs\avatar\8.png" />
+    <Content Include="Imgs\avatar\9.png" />
+    <Content Include="Imgs\avatar\10.png" />
+    <Content Include="Imgs\avatar\11.png" />
+    <Content Include="Imgs\avatar\12.png" />
+    <Content Include="Imgs\avatar\13.png" />
+    <Content Include="Imgs\avatar\14.png" />
+    <Content Include="Imgs\avatar\15.png" />
+    <Content Include="Imgs\avatar\16.png" />
+    <Content Include="Imgs\avatar\17.png" />
+    <Content Include="Imgs\avatar\18.png" />
+    <Content Include="Imgs\avatar\19.png" />
+    <Content Include="Imgs\avatar\20.png" />
+    <Content Include="Imgs\favicon.ico" />
+    <Content Include="Imgs\insta_logo.png" />
+    <Content Include="Imgs\load.gif" />
+    <Content Include="Imgs\logo.png" />
+    <Content Include="Imgs\logosmall.png" />
+    <Content Include="Imgs\logosmall_nobg.png" />
+    <Content Include="Imgs\producto\arete01.jpg" />
+    <Content Include="Imgs\producto\arete02.jpg" />
+    <Content Include="Imgs\producto\arete03.jpg" />
+    <Content Include="Imgs\producto\arete04.jpg" />
+    <Content Include="Imgs\producto\arete05.jpg" />
     <Content Include="forms\PerfilUsuario.aspx" />
-    <Content Include="imgs\producto\placeholder.jpg" />
+    <Content Include="Imgs\producto\placeholder.jpg" />
     <Content Include="MasterPage.Master" />
     <Content Include="prueba.aspx" />
-    <Content Include="styles\addProducto.css" />
-    <Content Include="styles\administracion.css" />
-    <Content Include="styles\formulario.css" />
-    <Content Include="styles\catalogo.css" />
-    <Content Include="styles\login.css" />
-    <Content Include="styles\perfil.css" />
-    <Content Include="styles\registro.css" />
-    <Content Include="styles\main.css" />
+    <Content Include="Styles\addProducto.css" />
+    <Content Include="Styles\administracion.css" />
+    <Content Include="Styles\formulario.css" />
+    <Content Include="Styles\catalogo.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\perfil.css" />
+    <Content Include="Styles\registro.css" />
+    <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -180,19 +180,19 @@
     <Compile Include="forms\domicilio.aspx.designer.cs">
       <DependentUpon>domicilio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="User\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="User\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\registro.aspx.cs">
-      <DependentUpon>registro.aspx</DependentUpon>
+    <Compile Include="User\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\registro.aspx.designer.cs">
-      <DependentUpon>registro.aspx</DependentUpon>
+    <Compile Include="User\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -201,18 +201,18 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Models\Domicilio.cs" />
-    <Compile Include="Controllers\DomicilioController.cs" />
-    <Compile Include="Controllers\CarritoController.cs" />
-    <Compile Include="Models\Etiqueta.cs" />
-    <Compile Include="Controllers\EtiquetaController.cs" />
-    <Compile Include="Models\Media.cs" />
-    <Compile Include="Controllers\MediaController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Models\Producto.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Models\Registro.cs" />
-    <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="App_Code\Models\Domicilio.cs" />
+    <Compile Include="App_Code\Controllers\DomicilioController.cs" />
+    <Compile Include="App_Code\Controllers\CarritoController.cs" />
+    <Compile Include="App_Code\Models\Etiqueta.cs" />
+    <Compile Include="App_Code\Controllers\EtiquetaController.cs" />
+    <Compile Include="App_Code\Models\Media.cs" />
+    <Compile Include="App_Code\Controllers\MediaController.cs" />
+    <Compile Include="App_Code\Controllers\LoginController.cs" />
+    <Compile Include="App_Code\Models\Producto.cs" />
+    <Compile Include="App_Code\Controllers\ProductoController.cs" />
+    <Compile Include="App_Code\Models\Registro.cs" />
+    <Compile Include="App_Code\Controllers\RegistroController.cs" />
     <Compile Include="forms\PerfilUsuario.aspx.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,8 +220,8 @@
     <Compile Include="forms\PerfilUsuario.aspx.designer.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="App_Code\Models\Usuario.cs" />
+    <Compile Include="App_Code\Controllers\UsuarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="prueba.aspx.cs">
       <DependentUpon>prueba.aspx</DependentUpon>

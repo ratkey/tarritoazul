@@ -40,13 +40,12 @@ namespace Tarritoazul.Controllers
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
 
-                return usuarios;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
-                return null;
+                throw new Exception(ex.Message);
             }
+                return usuarios;
         }
 
         //Regresa un usuario de la BD basado en su id_usuario
@@ -83,7 +82,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
                 return null;
             }
         }
@@ -117,7 +116,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             con.Close();
             return null;
@@ -143,7 +142,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             con.Close();
             return null;
@@ -169,7 +168,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -194,7 +193,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -217,7 +216,7 @@ namespace Tarritoazul.Controllers
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

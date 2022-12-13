@@ -65,7 +65,7 @@ namespace tarritoazul.com
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        throw new Exception(ex.Message);
                     }
                 }
             }

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Web.UI;
 using Tarritoazul.Controllers;
-using Tarritoazul.Models;
 
-namespace tarritoazul.com.forms
+namespace Tarritoazul.User
 {
-    public partial class registro : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -14,7 +13,7 @@ namespace tarritoazul.com.forms
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro();
-
+            
             registro.Usuario = TbNombre.Text;
             registro.Correo = TbEmail.Text;
             registro.Contrasena = TbContrasena.Text;

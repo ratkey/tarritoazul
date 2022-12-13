@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Web.UI;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com.forms
 {
     public partial class registro : System.Web.UI.Page
     {
-        
-
         protected void Page_Load(object sender, EventArgs e)
         {
         }
@@ -22,7 +19,7 @@ namespace tarritoazul.com.forms
             registro.Correo = TbEmail.Text;
             registro.Contrasena = TbContrasena.Text;
 
-            RegistroControler.Insertar(registro);
+            RegistroController.Insertar(registro);
             Session["registro"] = registro;
             Response.Redirect("~/forms/addUsuario.aspx");
         }

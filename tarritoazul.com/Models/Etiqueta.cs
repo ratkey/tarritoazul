@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace tarritoazul.com.Models
+namespace Tarritoazul.Models
 {
     public class Etiqueta
     {

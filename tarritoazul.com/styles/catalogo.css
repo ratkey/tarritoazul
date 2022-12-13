@@ -1,6 +1,6 @@
 ﻿/* Catalogo */
 
-.catalogo{
+.catalogo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -12,16 +12,13 @@
     /* margin: auto; */
     text-align: center;
     border-radius: 3px;
-    
     min-width: 250px;
     max-width: 200px;
     text-align: center;
-
-    
 }
 
 @media (max-width: 510px) {
-    .card{
+    .card {
         max-width: 450px;
         margin: auto;
     }
@@ -32,7 +29,7 @@
     border-radius: 3px 3px 0 0;
 }
 
-.nombre{
+.nombre {
     font-size: 2.5rem;
     margin-top: 0;
 }
@@ -55,7 +52,7 @@
     border-radius: 0 0 3px 3px;
 }
 
-.card .descripcion{
+.card .descripcion {
     min-height: 60px;
 }
 
@@ -66,9 +63,9 @@
 .buscarCatalogo {
     width: 100%;
     text-align: right;
-/*    padding: 10rem 3rem 2rem 3rem;*/
-/*    width: 58%;*/
-/*    align-items: end;*/
+    /*    padding: 10rem 3rem 2rem 3rem;*/
+    /*    width: 58%;*/
+    /*    align-items: end;*/
     margin: 0px 0px 0px auto;
 }
 

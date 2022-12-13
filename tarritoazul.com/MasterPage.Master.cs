@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using tarritoazul.com.Models;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com
 {
@@ -8,8 +8,6 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
             //Si hay una sesion iniciada
             if (Session["registro"] != null && Session["usuario"] != null)
             {
@@ -36,7 +34,7 @@ namespace tarritoazul.com
                 btnCerrarSesion.Visible = false;
                 btnAdmin.Visible = false;
             }
-            
+
             //Si hay elementos en el carrtio
             if (Session["carrito"] != null)
             {

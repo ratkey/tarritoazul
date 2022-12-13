@@ -1,5 +1,6 @@
 ﻿using System;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com.forms
 {
@@ -10,15 +11,15 @@ namespace tarritoazul.com.forms
             string cotUser = TbUsuario.Text;
             string cotContr = TbContrasenia.Text;
 
-            int id_registro = LoginControler.ValidarLogin(cotUser, cotContr);
+            int id_registro = LoginController.ValidarLogin(cotUser, cotContr);
             if (id_registro != -1)
             {
                 //Obtener el registro y guardarlo en la Session
-                Registro registro = RegistroControler.SelectById(id_registro);
+                Registro registro = RegistroController.SelectById(id_registro);
                 Session["registro"] = registro;
 
                 //Obtener el Usuario y guardarlo en la Session
-                Usuario usuario = UsuarioControler.SelectByRegistroId(id_registro);
+                Usuario usuario = UsuarioController.SelectByRegistroId(id_registro);
                 if (usuario != null)
                 {
                     Session["usuario"] = usuario;

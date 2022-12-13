@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com
 {
@@ -13,7 +11,7 @@ namespace tarritoazul.com
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["usuario"] = UsuarioControler.SelectById(5);
+            //Session["usuario"] = UsuarioController.SelectById(5);
             if (Session["usuario"] == null)
             {
                 return;
@@ -28,7 +26,7 @@ namespace tarritoazul.com
             lbTelefono.Text = usuario.Telefono;
 
             //Cargar la imagen del usuario
-            if(usuario.Avatar_Img != "")
+            if (usuario.Avatar_Img != "")
             {
                 //string filepath = Server.MapPath("..//imgs//avatar//");
                 string imagenpath = "~/imgs/avatar/" + usuario.Avatar_Img;
@@ -60,7 +58,7 @@ namespace tarritoazul.com
                         Usuario usuario = (Usuario)Session["usuario"];
                         usuario.Avatar_Img = fn;
                         //guardar info del archivo en la BD
-                        UsuarioControler.Actualizar(usuario);
+                        UsuarioController.Actualizar(usuario);
 
                         string imagenpath = "~/imgs/avatar/" + usuario.Avatar_Img;
                         imgPerfil.ImageUrl = imagenpath;

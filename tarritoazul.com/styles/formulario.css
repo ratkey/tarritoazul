@@ -33,7 +33,7 @@
     gap: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-/*    width: 100%;*/
+    /*    width: 100%;*/
     width: 350px;
 }
 
@@ -54,7 +54,7 @@
         width: 100%;
     }
 
-/*    .formulario {
+    /*    .formulario {
         justify-content: stretch;
     }*/
 }

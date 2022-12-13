@@ -1,4 +1,4 @@
-﻿namespace tarritoazul.com.Models
+﻿namespace Tarritoazul.Models
 {
     public class Media
     {

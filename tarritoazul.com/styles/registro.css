@@ -1,21 +1,21 @@
-t1{
+t1 {
     font-size: 20pt;
 }
 
-.logo{
+.logo {
     width: 150px;
 }
 
-.logo_fondo{
+.logo_fondo {
     width: 100%;
     background-color: #a1c4c6;
 }
 
-.error{
-    color:red;
+.error {
+    color: red;
 }
 
-.registro_box{
+.registro_box {
     padding: 0px 0px 10px 0px;
     width: 300px;
     text-align: center;
@@ -24,20 +24,20 @@ t1{
     margin: 20px auto auto auto;
 }
 
-.registro_box table{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
+    .registro_box table {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
 
-#summary{
+#summary {
     font-size: 9pt;
     text-align: start;
     color: red;
 }
 
-#banner, #banner .logo{
-    height: 0px ;
+#banner, #banner .logo {
+    height: 0px;
 }
 
 #nav-botones {

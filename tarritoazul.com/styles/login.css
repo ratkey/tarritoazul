@@ -1,11 +1,10 @@
-
-.form_logo{
+.form_logo {
     width: 50px;
 }
 
-.logo_fondo{
+.logo_fondo {
     width: 100%;
-    text-align:center;
+    text-align: center;
 }
 
 #banner, #banner .logo {

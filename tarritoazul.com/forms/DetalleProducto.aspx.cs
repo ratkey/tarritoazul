@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com.forms
 {
     public partial class DetalleProducto : System.Web.UI.Page
     {
         private static Producto producto;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,7 +17,7 @@ namespace tarritoazul.com.forms
                 if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
                 {
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-                    producto = ProductoControler.SelectById(id);
+                    producto = ProductoController.SelectById(id);
                     SetValues(producto);
                 }
             }
@@ -32,7 +30,7 @@ namespace tarritoazul.com.forms
             lbPrecio.Text = "$" + p.Precio.ToString();
             lbDescripcion.Text = p.Descripcion;
 
-            string img = ProductoControler.GetProductMedia(p.Id_Producto);
+            string img = ProductoController.GetProductMedia(p.Id_Producto);
             string imgurl = "~/imgs/producto/";
             if (img != "")
             {
@@ -49,7 +47,7 @@ namespace tarritoazul.com.forms
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             //Agrega el producto al Session["carrito"]
-            CarritoControler.AddProducto(producto);
+            CarritoController.AddProducto(producto);
             //Recarga la pagina para que se actualice
             Response.Redirect("~/default.aspx");
         }

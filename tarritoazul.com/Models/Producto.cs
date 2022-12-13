@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 
-namespace tarritoazul.com.Models
+namespace Tarritoazul.Models
 {
     public class Producto
     {

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web;
+using Tarritoazul.Models;
 
-namespace tarritoazul.com.Models
+namespace Tarritoazul.Controllers
 {
-    public class CarritoControler
+    public class CarritoController
     {
         //Agregar un producto al carrito de la Session
         public static void AddProducto(Producto p)

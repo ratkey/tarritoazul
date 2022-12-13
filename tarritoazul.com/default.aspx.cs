@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com
 {
@@ -17,9 +18,8 @@ namespace tarritoazul.com
         private void FillPage()
         {
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoControler.GetAllProductos();
+            List<Producto> productos = ProductoController.GetAllProductos();
             LlenarCatalogo(productos);
-            
         }
 
         public void Log(string msg)
@@ -35,7 +35,7 @@ namespace tarritoazul.com
             string busqueda = tbBuscar.Text;
 
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoControler.GetProductsByName(busqueda);
+            List<Producto> productos = ProductoController.GetProductsByName(busqueda);
             LlenarCatalogo(productos);
         }
 
@@ -66,9 +66,9 @@ namespace tarritoazul.com
                     //Funcion al darle click al boton o imagen
                     imageButton.PostBackUrl = "~/forms/DetalleProducto.aspx?id=" + producto.Id_Producto;
                     btnVer.PostBackUrl = "~/forms/DetalleProducto.aspx?id=" + producto.Id_Producto;
-                    
+
                     //Obtener la primera imagen del producto
-                    string img = ProductoControler.GetProductMedia(producto.Id_Producto);
+                    string img = ProductoController.GetProductMedia(producto.Id_Producto);
 
                     //Cambiar las propiedades de los controles
                     if (img != "")
@@ -113,7 +113,7 @@ namespace tarritoazul.com
             string busqueda = tbBuscar.Text;
 
             //Obtiene una lista de todos los productos
-            List<Producto> productos = ProductoControler.GetProductsByName(busqueda);
+            List<Producto> productos = ProductoController.GetProductsByName(busqueda);
             LlenarCatalogo(productos);
         }
     }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using tarritoazul.com.Models;
+using Tarritoazul.Controllers;
+using Tarritoazul.Models;
 
 namespace tarritoazul.com.forms
 {
@@ -26,8 +23,8 @@ namespace tarritoazul.com.forms
                     tbTelefono.Text = usuario.Telefono;
                 }
             }
-            
         }
+
         protected void btGuardar_Click(object sender, EventArgs e)
         {
             if (Session["registro"] != null)
@@ -52,18 +49,19 @@ namespace tarritoazul.com.forms
 
                 if (Session["usuario"] == null)
                 {
-                    UsuarioControler.Insertar(usuario);
+                    UsuarioController.Insertar(usuario);
                 }
                 else
                 {
                     Usuario us = (Usuario)Session["usuario"];
                     usuario.Id_Usuario = us.Id_Usuario;
-                    UsuarioControler.Actualizar(usuario);
+                    UsuarioController.Actualizar(usuario);
                 }
                 Session["usuario"] = usuario;
             }
             Response.Redirect("~/default.aspx");
         }
+
         public void Log(string msg)
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");

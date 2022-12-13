@@ -3,9 +3,9 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace tarritoazul.com.Models
+namespace Tarritoazul.Controllers
 {
-    public class LoginControler
+    public class LoginController
     {
         public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

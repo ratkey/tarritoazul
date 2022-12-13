@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Tarritoazul.Models;
 
-namespace tarritoazul.com.Models
+namespace Tarritoazul.Controllers
 {
-    public class DomicilioControler
+    public class DomicilioController
     {
         private static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

@@ -1,6 +1,4 @@
 ﻿using System;
-using Tarritoazul.Controllers;
-using Tarritoazul.Models;
 
 namespace Tarritoazul.User
 {

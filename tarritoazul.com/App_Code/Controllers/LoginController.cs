@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 
-public class LoginController
+internal class LoginController
 {
     public static readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

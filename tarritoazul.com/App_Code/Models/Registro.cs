@@ -1,4 +1,4 @@
-﻿public class Registro
+﻿internal class Registro
 {
     public Registro()
     {

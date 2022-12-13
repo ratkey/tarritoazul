@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 
-public class Usuario
+internal class Usuario
 {
     private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
 

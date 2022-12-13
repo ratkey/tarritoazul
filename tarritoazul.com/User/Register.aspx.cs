@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using Tarritoazul.Controllers;
 
 namespace Tarritoazul.User
 {
@@ -13,7 +12,7 @@ namespace Tarritoazul.User
         protected void BtContinuar_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro();
-            
+
             registro.Usuario = TbNombre.Text;
             registro.Correo = TbEmail.Text;
             registro.Contrasena = TbContrasena.Text;

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using System.Windows.Forms;
-using Tarritoazul.Controllers;
-using Tarritoazul.Models;
 
 namespace tarritoazul.com
 {

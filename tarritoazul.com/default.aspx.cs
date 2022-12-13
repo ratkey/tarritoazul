@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Tarritoazul.Controllers;
-using Tarritoazul.Models;
 
 namespace tarritoazul.com
 {

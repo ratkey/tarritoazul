@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
-using Tarritoazul.Controllers;
-using Tarritoazul.Models;
+using System.Windows.Forms;
 using Page = System.Web.UI.Page;
 
 namespace tarritoazul.com.forms
 {
     public partial class addProducto : System.Web.UI.Page
     {
-        private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TAConnectionString"].ConnectionString);
-
-        public static Producto producto = new Producto();
+        private static Producto producto = new Producto();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,11 +17,9 @@ namespace tarritoazul.com.forms
                 //Revisar si la url contiene el parametro id
                 if (!String.IsNullOrWhiteSpace(Request.QueryString["id"]))
                 {
-                    Log("modificando");
                     int id = Convert.ToInt32(Request.QueryString["id"]);
                     producto = ProductoController.SelectById(id);
                     SetValuesFromModel();
-                    Log("Producto: " + producto.ToString());
                 }
             }
         }
@@ -132,11 +125,12 @@ namespace tarritoazul.com.forms
                         cantidad_archivos++;
 
                         //guardar info del archivo en la BD
-                        insertMedia(fn, "imagen", producto.Id_Producto);
+                        int id_producto = producto.Id_Producto;
+                        MediaController.Insertar(new Media(src_Url: fn, tipo: "imagen", id_Producto: id_producto));
                     }
                     catch (Exception ex)
                     {
-                        FileUploadStatus.Text = "Error: " + ex.Message;
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 if (cantidad_archivos > 0)
@@ -148,18 +142,6 @@ namespace tarritoazul.com.forms
             {
                 FileUploadStatus.Text = "Seleccione archivos para subir.";
             }
-        }
-
-        protected void insertMedia(string src_url, string tipo, int id_producto)
-        {
-            con.Open();
-
-            string SQLInsert = String.Format("insert into MEDIA(src_url, tipo, id_producto)" +
-            "values('{0}','{1}',{2});", src_url, tipo, id_producto);
-
-            SqlCommand cmd = new SqlCommand(SQLInsert, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         public void Log(string msg)

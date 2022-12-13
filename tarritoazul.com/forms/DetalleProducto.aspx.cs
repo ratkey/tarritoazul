@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using Tarritoazul.Controllers;
-using Tarritoazul.Models;
 
 namespace tarritoazul.com.forms
 {

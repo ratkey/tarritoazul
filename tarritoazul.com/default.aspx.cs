@@ -66,18 +66,17 @@ namespace tarritoazul.com
                     btnVer.PostBackUrl = "~/forms/DetalleProducto.aspx?id=" + producto.Id_Producto;
 
                     //Obtener la primera imagen del producto
-                    string img = ProductoController.GetProductMedia(producto.Id_Producto);
-
-                    //Cambiar las propiedades de los controles
-                    if (img != "")
+                    
+                    List<Media> mediaList = MediaController.GetAllMediaFromProducto(producto.Id_Producto);
+                    if(mediaList .Count > 0)
                     {
+                        string img = mediaList[0].Src_Url;
                         imageButton.ImageUrl = "~/imgs/producto/" + img;
                     }
                     else
                     {
                         imageButton.ImageUrl = "~/imgs/producto/" + "placeholder.jpg";
                     }
-                    Log(img);
 
                     lblNombre.Text = producto.Nombre;
                     lblPrecio.Text = "$" + producto.Precio;

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Page = System.Web.UI.Page;
 
@@ -20,7 +22,23 @@ namespace tarritoazul.com.forms
                     int id = Convert.ToInt32(Request.QueryString["id"]);
                     producto = ProductoController.SelectById(id);
                     SetValuesFromModel();
+                    setProductImages();
                 }
+            }
+        }
+
+        protected void setProductImages()
+        {
+            if (producto.Id_Producto == -1) return;
+
+            List<Media> mediaList = MediaController.GetAllMediaFromProducto(producto.Id_Producto);
+
+            foreach (Media media in mediaList)
+            {
+                Image img = new Image();
+                img.ImageUrl = "~/imgs/producto/" + media.Src_Url;
+                img.Width = 100;
+                pnlImages.Controls.Add(img);
             }
         }
 

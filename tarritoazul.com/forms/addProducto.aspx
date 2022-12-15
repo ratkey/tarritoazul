@@ -74,6 +74,8 @@
             <div class="file_up">
                 <h2 class="titulo">Imagenes</h2>
                 <asp:FileUpload ID="FileUpload_Control" runat="server" AllowMultiple="true" />
+                <asp:Panel ID="pnlImages" runat="server">
+                </asp:Panel>
                 <br />
                 <asp:Label ID="FileUpload_Msg" runat="server" Text=""></asp:Label>
             </div>

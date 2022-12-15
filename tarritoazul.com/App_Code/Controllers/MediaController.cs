@@ -27,19 +27,54 @@ internal class MediaController
                     media.Add(p);
                 }
             }
+            con.Close();
 
-            if (con.State == System.Data.ConnectionState.Open)
-                con.Close();
-
-            return media;
         }
         catch (SqlException ex)
         {
             throw new Exception(ex.Message);
         }
+        
+        return media;
     }
 
-    //Cambiar este metodo al modelo MediaModel
+    /// <summary>
+    /// Obtiene una lista de Media con el mismo id_producto
+    /// </summary>
+    /// <param name="id_producto"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    public static List<Media> GetAllMediaFromProducto(int id_producto)
+    {
+        List<Media> mediaList = new List<Media>();
+        string SQLSelect = String.Format("Select * from [MEDIA] where id_producto = {0}", id_producto);
+        SqlCommand command = new SqlCommand(SQLSelect, con);
+        try
+        {
+            con.Open();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Media p = new Media();
+                    p.Id_Media = (int)reader["id_media"];
+                    p.Src_Url = (string)reader["src_url"];
+                    p.Tipo = (string)reader["tipo"];
+                    p.Id_Producto = (int)reader["id_producto"];
+                    mediaList.Add(p);
+                }
+            }
+            con.Close();
+
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+
+        return mediaList;
+    }
+
     public static string GetProductMedia(int id_producto)
     {
         string url = "";

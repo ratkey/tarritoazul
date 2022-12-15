@@ -168,6 +168,15 @@ namespace tarritoazul.com.forms
         protected global::System.Web.UI.WebControls.FileUpload FileUpload_Control;
 
         /// <summary>
+        /// pnlImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlImages;
+
+        /// <summary>
         /// FileUpload_Msg control.
         /// </summary>
         /// <remarks>

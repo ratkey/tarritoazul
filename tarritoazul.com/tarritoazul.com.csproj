@@ -1,0 +1,282 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87E84734-EE54-4645-ABED-4604759E227C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tarritoazul.com</RootNamespace>
+    <AssemblyName>tarritoazul.com</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contacto.aspx" />
+    <Content Include="forms\addUsuario.aspx" />
+    <Content Include="forms\ConfirmarPedido.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="forms\administracion.aspx" />
+    <Content Include="forms\addProducto.aspx" />
+    <Content Include="forms\DetalleProducto.aspx" />
+    <Content Include="forms\domicilio.aspx" />
+    <Content Include="forms\login.aspx" />
+    <Content Include="forms\registro.aspx" />
+    <Content Include="imgs\avatar\1.png" />
+    <Content Include="imgs\avatar\2.png" />
+    <Content Include="imgs\avatar\3.png" />
+    <Content Include="imgs\avatar\4.png" />
+    <Content Include="imgs\avatar\5.png" />
+    <Content Include="imgs\avatar\6.png" />
+    <Content Include="imgs\avatar\7.png" />
+    <Content Include="imgs\avatar\8.png" />
+    <Content Include="imgs\avatar\9.png" />
+    <Content Include="imgs\avatar\10.png" />
+    <Content Include="imgs\avatar\11.png" />
+    <Content Include="imgs\avatar\12.png" />
+    <Content Include="imgs\avatar\13.png" />
+    <Content Include="imgs\avatar\14.png" />
+    <Content Include="imgs\avatar\15.png" />
+    <Content Include="imgs\avatar\16.png" />
+    <Content Include="imgs\avatar\17.png" />
+    <Content Include="imgs\avatar\18.png" />
+    <Content Include="imgs\avatar\19.png" />
+    <Content Include="imgs\avatar\20.png" />
+    <Content Include="imgs\favicon.ico" />
+    <Content Include="imgs\insta_logo.png" />
+    <Content Include="imgs\load.gif" />
+    <Content Include="imgs\logo.png" />
+    <Content Include="imgs\logosmall.png" />
+    <Content Include="imgs\logosmall_nobg.png" />
+    <Content Include="imgs\producto\arete01.jpg" />
+    <Content Include="imgs\producto\arete02.jpg" />
+    <Content Include="imgs\producto\arete03.jpg" />
+    <Content Include="imgs\producto\arete04.jpg" />
+    <Content Include="imgs\producto\arete05.jpg" />
+    <Content Include="forms\PerfilUsuario.aspx" />
+    <Content Include="imgs\producto\placeholder.jpg" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="prueba.aspx" />
+    <Content Include="styles\addProducto.css" />
+    <Content Include="styles\administracion.css" />
+    <Content Include="styles\formulario.css" />
+    <Content Include="styles\catalogo.css" />
+    <Content Include="styles\login.css" />
+    <Content Include="styles\perfil.css" />
+    <Content Include="styles\registro.css" />
+    <Content Include="styles\main.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\addUsuario.aspx.cs">
+      <DependentUpon>addUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\addUsuario.aspx.designer.cs">
+      <DependentUpon>addUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ConfirmarPedido.aspx.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmarPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmarPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\administracion.aspx.cs">
+      <DependentUpon>administracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\administracion.aspx.designer.cs">
+      <DependentUpon>administracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\addProducto.aspx.cs">
+      <DependentUpon>addProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\addProducto.aspx.designer.cs">
+      <DependentUpon>addProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DetalleProducto.aspx.designer.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\domicilio.aspx.cs">
+      <DependentUpon>domicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\domicilio.aspx.designer.cs">
+      <DependentUpon>domicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\registro.aspx.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\registro.aspx.designer.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Domicilio.cs" />
+    <Compile Include="Controlers\DomicilioControler.cs" />
+    <Compile Include="Controlers\CarritoControler.cs" />
+    <Compile Include="Models\Etiqueta.cs" />
+    <Compile Include="Controlers\EtiquetaControler.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Controlers\MediaControler.cs" />
+    <Compile Include="Controlers\LoginControler.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Controlers\ProductoControler.cs" />
+    <Compile Include="Models\Registro.cs" />
+    <Compile Include="Controlers\RegistroControler.cs" />
+    <Compile Include="forms\PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Controlers\UsuarioControler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="prueba.aspx.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prueba.aspx.designer.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50313</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50313/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

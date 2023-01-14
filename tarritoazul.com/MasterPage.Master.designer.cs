@@ -105,15 +105,6 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.Button btnRegistrarse;
 
         /// <summary>
-        /// btnCerrarSesion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
-
-        /// <summary>
         /// btnIniciarSecion control.
         /// </summary>
         /// <remarks>
@@ -123,13 +114,22 @@ namespace tarritoazul.com
         protected global::System.Web.UI.WebControls.Button btnIniciarSecion;
 
         /// <summary>
-        /// btnUser control.
+        /// ImgBtnUserImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUser;
+        protected global::System.Web.UI.WebControls.ImageButton ImgBtnUserImage;
+
+        /// <summary>
+        /// lblUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lblUserName;
 
         /// <summary>
         /// Contenido control.

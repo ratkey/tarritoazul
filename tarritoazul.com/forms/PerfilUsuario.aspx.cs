@@ -68,6 +68,15 @@ namespace tarritoazul.com
             }
         }
 
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            //cerrar sesion
+            Session["registro"] = null;
+            Session["usuario"] = null;
+            //redireccionar a la pagina principal
+            Response.Redirect("~/default.aspx");
+        }
+
         public void Log(string msg)
         {
             Page.Response.Write("<script>console.log('" + msg + "');</script>");

@@ -6,6 +6,16 @@ namespace Tarritoazul.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        public void Log(string msg)
+        {
+            Page.Response.Write("<script>console.log('" + msg + "');</script>");
+        }
+
+        protected void BtLogin_Click(object sender, EventArgs e)
+        {
             string cotUser = TbUsuario.Text;
             string cotContr = TbContrasenia.Text;
 
@@ -32,11 +42,6 @@ namespace Tarritoazul.User
             {
                 Log("No existe el usuario");
             }
-        }
-
-        public void Log(string msg)
-        {
-            Page.Response.Write("<script>console.log('" + msg + "');</script>");
         }
     }
 }

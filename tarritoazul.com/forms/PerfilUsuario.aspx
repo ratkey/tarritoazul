@@ -12,10 +12,10 @@
             <tr>
                 <%--td de la imagen--%>
                 <td style="max-width: 200px;">
-                    <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/imgs/producto/placeholder.jpg" CssClass="imgPerfil"/>
+                    <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/imgs/producto/placeholder.jpg" CssClass="imgPerfil" />
                     <br />
                     <asp:FileUpload ID="fileUp" runat="server" />
-                    <asp:Button ID="btnSubirimg" runat="server" Text="Subir" CssClass="btn btn-primario" OnClick="btnSubirimg_Click"/>
+                    <asp:Button ID="btnSubirimg" runat="server" Text="Subir" CssClass="btn btn-primario" OnClick="btnSubirimg_Click" />
                     <br />
 
                 </td>
@@ -38,6 +38,8 @@
                     <asp:Label ID="lbTelefono" runat="server" Text="Fecha de telefono"></asp:Label>
                     <br />
                     <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="btn btn-primario" PostBackUrl="~/forms/addUsuario.aspx?update=true" />
+                    <br />
+                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion" CssClass="btn btn-peligro" Width="131" CausesValidation="False" OnClick="btnCerrarSesion_Click" />
                 </td>
             </tr>
     </table>

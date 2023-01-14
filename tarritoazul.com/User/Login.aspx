@@ -37,7 +37,7 @@
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="BtLogin" runat="server" Text="Iniciar sesión" CssClass="btn btn-primario" />
+            <asp:Button ID="BtLogin" runat="server" Text="Iniciar sesión" CssClass="btn btn-primario" OnClick="BtLogin_Click" />
             <p style="font-size: 12pt;" class="centrar">
                 ¿Aún no tienes una cuenta?
             <asp:HyperLink ID="linkIniciarSecionForm" runat="server" NavigateUrl="~/forms/registro.aspx">Regístrate aquí</asp:HyperLink>
